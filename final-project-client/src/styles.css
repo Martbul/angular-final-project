@@ -15,5 +15,17 @@
     width: 100%;
     height: auto;
   }
-  
+  .site-section{
+    padding: 2em;
+  }
+  .primary-color{
+    background-color: #ffbd4a;
+  }
 
+button{
+  background-color: #ffbd4a;
+  color: black;
+  border: 1px solid rgb(255, 255, 255);
+  padding: 1.2em 2.8em;
+  border-radius: 1em;
+}

@@ -1,0 +1,100 @@
+@media(min-width:1200px){
+    .heading{
+    height: 100vh;
+}
+
+.heading .container{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.4em 4em 0em 8em;
+}
+
+.heading .heading-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+}
+.heading .heading-text h1{
+    font-size:3.4em
+}
+
+.heading .heading-media img{
+    justify-content: center;
+    align-items: center ;
+    width: 38em;
+    border-radius: 1.2em;
+    box-shadow: 1em 1em 1em 0em rgba(0, 0, 0, 0.6);
+}
+
+
+
+
+.offer-section .offer{
+    margin: 2em 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 16em 0 7em;
+}
+.offer-section .offer .offer-heading{
+    display: flex;
+    align-items: center ;
+}
+
+.offer-section .offer .offer-text{
+    border: 1px solid rgb(255, 255, 255);
+    background-color: white;
+    border-radius: 1em;
+    color: black;
+    width:34em;
+    font-weight: 500;
+}
+.offer-section .offer .offer-heading h3{
+    font-size: 2em;
+   
+}
+.offer-section .offer .offer-text p{
+    margin: 2em;
+    text-align: center;
+}
+
+
+.services .container{
+    margin: 12em 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+
+.services .container .service-card{
+    border: 1px solid black;
+    border-radius: 0.5em;
+    padding: 1em;
+    width: 22em;
+    text-align: center;
+    box-shadow: 1em 1em 1em 1em rgba(0, 0, 0, 0.1);
+}
+
+.services .container .service-card h4{
+    font-size: 1.4em;
+}
+
+.services .container .service-card i{
+    font-size: 4.6em;
+    padding: 1em;
+
+};
+
+
+
+
+
+
+
+
+.testemenial{
+    background-color: #e7ecef;
+}
+}

@@ -1,8 +1,23 @@
 header{
+  background-color: black;
+}
+
+header nav a{
+  text-decoration: none;
+  color: #fff;
+}
+
+header nav a:hover{
+  text-decoration: none;
+  color: #ffbd4a;
+}
+
+@media(min-width:1200px){
+  header{
     display: flex;
     justify-content: space-between;
     padding: 1.5em 2.5em;
-    background-color: black;
+    
   }
 
   header nav{
@@ -25,15 +40,13 @@ header{
 
   
   header nav a {
-    text-decoration: none;
-    color: #fff;
+    
     font-size: 0.9em;
     
   }
 
   header nav a:hover {
-    text-decoration: none;
-    color: #ffbd4a;
+   
     font-size: 0.9em;
     transition: ease-in 0.3s;
   }
@@ -45,14 +58,27 @@ header{
     
   }
   
-  .site-title a {
+  .site-title{
+    display: flex;
+    justify-content: left;
+  }
+
+  .site-title a{
+    text-decoration: none;
+    color:white;
+    margin-right: -8.8em;
+    padding-top: 0.8em;
+    font-size: 1.8em;
+   
+  }
+  .site-title a:first-child {
     display: block;
     width: 100px;
     height: 50px;
     overflow: hidden;
     text-indent: -200vw;
     
-    background-image: url("../../../assets/images/AlystLogoV2.png");
+    background-image: url("../../../assets/images/AlystLogoV1.png");
     
     background-size: contain;
     background-position: center;
@@ -60,6 +86,5 @@ header{
     padding-left: 20em;
   }
 
-  .site-section{
-    padding: 2em;
-  }
+
+}
