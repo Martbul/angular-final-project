@@ -1,0 +1,65 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em 2.5em;
+    background-color: black;
+  }
+
+  header nav{
+    display: flex;
+    align-items: center;
+    padding-right: 3em;
+  }
+  header nav ul {
+    display: flex;
+
+  }
+
+  header nav li {
+    list-style: none outside;
+    padding: 0 1.3em;
+    font-size: 1.2em;
+    
+  }
+
+
+  
+  header nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9em;
+    
+  }
+
+  header nav a:hover {
+    text-decoration: none;
+    color: #ffbd4a;
+    font-size: 0.9em;
+    transition: ease-in 0.3s;
+  }
+
+  header nav a .active{
+    text-decoration: none;
+    color: #ffbd4a;
+    font-size: 0.9em;
+    
+  }
+  
+  .site-title a {
+    display: block;
+    width: 100px;
+    height: 50px;
+    overflow: hidden;
+    text-indent: -200vw;
+    
+    background-image: url("../../../assets/images/AlystLogoV2.png");
+    
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-left: 20em;
+  }
+
+  .site-section{
+    padding: 2em;
+  }
