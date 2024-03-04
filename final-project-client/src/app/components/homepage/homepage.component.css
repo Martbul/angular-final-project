@@ -61,10 +61,12 @@
 
 
 .services .container{
-    margin: 12em 0;
+    padding: 12em 0;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin: 0 auto;
+    gap: 3em;
 }
 
 
@@ -92,7 +94,9 @@
 
 
 
+.calendar{
 
+}
 
 .testemenial{
     background-color: #e7ecef;
