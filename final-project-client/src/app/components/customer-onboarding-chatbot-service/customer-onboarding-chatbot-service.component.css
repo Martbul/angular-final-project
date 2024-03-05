@@ -1,0 +1,375 @@
+@media(min-width: 1200px) {
+   .how-it-works .how-container{
+ display: flex;
+   flex-direction: column;
+
+   align-items:center;
+   text-align: center;
+   padding: 10em 0em;
+   gap: 5em;
+}
+.how-it-works .how-container .how-text h4{
+font-size: 1.5em;
+padding-bottom: 1em;
+}
+
+.how-it-works .how-container .how-text h1{
+   font-size: 2.8em
+}
+.how-it-works .how-container .how-text p{
+   padding-top: 1em;
+   font-size: 1em;
+}
+
+.how-it-works .how-container .how-cards{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   gap: 5em;
+   
+}
+
+.how-it-works .how-container .how-card{
+border: 1px solid #fff;
+padding: 2em;
+border-radius: .5em;
+}
+
+.how-it-works .how-container .how-card h3{
+   font-weight: bold;
+   font-size: 1.4em;
+}
+
+.how-it-works .how-container .how-card i{
+   font-size:3.4em;
+   margin: 0.8em 1em;
+}
+}
+
+
+
+@media(max-width:1199px){
+    .how-it-works .how-container{
+ display: flex;
+   flex-direction: column;
+
+   align-items:center;
+   text-align: center;
+   padding: 6em 0em;
+   gap: 3em;
+}
+
+.how-it-works .how-container .how-text{
+min-width: 10em;
+margin: 0 2em;
+}
+.how-it-works .how-container .how-text h4{
+font-size: 1.1em;
+padding-bottom: 0.7em;
+
+}
+
+.how-it-works .how-container .how-text h1{
+   font-size: 2em
+}
+.how-it-works .how-container .how-text p{
+   padding-top: 0.5em;
+   font-size: 1em;
+}
+
+.how-it-works .how-container .how-cards{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   gap: 2em;
+   margin: 0em 15em;
+   justify-content: center;
+   min-width: 12em;
+   
+}
+
+.how-it-works .how-container .how-card{
+border: 1px solid #fff;
+padding: 2.2em 1em;
+border-radius: .5em;
+}
+
+.how-it-works .how-container .how-card h3{
+   font-weight: bold;
+   font-size: 1em;
+}
+
+.how-it-works .how-container .how-card i{
+   font-size:2.6em;
+   margin: 0.4em 0.5em;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(min-width:1200px){
+   .what-offering .what-offering-counter{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      flex-grow: 1;
+      flex-shrink: 1;
+      margin: 8em 0em;
+      gap: 3em;
+      padding: 0em 10em;
+   }
+
+    .what-offering .what-offering-counter .what-offering-text{
+      display: flex;
+      flex-direction: column;
+      max-width: 50em;
+      justify-content: center;
+    }
+
+    .what-offering .what-offering-counter .what-offering-text h4{
+      font-size: 1.5em;
+    }
+    .what-offering .what-offering-counter .what-offering-text h1{
+      font-size: 2.4em;
+      line-height: 1.4;
+      font-weight: bold;
+      margin-bottom: 1em;
+    }
+
+    .what-offering .what-offering-counter .what-offering-text .what-offering-list{
+      display: flex;
+      flex-direction: row;
+      gap: 3em;
+    }
+
+    .what-offering .what-offering-counter .what-offering-text .what-offering-list p{
+      max-width: 26em;
+      line-height: 2.2;
+      min-width: 22em;
+    }
+    .what-offering .what-offering-counter .what-offering-text .what-offering-list ul{
+      line-height: 2.2;
+      font-size: 1.1em;
+      text-decoration: underline;
+      min-width: 14em;
+    }
+
+      .what-offering .what-offering-counter .what-offering-media{
+         width: 36em;
+          min-width: 30em;
+         display: flex;
+         align-items: center;
+      }
+}
+
+@media(max-width:1199px){
+     .what-offering .what-offering-counter{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+     
+    
+      margin: 4em 0em;
+      gap: 2em;
+      padding: 0em 6em;
+   }
+
+    .what-offering .what-offering-counter .what-offering-text{
+      display: flex;
+      flex-direction: column;
+      max-width: 30em;
+      justify-content: center;
+    }
+
+    .what-offering .what-offering-counter .what-offering-text h4{
+      font-size: 1.2em;
+    }
+    .what-offering .what-offering-counter .what-offering-text h1{
+      font-size: 2em;
+      line-height: 1;
+      font-weight: bold;
+      margin-bottom: 1em;
+    }
+
+    .what-offering .what-offering-counter .what-offering-text .what-offering-list{
+      display: flex;
+      flex-direction: row;
+      gap: 2em;
+    }
+
+    .what-offering .what-offering-counter .what-offering-text .what-offering-list p{
+      max-width: 28em;
+      line-height: 2;
+      min-width: 18em;
+    }
+    .what-offering .what-offering-counter .what-offering-text .what-offering-list ul{
+
+      display: none;
+    }
+
+      .what-offering .what-offering-counter .what-offering-media{
+         min-width: 26em;
+         width: 30em;
+         display: flex;
+         align-items: center;
+      }
+}
+
+@media(max-width:699px){
+     .what-offering .what-offering-counter{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+     flex-shrink: 1;
+     align-items: center;
+   }
+
+    .what-offering .what-offering-counter .what-offering-text{
+      display: flex;
+      flex-direction: column;
+      max-width: 20em;
+      min-width: 16em;
+    }
+
+    .what-offering .what-offering-counter .what-offering-text h4{
+      font-size: 1em;
+    }
+    .what-offering .what-offering-counter .what-offering-text h1{
+      font-size: 1.6em;
+      line-height: 1;
+      font-weight: bold;
+      margin-bottom: 1em;
+    }
+
+    .what-offering .what-offering-counter .what-offering-text .what-offering-list{
+      display: flex;
+      flex-direction: row;
+      gap: 2em;
+    }
+
+    .what-offering .what-offering-counter .what-offering-text .what-offering-list p{
+      max-width: 28em;
+      line-height: 2;
+      min-width: 18em;
+    }
+    .what-offering .what-offering-counter .what-offering-text .what-offering-list ul{
+
+      display: none;
+    }
+
+      .what-offering .what-offering-counter .what-offering-media{
+         min-width: 4em;
+         width: 18em;
+         max-width: 26em;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1200px) {
+  .results {
+    padding: 9em 0;
+  }
+
+  .result-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    flex-shrink: 1;
+    gap: 1em;
+  }
+
+  .result-container .result-container-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2em;
+    max-width: 30em;
+    min-width: 16em;
+  }
+  .result-container .result-container-card h2 {
+    font-size: 2.6em;
+  }
+
+  .result-container .result-container-card i {
+    font-size: 6.6em;
+  }
+}
+
+@media (max-width: 1200px) {
+  .results {
+    padding: 6em 0;
+  }
+  .result-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    flex-shrink: 1;
+    gap: 2em;
+    flex-wrap: wrap;
+  }
+
+  .result-container .result-container-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.4em;
+    padding: 2em;
+    max-width: 30em;
+    min-width: 16em;
+  }
+  .result-container .result-container-card h2 {
+    font-size: 2.6em;
+  }
+
+  .result-container .result-container-card i {
+    font-size: 6.6em;
+  }
+}

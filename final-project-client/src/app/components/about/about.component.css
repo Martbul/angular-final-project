@@ -1,3 +1,169 @@
+.modern-gradient {
+  background-image: 
+    linear-gradient(
+      to bottom left in oklab, 
+      rgb(69% 100% 68%) 0%, oklch(91% 0.15 95) 100%
+    )
+  ;
+}
+
+@media(min-width:1200px) {
+   .about-us-heading{
+   height: 50vh;
+   display: flex;
+     justify-content: space-evenly;
+  flex-grow: 1;
+   flex-shrink: 1;
+}
+
+
+.about-us-heading .about-us-container{
+   display: flex;
+ 
+   align-items: center;
+   margin: 0 30em;
+   
+    gap: 10em;
+}
+
+.about-us-heading .about-us-container .about-us-text{
+   display: flex;
+   flex-direction:column;
+   justify-content:center;
+   color: #fff;
+   min-width: 30em;
+}
+
+.about-us-heading .about-us-container .about-us-text h1{
+   font-size: 3em;
+   font-weight: 800;
+}
+
+.about-us-heading .about-us-container .about-us-text p{
+   font-size: 1.4em;
+}
+
+.about-us-heading .about-us-container .about-us-text button{
+   padding: 0.6em 0.3em;
+}
+.about-us-heading .about-us-container .about-us-media{
+   display: flex;
+   align-items: center;
+}
+
+.about-us-heading .about-us-container .about-us-media img{
+   width: 40em;
+}
+
+}
+
+
+@media(max-width:1199px) {
+   .about-us-heading{
+   height: 30vh;
+   display: flex;
+     justify-content: space-evenly;
+  flex-grow: 1;
+   flex-shrink: 1;
+}
+
+
+.about-us-heading .about-us-container{
+   display: flex;
+ 
+   align-items: center;
+   margin: 0 20em;
+   
+    gap: 6em;
+}
+
+.about-us-heading .about-us-container .about-us-text{
+   display: flex;
+   flex-direction:column;
+   justify-content:center;
+   color: #fff;
+   min-width: 20em;
+}
+
+.about-us-heading .about-us-container .about-us-text h1{
+   font-size: 2.4em;
+   font-weight: 800;
+}
+
+.about-us-heading .about-us-container .about-us-text p{
+   font-size: 1em;
+}
+
+.about-us-heading .about-us-container .about-us-text button{
+   padding: 0.4em 0.3em;
+}
+.about-us-heading .about-us-container .about-us-media{
+   display: flex;
+   align-items: center;
+}
+
+.about-us-heading .about-us-container .about-us-media img{
+   width: 20em;
+}
+}
+
+
+@media(max-width:700px){
+     .about-us-heading{
+   height: 30vh;
+   display: flex;
+     justify-content: space-evenly;
+  flex-grow: 1;
+   flex-shrink: 1;
+}
+
+
+.about-us-heading .about-us-container{
+   display: flex;
+ 
+   align-items: center;
+   margin: 0 10em;
+   gap: 0em;
+}
+
+.about-us-heading .about-us-container .about-us-text{
+   display: flex;
+   flex-direction:column;
+   justify-content:center;
+   color: #fff;
+   min-width: 18em;
+}
+
+.about-us-heading .about-us-container .about-us-text h1{
+   font-size: 1.4em;
+   font-weight: 500;
+}
+
+.about-us-heading .about-us-container .about-us-text p{
+   font-size: 0.6em;
+}
+
+.about-us-heading .about-us-container .about-us-text button{
+   width: fit-content;
+   font-size: 0.8em;
+   padding: 0.6em 0.8em;
+  
+}
+.about-us-heading .about-us-container .about-us-media{
+   display: flex;
+   align-items: center;
+}
+
+.about-us-heading .about-us-container .about-us-media img{
+   width: 12em;
+   
+}
+}
+
+
+
+
+
 .our-values{
    display: flex;
    flex-direction: column;

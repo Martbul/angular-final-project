@@ -14,6 +14,9 @@ import { OurservicesComponent } from './components/ourservices/ourservices.compo
 import { AppFinderComponent } from './components/app-finder/app-finder.component';
 import { AlystServicesComponent } from './components/alyst-services/alyst-services.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CustomerSupportChatbotServiceComponent } from './components/customer-support-chatbot-service/customer-support-chatbot-service.component';
+import { CustomerOnboardingChatbotServiceComponent } from './components/customer-onboarding-chatbot-service/customer-onboarding-chatbot-service.component';
+import { EmployeeTrainingChatbotServiceComponent } from './components/employee-training-chatbot-service/employee-training-chatbot-service.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     OurservicesComponent,
     AppFinderComponent,
     AlystServicesComponent,
+    CustomerSupportChatbotServiceComponent,
+    CustomerOnboardingChatbotServiceComponent,
+    EmployeeTrainingChatbotServiceComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],

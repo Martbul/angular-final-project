@@ -1,22 +1,23 @@
 @media(min-width: 1200px) {
    
 .our-services-heading .our-services-heading-container{
-   background-image: url('../../../assets/images/Services-background-1.jpg');
-height:40vh;
-color:white;
+   background-image: url('../../../assets/images/shutterstock_1091189819-1-scaled-2559x853.jpg');
+height:45vh;
+color:rgb(255, 255, 255);
 display: flex;
 justify-content: center;
 background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
     align-items: center;
-   
+   background-image: linear-gradient(rgba(0, 0, 0, 0.8),
+                       rgba(0, 0, 0, 0.3)), url("../../../assets/images/shutterstock_1091189819-1-scaled-2559x853.jpg")
 
 }
 
 .our-services-heading .our-services-heading-container h1{
- font-weight: 700;
-    font-size: 4.6em;
+ font-weight: 900;
+    font-size: 4.8em;
 }
 }
 
