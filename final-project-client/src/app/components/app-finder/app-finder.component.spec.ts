@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ServicesComponent } from './services.component';
+import { AppFinderComponent } from './app-finder.component';
 
-describe('ServicesComponent', () => {
-  let component: ServicesComponent;
-  let fixture: ComponentFixture<ServicesComponent>;
+describe('AppFinderComponent', () => {
+  let component: AppFinderComponent;
+  let fixture: ComponentFixture<AppFinderComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ServicesComponent]
+      declarations: [AppFinderComponent]
     });
-    fixture = TestBed.createComponent(ServicesComponent);
+    fixture = TestBed.createComponent(AppFinderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

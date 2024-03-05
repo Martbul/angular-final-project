@@ -1,12 +1,22 @@
 @media(min-width:1200px){
     .heading{
-    height: 100vh;
+    height: 90vh;
+    display: flex;
 }
 
 .heading .container{
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
+   
+  
     padding: 1.4em 4em 0em 8em;
+    margin: center; 
+}
+.heading .heading-container{
+   margin-bottom: 1em;
+    align-items: center;
+    justify-content: center;
+    gap: 28em;
 }
 
 .heading .heading-text{
@@ -18,11 +28,14 @@
 .heading .heading-text h1{
     font-size:3.4em
 }
+.heading .heading-text p{
+    font-size:2em
+}
 
 .heading .heading-media img{
     justify-content: center;
     align-items: center ;
-    width: 38em;
+    width: 44em;
     border-radius: 1.2em;
     box-shadow: 1em 1em 1em 0em rgba(0, 0, 0, 0.6);
 }
@@ -35,7 +48,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 16em 0 7em;
+    padding: 0 28em 0 22em;
 }
 .offer-section .offer .offer-heading{
     display: flex;
@@ -51,43 +64,13 @@
     font-weight: 500;
 }
 .offer-section .offer .offer-heading h3{
-    font-size: 2em;
-   
+    font-size: 2.3em;
+    font-weight: 600;
 }
 .offer-section .offer .offer-text p{
     margin: 2em;
     text-align: center;
 }
-
-
-.services .container{
-    padding: 12em 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: 0 auto;
-    gap: 3em;
-}
-
-
-.services .container .service-card{
-    border: 1px solid black;
-    border-radius: 0.5em;
-    padding: 1em;
-    width: 22em;
-    text-align: center;
-    box-shadow: 1em 1em 1em 1em rgba(0, 0, 0, 0.1);
-}
-
-.services .container .service-card h4{
-    font-size: 1.4em;
-}
-
-.services .container .service-card i{
-    font-size: 4.6em;
-    padding: 1em;
-
-};
 
 
 

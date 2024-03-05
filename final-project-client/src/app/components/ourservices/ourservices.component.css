@@ -1,0 +1,22 @@
+@media(min-width: 1200px) {
+   
+.our-services-heading .our-services-heading-container{
+   background-image: url('../../../assets/images/Services-background-1.jpg');
+height:40vh;
+color:white;
+display: flex;
+justify-content: center;
+background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: center;
+   
+
+}
+
+.our-services-heading .our-services-heading-container h1{
+ font-weight: 700;
+    font-size: 4.6em;
+}
+}
+

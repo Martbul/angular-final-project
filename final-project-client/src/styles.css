@@ -29,3 +29,5 @@ button{
   padding: 1.2em 2.8em;
   border-radius: 1em;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
