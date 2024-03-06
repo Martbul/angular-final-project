@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomerSupportChatbotServiceComponent } from './components/customer-support-chatbot-service/customer-support-chatbot-service.component';
 import { CustomerOnboardingChatbotServiceComponent } from './components/customer-onboarding-chatbot-service/customer-onboarding-chatbot-service.component';
 import { EmployeeTrainingChatbotServiceComponent } from './components/employee-training-chatbot-service/employee-training-chatbot-service.component';
+import { BookACallComponent } from './components/book-a-call/book-a-call.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { EmployeeTrainingChatbotServiceComponent } from './components/employee-t
     CustomerSupportChatbotServiceComponent,
     CustomerOnboardingChatbotServiceComponent,
     EmployeeTrainingChatbotServiceComponent,
+    BookACallComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
