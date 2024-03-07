@@ -21,13 +21,20 @@ form {
   width: 100%;
 }
 
+.search-layout{
+  display: flex;
+  justify-content:center;
+  margin: 2.2em 0;
+}
+
+
 /* Search Form */
 
 .styled-input {
   float: left;
   background: #fff;
   border: 1px solid #EFEFEF;
-  border-radius: 3px;
+  border-radius: 1em;
   -webkit-box-shadow: inset 0 -1px 4px 0 rgba(0,0,0,0.20);
           box-shadow: inset 0 -1px 4px 0 rgba(0,0,0,0.20);
   width: 100%;
@@ -309,12 +316,15 @@ form {
 }
 
 .form-area button.serach-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border: none;
   font-size: 24px;
-  background: #81B44C;
+  background: #ffbd4a;
   text-align: center;
   color: white;
   text-transform: uppercase;
@@ -329,7 +339,7 @@ form {
 }
 
 .form-area button.serach-btn:hover {
-    background: #638A3A;
+    background: #ffb12b;
     -webkit-box-shadow: -2px -2px 4px -4px rgba(0, 0, 0, 0.02), 0 3px 9px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.14);
     box-shadow: -2px -2px 4px -4px rgba(0, 0, 0, 0.02), 0 3px 9px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.14);
 }

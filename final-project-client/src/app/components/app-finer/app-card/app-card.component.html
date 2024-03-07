@@ -1,9 +1,16 @@
 <div *ngFor="let app of apps" class="app-card">
-   <h1>{{app.title}}</h1>
-   <h3>{{app.price}}</h3>
-   <p>{{app.description}}</p>
-   <p>{{app.category}}</p>
+   <div class="el1">
+       <h1>{{app.title}}</h1>
+   <h1>${{app.price}}</h1>
+   </div>
+  
+   <!-- <p>{{app.description}}</p>
+   <p>{{app.category}}</p> -->
    <img src={{app.imgUrl}} alt="">
-   <button>BUY</button>
+   <div class="buttons">
+       <button>BUY</button>
    <button>Edit</button>
+ 
+   </div>
+      <button>Details</button>
 </div>

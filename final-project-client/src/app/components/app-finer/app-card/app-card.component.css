@@ -1,5 +1,20 @@
 .app-card{
+   display: flex;
+   flex-direction: column;
    max-width: 20em;
    border: 1px solid black;
    padding: 2em;
+   border-radius: 1em;
+   margin: 1em
+}
+
+.app-card .el1{
+   display: flex;
+   justify-content:space-evenly;
+
+}
+
+.app-card .buttons{
+   display: flex;
+   margin: 1em 0;
 }
