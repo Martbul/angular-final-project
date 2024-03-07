@@ -11,13 +11,15 @@ import { FAQsComponent } from './components/faqs/faqs.component';
 
 import { AboutComponent } from './components/about/about.component';
 import { OurservicesComponent } from './components/ourservices/ourservices.component';
-import { AppFinderComponent } from './components/app-finder/app-finder.component';
+import { AppFinderComponent } from './components/app-finer/app-finder-page/app-finder.component';
 import { AlystServicesComponent } from './components/alyst-services/alyst-services.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomerSupportChatbotServiceComponent } from './components/customer-support-chatbot-service/customer-support-chatbot-service.component';
 import { CustomerOnboardingChatbotServiceComponent } from './components/customer-onboarding-chatbot-service/customer-onboarding-chatbot-service.component';
 import { EmployeeTrainingChatbotServiceComponent } from './components/employee-training-chatbot-service/employee-training-chatbot-service.component';
 import { BookACallComponent } from './components/book-a-call/book-a-call.component';
+import { CreateAppComponent } from './components/create-app/create-app.component';
+import { SearchBarComponent } from './components/app-finer/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { BookACallComponent } from './components/book-a-call/book-a-call.compone
     CustomerOnboardingChatbotServiceComponent,
     EmployeeTrainingChatbotServiceComponent,
     BookACallComponent,
+    CreateAppComponent,
+    SearchBarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],

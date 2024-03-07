@@ -3,10 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { OurservicesComponent } from './components/ourservices/ourservices.component';
 import { AboutComponent } from './components/about/about.component';
-import { AppFinderComponent } from './components/app-finder/app-finder.component';
+import { AppFinderComponent } from './components/app-finer/app-finder-page/app-finder.component';
 import { CustomerOnboardingChatbotServiceComponent } from './components/customer-onboarding-chatbot-service/customer-onboarding-chatbot-service.component';
 import { EmployeeTrainingChatbotServiceComponent } from './components/employee-training-chatbot-service/employee-training-chatbot-service.component';
 import { CustomerSupportChatbotServiceComponent } from './components/customer-support-chatbot-service/customer-support-chatbot-service.component';
+import { CreateAppComponent } from './components/create-app/create-app.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,11 @@ const routes: Routes = [
   {
     path: 'services/customersupportchatbot',
     component: CustomerSupportChatbotServiceComponent,
+  },
+
+  {
+    path: 'create-app',
+    component: CreateAppComponent,
   },
 ];
 
