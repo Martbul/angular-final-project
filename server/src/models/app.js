@@ -15,6 +15,10 @@ const appSchema = new mongoose.Schema({
     type: String,
     required: [true, "the description is required"],
   },
+  app_id: {
+    type: String,
+    required: [true, "the price for the order is required"],
+  },
   price: {
     type: Number,
     required: [true, "the price for the order is required"],

@@ -4,7 +4,7 @@ const userService = require("../services/userService");
 
 
 router.post("/order", async (req, res) => {
-  const { title, description, price, category, imgUrl, email, username } =
+  const { title, description, price, category, imgUrl, email,app_id, username } =
     req.body;
   // console.log(email);
 
@@ -20,6 +20,7 @@ router.post("/order", async (req, res) => {
       price,
       category,
       imgUrl,
+      app_id,
       _ownerEmail: email,
     });
 

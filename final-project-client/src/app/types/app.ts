@@ -3,5 +3,6 @@ export interface App {
    price: number;
    description: string;
    imgUrl: string;
-   category: string;
+  category: string;
+  app_id: string;
 }
