@@ -20,6 +20,8 @@ import { EmployeeTrainingChatbotServiceComponent } from './components/employee-t
 import { BookACallComponent } from './components/book-a-call/book-a-call.component';
 import { CreateAppComponent } from './components/create-app/create-app.component';
 import { SearchBarComponent } from './components/app-finer/search-bar/search-bar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AppCardComponent } from './components/app-finer/app-card/app-card.component';
 
 @NgModule({
   declarations: [
@@ -40,8 +42,9 @@ import { SearchBarComponent } from './components/app-finer/search-bar/search-bar
     BookACallComponent,
     CreateAppComponent,
     SearchBarComponent,
+    AppCardComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

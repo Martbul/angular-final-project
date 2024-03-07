@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const bindService = require("../services/bindsService");
+const bindService = require("../services/appService");
 //const { isAuth } = require("./../middlewares/authMiddleware");
 
 router.get("/binds", async (req, res) => {

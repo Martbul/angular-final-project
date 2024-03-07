@@ -4,12 +4,12 @@ const appSchema = new mongoose.Schema({
   title: {
     type: String,
     required: [true, "the NAME of the order is required"],
-    validate: {
-      validator: function (value) {
-        return /^[a-zA-Z]+ [a-zA-Z]+$/.test(value);
-      },
-      message: "please enter a correct name(exp: Discord))",
-    },
+    // validate: {
+    //   validator: function (value) {
+    //     return /^[a-zA-Z]+ [a-zA-Z]+$/.test(value);
+    //   },
+    //   message: "please enter a correct name(exp: Discord))",
+    // },
   },
   description: {
     type: String,

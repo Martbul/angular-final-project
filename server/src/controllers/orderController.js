@@ -1,18 +1,11 @@
 const router = require("express").Router();
-const orderService = require("../services/orderService");
+const orderService = require("../services/appService");
 const userService = require("../services/userService");
 
 
 router.post("/order", async (req, res) => {
-  const {
-    fullname,
-    address,
-    dayForDelivery,
-    timeForDelivery,
-    order,
-    email,
-    username,
-  } = req.body;
+  const { title, description, price, category, imgUrl, email, username } =
+    req.body;
   // console.log(email);
 
   try {
@@ -22,11 +15,11 @@ router.post("/order", async (req, res) => {
     //! dobarvi nqkaksi tuk da vrushtah ordur id za da move posle da go vzema i posle da rendurna ordura v prole page
 
     await orderService.create({
-      fullname,
-      order,
-      address,
-      dayForDelivery,
-      timeForDelivery,
+      title,
+      description,
+      price,
+      category,
+      imgUrl,
       _ownerEmail: email,
     });
 
