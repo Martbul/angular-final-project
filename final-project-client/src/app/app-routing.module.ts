@@ -7,7 +7,7 @@ import { AppFinderComponent } from './components/app-finer/app-finder-page/app-f
 import { CustomerOnboardingChatbotServiceComponent } from './components/customer-onboarding-chatbot-service/customer-onboarding-chatbot-service.component';
 import { EmployeeTrainingChatbotServiceComponent } from './components/employee-training-chatbot-service/employee-training-chatbot-service.component';
 import { CustomerSupportChatbotServiceComponent } from './components/customer-support-chatbot-service/customer-support-chatbot-service.component';
-import { CreateAppComponent } from './components/create-app/create-app.component';
+import { CreateAppComponent } from './components/post-app/create-app/create-app.component';
 
 const routes: Routes = [
   {

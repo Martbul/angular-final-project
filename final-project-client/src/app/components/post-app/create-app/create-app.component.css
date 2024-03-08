@@ -31,7 +31,10 @@ body {
   gap: 1rem;
 }
 
-.form * {
+.form input,
+.form .layout,
+form .form-name,
+form button  {
   width: 100%;
   padding: 1rem;
   font: 900 0.85rem futura,sans-serif;
@@ -79,3 +82,7 @@ input:focus, textarea:focus { background-color: rgba(102, 24, 24, 0.5); }
   pointer-events: auto;
   color: rgb(0, 211, 155);
 }   
+
+.error{
+  color:red
+}

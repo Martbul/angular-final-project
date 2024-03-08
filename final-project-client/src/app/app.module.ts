@@ -18,12 +18,14 @@ import { CustomerSupportChatbotServiceComponent } from './components/customer-su
 import { CustomerOnboardingChatbotServiceComponent } from './components/customer-onboarding-chatbot-service/customer-onboarding-chatbot-service.component';
 import { EmployeeTrainingChatbotServiceComponent } from './components/employee-training-chatbot-service/employee-training-chatbot-service.component';
 import { BookACallComponent } from './components/book-a-call/book-a-call.component';
-import { CreateAppComponent } from './components/create-app/create-app.component';
+import { CreateAppComponent } from './components/post-app/create-app/create-app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppFinerModule } from './components/app-finer/app-finer.module';
-import { MyRouterLinkDirective } from './my-router-link.directive';
+import { UserModule } from './user/user.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { MyRouterLinkDirective } from './my-router-link.directive';
 
 
 @NgModule({
@@ -44,7 +46,8 @@ import { MyRouterLinkDirective } from './my-router-link.directive';
     EmployeeTrainingChatbotServiceComponent,
     BookACallComponent,
     CreateAppComponent,
-    MyRouterLinkDirective,
+    // MyRouterLinkDirective,
+    
    
   ],
   imports: [
@@ -53,6 +56,12 @@ import { MyRouterLinkDirective } from './my-router-link.directive';
     HttpClientModule,
     AppRoutingModule,
     AppFinerModule,
+    UserModule,
+
+    FormsModule,
+
+    //! modul za reactivni formi
+     ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

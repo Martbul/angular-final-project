@@ -3,16 +3,28 @@ const appService = require("../services/appService");
 const userService = require("../services/userService");
 
 
-router.post("", async (req, res) => {
-  const { title, description, price, category, imgUrl, app_id,email, } =
-    req.body;
-  // console.log(email);
+router.post("/", async (req, res) => {
+ 
+  // const { title, description, price, category, imgUrl, _id, email} =
+  //   req.body;
+
+  const { title, description, price, category, imgUrl} =
+  req.body
+
+  
 
   try {
-    //console.log(req.body);
-
-    // console.log(req.body);
     //! dobarvi nqkaksi tuk da vrushtah ordur id za da move posle da go vzema i posle da rendurna ordura v prole page
+
+    // await appService.create({
+    //   title,
+    //   description,
+    //   price,
+    //   category,
+    //   imgUrl,
+    //   _id,
+    //   _ownerEmail: email,
+    // });
 
     await appService.create({
       title,
@@ -20,16 +32,13 @@ router.post("", async (req, res) => {
       price,
       category,
       imgUrl,
-      app_id,
-      _ownerEmail: email,
     });
 
-
-    await userService.addOrderToUser({
-      order
-    },
-      email,
-  );
+  //   await userService.addOrderToUser({
+  //     order
+  //   },
+  //     email,
+  // );
 
 
     res.status(201).end();

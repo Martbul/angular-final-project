@@ -6,12 +6,14 @@ exports.getAll = async () => {
   return apps;
 };
 
-exports.create = async (orderData) => {
-  orderData.likes = 0;
-  orderData.likedBy = Array;
-  const App = await App.create(orderData);
+exports.create = async (appData) => {
+
+  appData.likes = 0;
+  appData.likedBy = Array;
+  console.log(appData);
+  const newApp = await App.create(appData);
   console.log(App);
-  return App;
+  return newApp;
 };
 
 

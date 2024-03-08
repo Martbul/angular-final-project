@@ -4,6 +4,6 @@ export interface App {
    description: string;
    imgUrl: string;
   category: string;
-  app_id: string;
+  
   _id:any
 }
