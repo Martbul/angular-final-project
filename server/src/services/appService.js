@@ -1,9 +1,9 @@
 const App = require("../models/app");
 
 exports.getAll = async () => {
-  const binds = await App.find().lean();
+  const apps = await App.find().lean();
 
-  return binds;
+  return apps;
 };
 
 exports.create = async (orderData) => {

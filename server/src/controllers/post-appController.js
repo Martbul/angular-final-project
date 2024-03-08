@@ -1,10 +1,10 @@
 const router = require("express").Router();
-const orderService = require("../services/appService");
+const appService = require("../services/appService");
 const userService = require("../services/userService");
 
 
-router.post("/order", async (req, res) => {
-  const { title, description, price, category, imgUrl, email,app_id, username } =
+router.post("", async (req, res) => {
+  const { title, description, price, category, imgUrl, app_id,email, } =
     req.body;
   // console.log(email);
 
@@ -14,7 +14,7 @@ router.post("/order", async (req, res) => {
     // console.log(req.body);
     //! dobarvi nqkaksi tuk da vrushtah ordur id za da move posle da go vzema i posle da rendurna ordura v prole page
 
-    await orderService.create({
+    await appService.create({
       title,
       description,
       price,

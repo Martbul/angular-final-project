@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ApiService } from 'src/app/api.service';
 import { App } from 'src/app/types/app';
 
 @Component({
@@ -16,11 +17,16 @@ export class AppDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    //subscribing to changes in the route parametars(When the route parameters change, it triggers the callback function with the new data. )
     this.activeRoute.params.subscribe((data) => {
-      const id = data['themeId'];
+      const id = data['appId'];
+console.log(id);
 
-       this.apiService.getTheme(id).subscribe((theme) => {
-        this.theme = theme;
-    })
+      this.apiService.getSingleApp(id).subscribe((app) => {
+        this.app = app;
+        console.log(this.app);
+        
+      });
+    });
   }
 }

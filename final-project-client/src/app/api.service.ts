@@ -9,8 +9,12 @@ import { App } from './types/app';
 export class ApiService {
   constructor(private http: HttpClient) {}
 
-  getTheme(id: string) {
+  getSingleApp(id: string) {
+    console.log(id);
+    
     const { apiUrl } = environment;
-    return this.http.get<App>(`${apiUrl}/bind/${id}`);
+    console.log(apiUrl);
+    
+    return this.http.get<App>(`${apiUrl}/app-finder/${id}`);
   }
 }
