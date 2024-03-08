@@ -5,11 +5,11 @@ import { App } from '../types/app';
   providedIn: 'root',
 })
 export class AppServicesService {
-   baseUrl= "http://localhost:5050/binds/binds";
+  baseUrl = 'http://localhost:5050';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getApps(){
-  return this.http.get<App[]>(this.baseUrl)
+  getApps() {
+    return this.http.get<App[]>(`${this.baseUrl}/app-finder`);
   }
 }

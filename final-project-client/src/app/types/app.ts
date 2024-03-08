@@ -5,4 +5,5 @@ export interface App {
    imgUrl: string;
   category: string;
   app_id: string;
+  _id:any
 }

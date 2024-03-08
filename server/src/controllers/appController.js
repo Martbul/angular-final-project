@@ -2,24 +2,22 @@ const router = require("express").Router();
 const appService = require("../services/appService");
 //const { isAuth } = require("./../middlewares/authMiddleware");
 
-router.get("", async (req, res) => {
- // console.log(req);
-
+router.get("/", async (req, res) => {
   try {
     //  const orders = await orderService.getAll(search, from, to);
     const apps = await appService.getAll();
-  //  console.log(apps);
     res.json(apps);
   } catch (message) {
     res.status(400).json({ message });
   }
 });
 
+
 router.get("/:appId", async (req, res) => {
   const appId = req.params.appId;
- // console.log(appId);
+ console.log(appId);
 
-  const app = await appService.getSingleBind(appId).lean();
+  const app = await appService.getSingleApp(appId).lean();
 
   if (!app) {
     return;
@@ -29,7 +27,7 @@ router.get("/:appId", async (req, res) => {
   //res.render("details");
 });
 
-router.put(":appId", async (req, res) => {
+router.put("/:appId", async (req, res) => {
   try {
     const { appId } = req.params;
     //console.log(appId);
@@ -55,7 +53,7 @@ router.put(":appId", async (req, res) => {
   }
 });
 
-router.delete(":appId", async (req, res) => {
+router.delete("/:appId", async (req, res) => {
   try {
     const { appId } = req.params;
     // console.log(appId);

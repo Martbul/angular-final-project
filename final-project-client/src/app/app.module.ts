@@ -23,6 +23,7 @@ import { CreateAppComponent } from './components/create-app/create-app.component
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppFinerModule } from './components/app-finer/app-finer.module';
+import { MyRouterLinkDirective } from './my-router-link.directive';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { AppFinerModule } from './components/app-finer/app-finer.module';
     EmployeeTrainingChatbotServiceComponent,
     BookACallComponent,
     CreateAppComponent,
+    MyRouterLinkDirective,
    
   ],
   imports: [

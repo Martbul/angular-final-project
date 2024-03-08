@@ -18,7 +18,7 @@ exports.create = async (orderData) => {
 
 
 
-exports.getSingleBind = (id) => App.findById(id);
+exports.getSingleApp = (id) => App.findById(id);
 
 
 exports.update = (bindId, bindData) => App.findByIdAndUpdate(bindId, bindData);

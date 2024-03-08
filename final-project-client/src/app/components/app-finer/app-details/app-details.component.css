@@ -1,0 +1,37 @@
+.details-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 70em;
+  margin: 0 auto;
+  border: 1px solid black;
+  border-radius: 1em;
+  padding: 1em;
+}
+
+.details-container .content {
+  margin: 1em 3em;
+}
+
+.details-container .content .category {
+  font-style: italic;
+}
+
+.details-container .content .heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.details-container .content .heading h1 {
+  font-size: 2.4em;
+}
+
+.details-container .content .text {
+}
+.details-container .content .media {
+  display: flex;
+  justify-content: center;
+}
+.details-container .content .media img {
+  max-width: 30em;
+}
