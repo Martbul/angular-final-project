@@ -25,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppFinerModule } from './components/app-finer/app-finer.module';
 import { UserModule } from './user/user.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppsLoopDirective } from './apps-loop.directive';
 // import { MyRouterLinkDirective } from './my-router-link.directive';
 
 
@@ -46,6 +47,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EmployeeTrainingChatbotServiceComponent,
     BookACallComponent,
     CreateAppComponent,
+    AppsLoopDirective,
     // MyRouterLinkDirective,
     
    
@@ -57,6 +59,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     AppFinerModule,
     UserModule,
+    BrowserAnimationsModule,
 
     FormsModule,
 
