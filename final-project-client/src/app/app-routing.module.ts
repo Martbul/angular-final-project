@@ -56,6 +56,11 @@ const routes: Routes = [
     path: 'app-finder/edit/:appId',
     component: AppEditComponent,
   },
+
+  {
+    path: 'app-finder/delete/:appId',
+    redirectTo: '/app-finder'
+  },
 ];
 
 @NgModule({

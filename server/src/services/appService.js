@@ -27,7 +27,7 @@ exports.getSingleApp = (id) => App.findById(id);
 exports.update = (appId, appData) => App.findByIdAndUpdate(appId, appData);
 
 
-exports.delete = (bindId) => App.findByIdAndDelete(bindId);
+exports.delete = (appId) => App.findByIdAndDelete(appId);
 
 exports.addLikeToBind = async(bindId,email) =>{
 

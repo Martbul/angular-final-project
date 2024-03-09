@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { App } from 'src/app/types/app';
+import { DetailsService } from './details.service';
 
 @Component({
   selector: 'app-app-details',
@@ -13,7 +14,8 @@ export class AppDetailsComponent implements OnInit {
 
   constructor(
     private apiService: ApiService,
-    private activeRoute: ActivatedRoute
+    private activeRoute: ActivatedRoute,
+    private detailsService:DetailsService
   ) { }
 
   ngOnInit(): void {
@@ -29,4 +31,17 @@ console.log(id);
       });
     });
   }
+
+
+  deleteApp(){
+
+    
+    this.activeRoute.params.subscribe((data) => {
+      const id = data['appId'];
+console.log(id);
+
+      this.detailsService.deleteApp(id)
+    });
+  }
+
 }

@@ -17,6 +17,7 @@
     <div class="button">
       <button>BUY</button>
       <button [routerLink]="'/app-finder/edit/'+app._id" >Edit</button>
+      <button (click)="deleteApp()" [routerLink]="'/app-finder/delete/'+app._id" >Delete</button>
     </div>
     <div class="interactions"></div>
   </div>

@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
 
 router.get("/:appId", async (req, res) => {
   const appId = req.params.appId;
- console.log(appId);
+
 
   const app = await appService.getSingleApp(appId).lean();
 
@@ -57,8 +57,10 @@ router.put("/edit/:appId", async (req, res) => {
   }
 });
 
-router.delete("/:appId", async (req, res) => {
+router.delete("/delete/:appId", async (req, res) => {
+  
   try {
+
     const { appId } = req.params;
     // console.log(appId);
     await appService.delete(appId);
