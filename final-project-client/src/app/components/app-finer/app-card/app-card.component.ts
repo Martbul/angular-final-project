@@ -18,22 +18,6 @@ export class AppCardComponent {
   }
 
 
-  fetchApps1(form?: NgForm) {
-    console.log(form?.value.title);
-    this.appService.getApps().subscribe((apps) => {
-      if (form && form.value.title) {
-        // Filter apps based on the form values
-        let filteredApps = apps.filter(app => {
-          return app.title.toLowerCase().includes(form.value.title.toLowerCase());
-        });
-        this.apps = filteredApps; // Assign filtered apps to the main apps array
-      } else {
-        this.apps = apps; // Set apps to all apps if form is not provided or has no value
-      }
-      console.log(this.apps);
-    });
-  }
-
 
   fetchApps(form?: NgForm) {
     console.log(form?.value.title);

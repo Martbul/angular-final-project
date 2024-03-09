@@ -26,6 +26,7 @@ import { AppFinerModule } from './components/app-finer/app-finer.module';
 import { UserModule } from './user/user.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppsLoopDirective } from './apps-loop.directive';
+import { AppEditComponent } from './components/app-finer/app-edit/app-edit.component';
 // import { MyRouterLinkDirective } from './my-router-link.directive';
 
 
@@ -48,6 +49,7 @@ import { AppsLoopDirective } from './apps-loop.directive';
     BookACallComponent,
     CreateAppComponent,
     AppsLoopDirective,
+    AppEditComponent,
     // MyRouterLinkDirective,
     
    

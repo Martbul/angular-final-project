@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './components/homepage/homepage.component';
@@ -8,6 +9,7 @@ import { CustomerOnboardingChatbotServiceComponent } from './components/customer
 import { EmployeeTrainingChatbotServiceComponent } from './components/employee-training-chatbot-service/employee-training-chatbot-service.component';
 import { CustomerSupportChatbotServiceComponent } from './components/customer-support-chatbot-service/customer-support-chatbot-service.component';
 import { CreateAppComponent } from './components/post-app/create-app/create-app.component';
+import { AppEditComponent } from './components/app-finer/app-edit/app-edit.component';
 
 const routes: Routes = [
   {
@@ -49,6 +51,10 @@ const routes: Routes = [
   {
     path: 'create-app',
     component: CreateAppComponent,
+  },
+  {
+    path: 'edit/:appId',
+    component: AppEditComponent,
   },
 ];
 
