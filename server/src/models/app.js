@@ -35,6 +35,9 @@ const appSchema = new mongoose.Schema({
   likedBy: {
     type: Array,
   },
+  posted_at:{
+    type:String
+  }
   // _creator: { type: String },
 });
 

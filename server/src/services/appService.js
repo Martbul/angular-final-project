@@ -1,3 +1,5 @@
+
+
 const App = require("../models/app");
 
 exports.getAll = async () => {
@@ -7,7 +9,6 @@ exports.getAll = async () => {
 };
 
 exports.create = async (appData) => {
-
   appData.likes = 0;
   appData.likedBy = Array;
   console.log(appData);
@@ -23,7 +24,7 @@ exports.create = async (appData) => {
 exports.getSingleApp = (id) => App.findById(id);
 
 
-exports.update = (bindId, bindData) => App.findByIdAndUpdate(bindId, bindData);
+exports.update = (appId, appData) => App.findByIdAndUpdate(appId, appData);
 
 
 exports.delete = (bindId) => App.findByIdAndDelete(bindId);

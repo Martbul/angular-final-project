@@ -1,10 +1,11 @@
 const router = require("express").Router();
 const appService = require("../services/appService");
 const userService = require("../services/userService");
-
+var moment = require('moment');
 
 router.post("/", async (req, res) => {
- 
+ let posted_at = moment().format("MMMM Do YYYY"); 
+
   // const { title, description, price, category, imgUrl, _id, email} =
   //   req.body;
 
@@ -32,6 +33,7 @@ router.post("/", async (req, res) => {
       price,
       category,
       imgUrl,
+      posted_at
     });
 
   //   await userService.addOrderToUser({

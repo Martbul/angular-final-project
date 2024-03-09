@@ -9,13 +9,14 @@
     </div>
     <div class="text">
       <p>{{ app.description }}</p>
+      <p>Last updated on: {{ app.posted_at }}</p>
     </div>
     <div class="media">
       <img src="{{ app.imgUrl }}" alt="" />
     </div>
     <div class="button">
       <button>BUY</button>
-      <button [routerLink]="'/edit/'+app._id" >Edit</button>
+      <button [routerLink]="'/app-finder/edit/'+app._id" >Edit</button>
     </div>
     <div class="interactions"></div>
   </div>

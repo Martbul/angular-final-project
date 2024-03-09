@@ -27,6 +27,9 @@
 }
 
 .details-container .content .text {
+  display: flex;
+  justify-content: space-between;
+  gap: 10em;
 }
 .details-container .content .media {
   display: flex;

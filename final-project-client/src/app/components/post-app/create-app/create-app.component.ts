@@ -18,7 +18,7 @@ constructor(private createAppService: CreateAppService){
     if (form.invalid) {
       return;
     }
-    const appData: { title: string; price: string; imgUrl:string; category:string; description:string ;_id:any} = form.value;
+    const appData: { title: string; price: string; imgUrl:string; category:string; description:string ;_id:any,posted_at:any} = form.value;
 
 
  this.createAppService.createApp(appData)

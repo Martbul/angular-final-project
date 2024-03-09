@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const appService = require("../services/appService");
+var moment = require('moment');
+
 //const { isAuth } = require("./../middlewares/authMiddleware");
 
 router.get("/", async (req, res) => {
@@ -27,20 +29,22 @@ router.get("/:appId", async (req, res) => {
   //res.render("details");
 });
 
-router.put("/:appId", async (req, res) => {
+router.put("/edit/:appId", async (req, res) => {
+  let posted_at = moment().format("MMMM Do YYYY"); 
+  console.log(req.body);
   try {
     const { appId } = req.params;
     //console.log(appId);
-
-    const { fullname, address, dayForDelivery, timeForDelivery, order, email } =
-      req.body;
+    const { title, description, price, category, imgUrl} =
+    req.body
 
     const appData = {
-      fullname,
-      address,
-      dayForDelivery,
-      timeForDelivery,
-      order,
+      title,
+      description,
+      price,
+      category,
+      imgUrl,
+      posted_at
       // _ownerId: req.user._id,
     };
    // console.log(appData);

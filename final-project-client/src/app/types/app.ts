@@ -4,6 +4,6 @@ export interface App {
    description: string;
    imgUrl: string;
   category: string;
-  
+  posted_at:string;
   _id:any
 }

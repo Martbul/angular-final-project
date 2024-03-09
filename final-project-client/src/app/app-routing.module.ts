@@ -53,7 +53,7 @@ const routes: Routes = [
     component: CreateAppComponent,
   },
   {
-    path: 'edit/:appId',
+    path: 'app-finder/edit/:appId',
     component: AppEditComponent,
   },
 ];
