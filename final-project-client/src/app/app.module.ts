@@ -23,10 +23,12 @@ import { CreateAppComponent } from './components/post-app/create-app/create-app.
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppFinerModule } from './components/app-finer/app-finer.module';
-import { UserModule } from './user/user.module';
+import { UserModule } from './components/user/user.module'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppsLoopDirective } from './apps-loop.directive';
 import { AppEditComponent } from './components/app-finer/app-edit/app-edit.component';
+import { appInterceptorProvider } from './app.interceptor';
+import { LogoutComponent } from './components/user/logout/logout.component';
 // import { MyRouterLinkDirective } from './my-router-link.directive';
 
 
@@ -50,6 +52,7 @@ import { AppEditComponent } from './components/app-finer/app-edit/app-edit.compo
     CreateAppComponent,
     AppsLoopDirective,
     AppEditComponent,
+    LogoutComponent,
     // MyRouterLinkDirective,
     
    
@@ -68,7 +71,8 @@ import { AppEditComponent } from './components/app-finer/app-edit/app-edit.compo
     //! modul za reactivni formi
      ReactiveFormsModule
   ],
-  providers: [],
+  //! appInterceptorProvider
+  providers: [appInterceptorProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

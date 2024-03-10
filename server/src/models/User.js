@@ -51,10 +51,14 @@ const userSchema = new mongoose.Schema({
     type: String,  
   },
 
-  order: { 
+  appsCreated: { 
     type: Array,  
    },
 
+   appsBought: { 
+    type: Array,  
+   },
+  
   country: { 
     type: String, 
   },

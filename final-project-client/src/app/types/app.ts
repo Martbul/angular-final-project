@@ -5,5 +5,8 @@ export interface App {
    imgUrl: string;
   category: string;
   posted_at:string;
+  likes:number;
+  comments:object;
   _id:any
+  creator:any
 }

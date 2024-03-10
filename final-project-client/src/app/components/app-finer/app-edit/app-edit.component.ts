@@ -51,7 +51,7 @@ this._id=this.app._id
     if (form.invalid) {
       return;
     }
-    const appData: { title: string; price: string; imgUrl:string; category:string; description:string ;_id:any,posted_at:any} = form.value;
+    const appData: { title: string; price: string; imgUrl:string; category:string; description:string ;_id:any,posted_at:any,likes:number, comments:object,creator:any} = form.value;
 
 
  this.editService.editApp(appData, this._id)

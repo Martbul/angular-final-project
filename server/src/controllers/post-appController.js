@@ -9,9 +9,9 @@ router.post("/", async (req, res) => {
   // const { title, description, price, category, imgUrl, _id, email} =
   //   req.body;
 
-  const { title, description, price, category, imgUrl} =
+  const { title, description, price, category, imgUrl, creator} =
   req.body
-
+console.log(req.body);
   
 
   try {
@@ -33,7 +33,8 @@ router.post("/", async (req, res) => {
       price,
       category,
       imgUrl,
-      posted_at
+      posted_at,
+      creator
     });
 
   //   await userService.addOrderToUser({

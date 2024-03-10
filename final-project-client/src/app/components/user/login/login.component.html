@@ -8,7 +8,7 @@
 <div class="container" id="container">
 	
 	<div class="form-container sign-in-container">
-		<form action="#">
+		<form #loginForm="ngForm" (ngSubmit)="handleLogin(loginForm)">
 			<h1>LogIn</h1>
 			<div class="social-container">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -16,11 +16,17 @@
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
 			<span>or use your account</span>
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
+			<p class="error" *ngIf="error">Invalid username or password
+			</p>
+			<input type="email" placeholder="Email"  name="email" #emailInput="ngModel"
+			ngModel />
+			<input type="password" placeholder="Password"  name="password" #passwordInput="ngModel"
+			ngModel />
 			<a href="#">Forgot your password?</a>
 			<button>LogIn</button>
+			
 		</form>
+		
 	</div>
 	<div class="overlay-container">
 		<div class="overlay">
@@ -32,7 +38,7 @@
 			<div class="overlay-panel overlay-right">
 				<h1>Hello, Friend!</h1>
 				<p>If you do not have account:</p>
-				<button class="ghost" id="signUp" [routerLink]="['/register']">Sign Up</button>
+				<button class="ghost" id="signUp" [routerLink]="['/singup']">Sign Up</button>
 			</div>
 		</div>
 	</div>

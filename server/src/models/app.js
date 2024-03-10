@@ -32,10 +32,14 @@ const appSchema = new mongoose.Schema({
   likes: {
     type: Number,
   },
-  likedBy: {
-    type: Array,
+  comments: {
+    type: Object,
+    
   },
   posted_at:{
+    type:String
+  },
+  creator:{
     type:String
   }
   // _creator: { type: String },

@@ -30,7 +30,6 @@ exports.singup = async (userData) => {
   //console.log(userData);
   userData.firstName = ''
   userData.lastName = ''
-  userData.order = Array
   userData.country = ''
   userData.city = ''
   userData.phoneNumber = ''
@@ -43,17 +42,19 @@ exports.singup = async (userData) => {
   // }
   try {
     const user = await User.create(userData);
+    
 
-const token = await getToken(user);
+const token = await getToken(user); //works
 
-//console.log('token' + token);
+
 const decodedToken = jwtDecode(token)
-console.log('token =  '+decodedToken);
-//console.log(token);
+console.log('token =  '+ decodedToken);
 
+
+//! works!!
 return decodedToken;
-  } catch ({message}) {
-    console.log(message);
+  } catch (err) {
+    console.log('err: '+err);
   }
   
 };
@@ -61,10 +62,8 @@ return decodedToken;
 
 
 exports.login = async (email, password) => {
-
   const user = await User.findOne({email});
   
-
   if (!user) {
     return ("invalid username!!!!!!!!! or password");
   }
@@ -73,18 +72,13 @@ exports.login = async (email, password) => {
 
   const token = await getToken(user);
   const decodedToken = jwtDecode(token)
-  console.log('token =  '+decodedToken);
-  //console.log(token);
-
+  
   return decodedToken;
 };
 
 exports.getMyProfile = (userId)=> 
   User.findById(userId)
 
-
-
-  
 
 
 exports.addOrderToUser = (order, email) => {

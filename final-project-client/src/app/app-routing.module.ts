@@ -10,6 +10,7 @@ import { EmployeeTrainingChatbotServiceComponent } from './components/employee-t
 import { CustomerSupportChatbotServiceComponent } from './components/customer-support-chatbot-service/customer-support-chatbot-service.component';
 import { CreateAppComponent } from './components/post-app/create-app/create-app.component';
 import { AppEditComponent } from './components/app-finer/app-edit/app-edit.component';
+import { LogoutComponent } from './components/user/logout/logout.component';
 
 const routes: Routes = [
   {
@@ -60,6 +61,10 @@ const routes: Routes = [
   {
     path: 'app-finder/delete/:appId',
     redirectTo: '/app-finder'
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent,
   },
 ];
 
