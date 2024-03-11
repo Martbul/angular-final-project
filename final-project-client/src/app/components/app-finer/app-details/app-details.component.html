@@ -15,16 +15,25 @@
     <div class="media">
       <img src="{{ app.imgUrl }}" alt="" />
     </div>
-    <div class="button">
-      <button *ngIf="currentUser !== app.creator" >BUY</button>
+    <div class="bottom-layout">
+      <div class="buttons">
+         <button *ngIf="currentUser !== app.creator" >BUY</button>
       <button *ngIf="currentUser == app.creator" [routerLink]="'/app-finder/edit/'+app._id" >Edit</button>
       <button *ngIf="currentUser== app.creator" (click)="deleteApp()" [routerLink]="'/app-finder/delete/'+app._id" >Delete</button>
+      </div>
+     
       <div  *ngIf="app.likedBy.includes(userEmail)" class="heart">
       
-         <a  (click)="addLike()"> {{app.likes}}  <i class="fa-solid fa-heart" style="color: #ff0000;"></i></a>
+         <div class="likeGroup" (click)="addLike()">
+          <p class="likeCount" >{{app.likes}} </p> 
+          <i class="fa-solid fa-heart" style="color: #ff0000;"></i>
+        </div>
       </div>
       <div *ngIf="!app.likedBy.includes(userEmail)">
-            <a  (click)="addLike()"> {{app.likes}}<i class="fa-regular fa-heart"></i></a>
+            <div   class="likeGroup" (click)="addLike()"> 
+              <p class="likeCount">{{app.likes}} </p> 
+              <i class="fa-regular fa-heart"></i>
+            </div>
       </div>
        
     </div>
