@@ -21,6 +21,7 @@ router.post("/singup", async (req, res) => {
     //! u need to make jwt work, but for the SFPROJECT DEFENCE I WILL USE AS A RESULT THE GIVEN 
     //!USERNAME AND EMAIL WITHOUT USING THE RESULT
     // console.log(JSON.stringify(decodedToken));
+    res.cookie('test', decodedToken)
    res.cookie("auth", decodedToken);
   res.json(decodedToken)
   
@@ -42,6 +43,8 @@ router.post("/login", async (req, res) => {
    
   
     //res.cookie("auth", result, { httpOnly: true });
+    res.cookie('test', decodedToken)
+    res.cookie("auth", decodedToken);
       res.json(decodedToken)
     
   } catch (error) {

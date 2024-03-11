@@ -9,11 +9,11 @@ import { UserService } from '../user/user-auth.service';
 export class HomepageComponent implements OnInit {
 
 
-  constructor(private userAuthService:UserService){}
+  constructor(public userAuthService:UserService){}
 ngOnInit(): void {
-  const user:any = localStorage.getItem('auth');
-  console.log(user);
+//   const user:any = localStorage.getItem('auth');
+//   console.log(user);
   
- this.userAuthService.user = user?.username
+//  this.userAuthService.user = user
 }
 }

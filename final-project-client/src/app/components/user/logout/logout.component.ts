@@ -12,12 +12,12 @@ constructor(private router:Router, private userAuthService: UserService){
   this.userAuthService.logout().subscribe({
     next:()=>{
       localStorage.clear()
-      this.userAuthService.user = null
+   
       this.router.navigate(['/']);
 
     },
     error:()=>{
-      this.userAuthService.user = null
+      
       this.router.navigate(['/login']);
 
     },

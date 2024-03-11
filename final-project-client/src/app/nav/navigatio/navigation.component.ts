@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from 'src/app/components/user/user-auth.service';
 
 @Component({
   selector: 'app-navigation',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent {
+  get isLoggedIn() {
+    return this.userAuthService.isLoggedIn;
+  }
 
+  get user() {
+    return this.userAuthService.user;
+  }
+constructor(private userAuthService: UserService){}
 }

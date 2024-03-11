@@ -16,16 +16,21 @@ constructor(private createAppService: CreateAppService, private userAuthService:
 }
 appCreator!: any|undefined
 
+get user() {
+  this.appCreator = this.userAuthService.user;
+  return this.userAuthService.user;
+}
+
   handleFormSubmit(form: NgForm): void {
     if (form.invalid) {
       return;
     }
 
-    this.appCreator = this.userAuthService.user?.username
+     this.appCreator = this.user
     const appData: { title: string; price: string; imgUrl:string; category:string; description:string ;_id:any,posted_at:any, likes:number, comments:object,creator:any} = form.value;
-    appData.creator = this.appCreator 
-    console.log(appData);
-    console.log(this.userAuthService.user);
+    // appData.creator = this.appCreator 
+    // console.log(appData);
+    // console.log(this.userAuthService.user$);
     
     
 

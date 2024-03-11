@@ -11,6 +11,7 @@ import { CustomerSupportChatbotServiceComponent } from './components/customer-su
 import { CreateAppComponent } from './components/post-app/create-app/create-app.component';
 import { AppEditComponent } from './components/app-finer/app-edit/app-edit.component';
 import { LogoutComponent } from './components/user/logout/logout.component';
+import { AuthActivate } from './components/guards/auth.activate';
 
 const routes: Routes = [
   {
@@ -65,6 +66,11 @@ const routes: Routes = [
   {
     path: 'logout',
     component: LogoutComponent,
+    canActivate:[AuthActivate],
+    data:{
+      title:'logout',
+      loginRequired:true
+    }
   },
 ];
 

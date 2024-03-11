@@ -24,7 +24,7 @@ this.userAuthService.login(email, password)
 .subscribe(user => {
 console.log(user);
 
-  this.userAuthService.user = user
+
   //! pri logi i signup s nevalidni danni pak te redirectva
   //! tova e vremenno reshenie - popravi go!!!
   if(user ==='invalid username!!!!!!!!! or password'){

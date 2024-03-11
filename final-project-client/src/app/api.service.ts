@@ -7,6 +7,7 @@ import { App } from './types/app';
   providedIn: 'root',
 })
 export class ApiService {
+  
   constructor(private http: HttpClient) {}
 
   getSingleApp(id: string) {

@@ -21,7 +21,7 @@ export class RegisterComponent {
       console.log(user);
       localStorage.setItem('auth', JSON.stringify(user))
       
-       this.userAuthService.user = user
+       
        this.router.navigate(['/app-finder'])
     } )
   }
