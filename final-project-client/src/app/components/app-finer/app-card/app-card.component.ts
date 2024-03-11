@@ -3,6 +3,8 @@ import { Component, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AppServicesService } from 'src/app/services/app-services.service';
 import { App } from 'src/app/types/app';
+import { UserService } from '../../user/user-auth.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-app-card',
@@ -11,23 +13,32 @@ import { App } from 'src/app/types/app';
 })
 export class AppCardComponent {
   apps: App[] = [];
-  constructor(private appService: AppServicesService) {}
+  userEmail!: any;
+  constructor(
+    private appService: AppServicesService,
+
+  ) {}
 
   ngOnInit(): void {
     this.fetchApps();
   }
 
-
-
   fetchApps(form?: NgForm) {
     console.log(form?.value.title);
     this.appService.getApps().subscribe((apps) => {
-      if (form && (form.value.title || form.value.price || form.value.category)) {
+      if (
+        form &&
+        (form.value.title || form.value.price || form.value.category)
+      ) {
         // Filter apps based on the form values
-        let filteredApps = apps.filter(app => {
-          const titleMatch = app.title.toLowerCase().includes(form.value.title.toLowerCase());
+        let filteredApps = apps.filter((app) => {
+          const titleMatch = app.title
+            .toLowerCase()
+            .includes(form.value.title.toLowerCase());
           const priceMatch = app.price.toString().includes(form.value.price);
-          const categoryMatch = app.category.toLowerCase().includes(form.value.category.toLowerCase());
+          const categoryMatch = app.category
+            .toLowerCase()
+            .includes(form.value.category.toLowerCase());
           return titleMatch && priceMatch && categoryMatch;
         });
         this.apps = filteredApps; // Assign filtered apps to the main apps array
@@ -39,5 +50,4 @@ export class AppCardComponent {
   }
 
 
-  
 }

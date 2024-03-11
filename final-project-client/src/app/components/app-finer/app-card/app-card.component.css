@@ -36,7 +36,12 @@ align-items: center;
    margin: 1em 0;
 }
 
-
+.bottomPart{
+  margin: 1em 0;
+  align-items: center;
+  display: flex;
+  justify-content:space-between
+}
 
 
 

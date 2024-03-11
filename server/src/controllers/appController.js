@@ -73,10 +73,12 @@ router.delete("/delete/:appId", async (req, res) => {
 
 
 router.post("/like", async (req, res) => {
+  console.log(req.body);
   const {email}  = req.body
-  const { appId } = req.body;
+  const { id } = req.body; 
 
-  const result = await appService.addLikeToBind(appId, email);
+  console.log(email);
+  const result = await appService.addLikeToApp(id, email);
 
   res.json(result).status(200).end()
 });

@@ -11,6 +11,7 @@ exports.getAll = async () => {
 exports.create = async (appData) => {
   appData.likes = 0;
   appData.likedBy = Array;
+  appData.comments={}
   console.log(appData);
   const newApp = await App.create(appData);
   console.log(App);
@@ -29,16 +30,27 @@ exports.update = (appId, appData) => App.findByIdAndUpdate(appId, appData);
 
 exports.delete = (appId) => App.findByIdAndDelete(appId);
 
-exports.addLikeToBind = async(bindId,email) =>{
-
-  const bind = await this.getSingleBind(bindId)
-  if(bind.likedBy.includes(email)){
-    return
-  }
-bind.likes += 1
-  bind.likedBy.push(email)
-  return bind.save()
+exports.addLikeToApp = async(appId,email) =>{
+  console.log(appId);
+  const app = await this.getSingleApp(appId)
+  console.log(app);
+  if (app.likedBy.includes(email)) {
+    console.log('email is in the likedBy array');
+    app.likes -= 1
+   
+    let index = app.likedBy.indexOf(email);
+    if (index > -1) {
+      app.likedBy.splice(index, 1);
+       return app.save();
+    }
+  } else {
+     console.log("email is NOT IN LIKEDBY");
+    app.likes += 1
+  app.likedBy.push(email);
+  return app.save();
   
+
+  }
 
 
 

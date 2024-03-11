@@ -26,7 +26,19 @@ appCreator!: any|undefined
   this.appCreator = this.userAuthService.userFromLocaleStorage.username
  
      
-    const appData: { title: string; price: string; imgUrl:string; category:string; description:string ;_id:any,posted_at:any, likes:number, comments:object,creator:any} = form.value;
+    const appData: {
+      title: string;
+      price: string;
+      imgUrl: string;
+      category: string;
+      description: string;
+      _id: any;
+      posted_at: any;
+      likes: number;
+      comments: object;
+      creator: any;
+      likedBy: string[];
+    } = form.value;
      appData.creator = this.appCreator 
      console.log(appData);
 

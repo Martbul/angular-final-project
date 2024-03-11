@@ -38,3 +38,9 @@
 .details-container .content .media img {
   max-width: 30em;
 }
+
+
+i{
+  font-size: 2.4em;
+  cursor: pointer;
+}

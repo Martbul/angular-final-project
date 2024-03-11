@@ -15,4 +15,18 @@ export class AppServicesService {
 
     return this.http.get<App[]>(`${this.baseUrl}/app-finder`);
   }
+
+
+  like(email: string, id: string) {
+    console.log(email);
+    console.log(id);
+     this.http
+       .post(`${this.baseUrl}/app-finder/like`,{email , id})
+       .subscribe(
+         (data) => console.log('Success!', data),
+         (error) => console.error('Error:', error)
+       );
+    
+     
+  }
 }

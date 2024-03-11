@@ -1,4 +1,4 @@
-<div class="details-container">
+<div    class="details-container">
   <div class="content">
     <div class="category">
       <p>{{ app.category }}</p>
@@ -19,6 +19,14 @@
       <button *ngIf="currentUser !== app.creator" >BUY</button>
       <button *ngIf="currentUser == app.creator" [routerLink]="'/app-finder/edit/'+app._id" >Edit</button>
       <button *ngIf="currentUser== app.creator" (click)="deleteApp()" [routerLink]="'/app-finder/delete/'+app._id" >Delete</button>
+      <div  *ngIf="app.likedBy.includes(userEmail)" class="heart">
+      
+         <a  (click)="addLike()"> {{app.likes}}  <i class="fa-solid fa-heart" style="color: #ff0000;"></i></a>
+      </div>
+      <div *ngIf="!app.likedBy.includes(userEmail)">
+            <a  (click)="addLike()"> {{app.likes}}<i class="fa-regular fa-heart"></i></a>
+      </div>
+       
     </div>
     <div class="interactions"></div>
   </div>

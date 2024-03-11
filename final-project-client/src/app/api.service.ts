@@ -18,4 +18,8 @@ export class ApiService {
     
     return this.http.get<App>(`${apiUrl}/app-finder/${id}`);
   }
+
+
+
+  
 }
