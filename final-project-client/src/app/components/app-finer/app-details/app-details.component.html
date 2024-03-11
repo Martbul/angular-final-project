@@ -11,13 +11,14 @@
       <p>{{ app.description }}</p>
       <p>Last updated on: {{ app.posted_at }}</p>
     </div>
+    <p>Creator: {{app.creator}}</p>
     <div class="media">
       <img src="{{ app.imgUrl }}" alt="" />
     </div>
     <div class="button">
-      <button>BUY</button>
-      <button [routerLink]="'/app-finder/edit/'+app._id" >Edit</button>
-      <button (click)="deleteApp()" [routerLink]="'/app-finder/delete/'+app._id" >Delete</button>
+      <button *ngIf="currentUser !== app.creator" >BUY</button>
+      <button *ngIf="currentUser == app.creator" [routerLink]="'/app-finder/edit/'+app._id" >Edit</button>
+      <button *ngIf="currentUser== app.creator" (click)="deleteApp()" [routerLink]="'/app-finder/delete/'+app._id" >Delete</button>
     </div>
     <div class="interactions"></div>
   </div>

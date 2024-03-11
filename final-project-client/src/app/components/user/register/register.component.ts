@@ -19,10 +19,9 @@ export class RegisterComponent {
     this.userAuthService.register(username, email, password)
     .subscribe(user => {
       console.log(user);
+
       localStorage.setItem('auth', JSON.stringify(user))
-      
-       
-       this.router.navigate(['/app-finder'])
+       this.router.navigate(['/'])
     } )
   }
 }

@@ -12,7 +12,7 @@ export class NavigationComponent {
   }
 
   get user() {
-    return this.userAuthService.user;
+    return this.userAuthService.userFromLocaleStorage;
   }
 constructor(private userAuthService: UserService){}
 }

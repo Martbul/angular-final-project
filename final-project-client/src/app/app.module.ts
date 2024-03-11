@@ -29,6 +29,7 @@ import { AppsLoopDirective } from './apps-loop.directive';
 import { AppEditComponent } from './components/app-finer/app-edit/app-edit.component';
 import { appInterceptorProvider } from './app.interceptor';
 import { LogoutComponent } from './components/user/logout/logout.component';
+import { AuthenticateComponent } from './components/authenticate/authenticate.component';
 // import { MyRouterLinkDirective } from './my-router-link.directive';
 
 
@@ -53,6 +54,7 @@ import { LogoutComponent } from './components/user/logout/logout.component';
     AppsLoopDirective,
     AppEditComponent,
     LogoutComponent,
+    AuthenticateComponent,
     // MyRouterLinkDirective,
     
    

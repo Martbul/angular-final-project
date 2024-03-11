@@ -1,9 +1,6 @@
 const router = require("express").Router();
 const userService = require("../services/userService");
-//const decoder = require('../lib/tokenDecoder')
-//const jwt = require("jsonwebtoken");
-//const {SECRET} = require('../constants'
-//import { jwtDecode } from "jwt-decode";
+const profileService = require("../services/profileService");
 const jwtDecode = require("jwt-decode");
 const { extractErrorMsgs } = require("../utils/errorHandler");
 //const isStrongPassword = require("validator/lib/isStrongPassword");
@@ -14,7 +11,7 @@ const { extractErrorMsgs } = require("../utils/errorHandler");
 
 router.post("/singup", async (req, res) => {
   const { username, email, password } = req.body;
-  //console.log(req.body.username);
+
 
   try {
     const decodedToken = await userService.singup({ username,email, password });
@@ -52,6 +49,23 @@ router.post("/login", async (req, res) => {
    return Error
   }
 });
+
+
+
+
+router.post('/profile',async (req,res)=>{
+  const {email} = req.body
+  console.log(req.body);
+
+  try {
+      const profileData = await profileService.getProfileData(email)
+  res.json(profileData).status(200).end();
+  console.log('userData deliverd');
+  } catch (message) {
+      res.status(400).json({ message }); 
+  }
+   
+})
 
 
 

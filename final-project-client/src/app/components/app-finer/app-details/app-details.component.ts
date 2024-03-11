@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { App } from 'src/app/types/app';
 import { DetailsService } from './details.service';
+import { UserService } from '../../user/user-auth.service';
 
 @Component({
   selector: 'app-app-details',
@@ -12,10 +13,12 @@ import { DetailsService } from './details.service';
 export class AppDetailsComponent implements OnInit {
   app = {} as App;
 
+  currentUser!: any
   constructor(
     private apiService: ApiService,
     private activeRoute: ActivatedRoute,
-    private detailsService:DetailsService
+    private detailsService:DetailsService,
+    private userAuthService:UserService
   ) { }
 
   ngOnInit(): void {
@@ -23,6 +26,8 @@ export class AppDetailsComponent implements OnInit {
     this.activeRoute.params.subscribe((data) => {
       const id = data['appId'];
 console.log(id);
+
+this.currentUser = this.userAuthService.userFromLocaleStorage.username
 
       this.apiService.getSingleApp(id).subscribe((app) => {
         this.app = app;
