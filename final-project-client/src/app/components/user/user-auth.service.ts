@@ -1,6 +1,6 @@
 import { HttpBackend, HttpClient } from '@angular/common/http';
 import { Injectable, OnDestroy } from '@angular/core';
-import { BehaviorSubject, Subscription, filter, tap } from 'rxjs';
+import { BehaviorSubject, Subscription, catchError, filter, tap, throwError } from 'rxjs';
 import { User } from 'src/app/types/user';
 
 @Injectable({
@@ -14,7 +14,7 @@ export class UserService implements OnDestroy {
   userFromLocaleStorage:any=null
 
  get isLoggedIn(){
-return this.user !==null
+return this.userFromLocaleStorage !== null;
   }
   subscription: Subscription
  
@@ -36,14 +36,31 @@ return this.user !==null
     .pipe(tap(user => this.user$$.next(user)));
   }
 
-  logout(){
-    return this.http.get<any>('/api/users/logout')
-    .pipe(tap(user => this.user$$.next(null)));
+  logout() {
+    //! VEMENNO RESHENIE
+    localStorage.clear();
+    // return this.http
+    //   .get<any>('/api/users/logout')
+    //   .pipe(tap((user) => this.user$$.next(null)));
+    
   }
 
   getProfile(){
-    this.userFromLocaleStorage  = JSON.parse(localStorage.getItem('auth') as any);
-    return this.http.post<any>('/api/users/profile',{email:this.userFromLocaleStorage.email})
+    this.userFromLocaleStorage = JSON.parse(localStorage.getItem('auth') as any);
+    if (this.userFromLocaleStorage ==null) {
+      return throwError(() => ' ERRROR');
+    }
+    return this.http
+      .post<any>('/api/users/profile', {
+        email: this.userFromLocaleStorage.email,
+      })
+      .pipe(
+        tap((user) => this.user$$.next(user)),
+        catchError((err) => {
+          this.user$$.next(null);
+          return throwError(() => err);
+        })
+      );
   }
 
 

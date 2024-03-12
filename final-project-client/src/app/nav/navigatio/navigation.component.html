@@ -37,8 +37,21 @@
             <li *ngIf="user" class="nav-item"><a routerLink="/profile">{{user?.username}}'s Profile</a></li>
   <li *ngIf="user" class="nav-item"><a routerLink="/logout">Logout</a></li>
 
+
+
+  <!-- <ng-template #loggedInTemplate>
+  <li >USER IS LOGGED IN</li>
+  </ng-template>
+
+   <ng-template #loggedOutTemplate>
+     <li >USER IS LOGGED OUT</li>
+  </ng-template>
+
+
+ 
+
             
-           
+               <ng-container *ngTemplateOutlet="userForVavRerender ? loggedInTemplate : loggedOutTemplate"></ng-container> -->
 
             <!-- <ng-container *ngTemplateOutlet="isLoggedIn ? loggedInTemplate : loggedOutTemplate"></ng-container> -->
         </ul>

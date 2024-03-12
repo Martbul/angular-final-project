@@ -61,15 +61,15 @@ const routes: Routes = [
 
   {
     path: 'app-finder/delete/:appId',
-    redirectTo: '/app-finder'
+    redirectTo: '/app-finder',
   },
   {
     path: 'logout',
     component: LogoutComponent,
-    canActivate:[AuthActivate],
-    data:{
-      title:'logout',
-      loginRequired:true
+    canActivate: [AuthActivate],
+    data: {
+      title: 'logout',
+      loginRequired: true,
     }
   },
 ];

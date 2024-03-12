@@ -8,20 +8,27 @@ import { UserService } from '../user-auth.service';
   styleUrls: ['./logout.component.css']
 })
 export class LogoutComponent {
-constructor(private router:Router, private userAuthService: UserService){
-  this.userAuthService.logout().subscribe({
-    next:()=>{
-      localStorage.clear()
+  constructor(private router: Router, private userAuthService: UserService) {
+
+    //! VEMENNO RESHENIE
+    this.userAuthService.logout();
+    this.router.navigate(['/']);
+
+    
+  // this.userAuthService.logout().subscribe({
+  //   next: () => {
+  //       console.log('I am in logout');
+  //     localStorage.clear()
    
-      this.router.navigate(['/']);
+  //     this.router.navigate(['/']);
 
-    },
-    error:()=>{
+  //   },
+  //   error:()=>{
       
-      this.router.navigate(['/login']);
+  //     this.router.navigate(['/login']);
 
-    },
-  })
+  //   },
+  // })
 }
   
 }
