@@ -107,3 +107,7 @@ input:focus, textarea:focus { background-color: rgba(0, 0, 0, 0.5); }
   font-size: 1.2em;
   margin-top: 1em;
 }
+
+.layout h1{
+  margin: 0 auto;
+}

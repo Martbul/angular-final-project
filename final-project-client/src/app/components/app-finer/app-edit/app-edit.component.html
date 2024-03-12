@@ -1,51 +1,49 @@
 <form class="form" #editForm="ngForm" (ngSubmit)="handleEdit(editForm)">
-    <div class="layout">
-       <div class="form-name">
-     <input class="form-first" type="text" placeholder="TITLE"  name="title" [ngModel]="title"  #titleInput="ngModel"
-     
-     
-     required/>
-     <ng-container *ngIf="titleInput.touched" >
-       
-       <p class="error" *ngIf="titleInput.errors?.['required']">Title is requierd</p>
-     </ng-container>
- 
- 
-     <input class="form-last" type="text" placeholder="PRICE"  name="price" [ngModel]="price" #priceInput="ngModel"
-     ngModel
-     required />
-     <ng-container *ngIf="priceInput.touched">
-       
-       <div *ngIf="priceInput.errors?.['required']">Price is requierd</div>
-     </ng-container>
- 
-     
+   <div class="layout">
+   <h1>Edit App</h1>
+      <div class="form-name">
+    <input class="form-first" type="text" placeholder="TITLE"  name="title"   #titleInput="ngModel"
+    ngModel
+    />
+    
+
+
+    <input class="form-last" type="text" placeholder="PRICE"  name="price" #priceInput="ngModel"
+    ngModel
+     />
+    <ng-container *ngIf="priceInput.touched">
+      
+      <!-- <div *ngIf="priceInput.errors?.['required']">Price is requierd</div> -->
+    </ng-container>
+
+    
+  </div>
+  <div class="form-name">
+    <input class="form-first" type="text" placeholder="IMAGE"  name="imgUrl" #imageInput="ngModel"
+    ngModel
+    />
+    <ng-container *ngIf="imageInput.touched">
+      
+      <!-- <div *ngIf="imageInput.errors?.['required']">Image is requierd</div> -->
+    </ng-container>
+    <input class="form-last" type="text" placeholder="CATEGORY"  name="category" #categoryInput="ngModel"
+    ngModel
+     />
+    <ng-container *ngIf="categoryInput.touched">
+      
+      <!-- <div *ngIf="categoryInput.errors?.['required']">Category is requierd</div> -->
+    </ng-container>
+  </div>
+  <input class="form-comment" placeholder="DESCRIPTION"  name="description" #descriptionInput="ngModel"
+  ngModel
+  >
+  <ng-container *ngIf="descriptionInput.touched">
+      
+    <!-- <div *ngIf="descriptionInput.errors?.['required']">Description is requierd</div> -->
+  </ng-container>
+  <!-- <button class="form-submit">SUBMIT</button> -->
+ 	<p class="error" *ngIf="error">{{error}}</p>
+  <button class="primary-color">Edit APP</button>
    </div>
-   <div class="form-name">
-     <input class="form-first" type="text" placeholder="IMAGE"  name="imgUrl" [ngModel]="imgUrl" #imageInput="ngModel"
-     ngModel
-     required/>
-     <ng-container *ngIf="imageInput.touched">
-       
-       <div *ngIf="imageInput.errors?.['required']">Image is requierd</div>
-     </ng-container>
-     <input class="form-last" type="text" placeholder="CATEGORY"  name="category" [ngModel]="category" #categoryInput="ngModel"
-     ngModel
-     required />
-     <ng-container *ngIf="categoryInput.touched">
-       
-       <div *ngIf="categoryInput.errors?.['required']">Category is requierd</div>
-     </ng-container>
-   </div>
-   <input class="form-comment" placeholder="DESCRIPTION"  name="description" [ngModel]="description" #descriptionInput="ngModel"
-   ngModel
-   required>
-   <ng-container *ngIf="descriptionInput.touched">
-       
-     <div *ngIf="descriptionInput.errors?.['required']">Description is requierd</div>
-   </ng-container>
-   <!-- <button class="form-submit">SUBMIT</button> -->
-   <button class="primary-color">POST APP</button>
-    </div>
-   
- </form>
+  
+</form>
