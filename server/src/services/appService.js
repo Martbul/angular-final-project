@@ -31,9 +31,9 @@ exports.update = (appId, appData) => App.findByIdAndUpdate(appId, appData);
 exports.delete = (appId) => App.findByIdAndDelete(appId);
 
 exports.addLikeToApp = async(appId,email) =>{
-  console.log(appId);
+ 
   const app = await this.getSingleApp(appId)
-  console.log(app);
+ 
   if (app.likedBy.includes(email)) {
     console.log('email is in the likedBy array');
     app.likes -= 1
@@ -46,7 +46,9 @@ exports.addLikeToApp = async(appId,email) =>{
   } else {
      console.log("email is NOT IN LIKEDBY");
     app.likes += 1
-  app.likedBy.push(email);
+    app.likedBy.push(email);
+    
+
   return app.save();
   
 

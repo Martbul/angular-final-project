@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const userService = require("../services/userService");
 const appService = require("../services/appService");
 var moment = require('moment');
 
@@ -76,12 +77,12 @@ router.post("/like", async (req, res) => {
   console.log(req.body);
   const {email}  = req.body
   const { id } = req.body; 
+ 
 
-  console.log(email);
   const result = await appService.addLikeToApp(id, email);
-
+  const result2 = await userService.addLikedAppToUserLikedApps(email,id);
   res.json(result).status(200).end()
-});
+})
 
 
 // router.post('/binds/:bindId', async (req, res) => {

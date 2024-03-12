@@ -1,4 +1,7 @@
 const User = require("../models/User");
+
+const App = require("../models/app");
+
 const bcrypt = require("bcrypt");
 const jwt = require("../lib/jwt");
 const {jwtDecode} = require('jwt-decode')
@@ -35,6 +38,7 @@ exports.singup = async (userData) => {
   userData.phoneNumber = ''
   userData.aboutMe = ''
   userData.imgUrl = ''
+  userData.appsLiked=[] 
   // console.log(userData.order);
   // const emailTest = JSON.parse(userData.email)
   // if(await User.findOne(emailTest)){
@@ -79,7 +83,13 @@ exports.login = async (email, password) => {
 exports.getMyProfile = (userId)=> 
   User.findById(userId)
 
+ exports.getSingleUserByEmail = (email) => {
+   const query = { email: email }; // Assuming email is the field in the User collection
 
+   return User.findOne(query);
+ };
+
+exports.getSingleApp = (id) => App.findById(id);
 
 exports.addOrderToUser = (order, email) => {
   // Find the user by ID
@@ -95,4 +105,64 @@ exports.addOrderToUser = (order, email) => {
     .catch((error) => {
       console.error("Failed to update user with order:", error);
     });
+};
+
+
+
+
+exports.addLikedAppToUserLikedApps = async (email, appId) => {
+  try {
+    const app = await this.getSingleApp(appId);
+    const user = await this.getSingleUserByEmail(email)
+    console.log("MYUSERIS: " + user);
+    if (user.appsLiked.includes(app.title)) {
+    
+    const updatedUser = await User.findOneAndUpdate(
+      { email: email },
+      { $pull: { appsLiked: app.title } },
+      { new: true }
+    );
+
+    if (updatedUser) {
+      console.log(
+        "App removed successfully from the user's liked apps:",
+        updatedUser
+      );
+    } else {
+      console.log("User not found or app not removed.");
+      }
+      
+
+
+
+
+    } else {
+
+
+
+
+      const updatedUser = await User.findOneAndUpdate(
+      { email: email },
+      { $push: { appsLiked: app.title } },
+      { new: true }
+      );
+      
+      if (updatedUser) {
+      console.log(
+        "App added successfully to the user's liked apps:",
+        updatedUser
+      );
+    } else {
+      console.log("User not found or app not added.");
+      }
+      
+
+    }
+
+    
+
+    
+  } catch (error) {
+    console.error("Failed to update user with app:", error);
+  }
 };

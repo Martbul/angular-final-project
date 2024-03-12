@@ -1,259 +1,259 @@
 <div class="my-app">
-    <header class="my-header">
-      <nav class="my-navbar navbar navbar-expand-lg navbar-light bg-white">
-        <a class="my-navbar__logo navbar-brand" href="#">
-          <img class="my-navbar__logo-icon" src="./images/icon-money.svg" alt>
-          <span class="my-navbar__logo-text">Dashboard</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Summary</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Activity</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Send & Request</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Wallet</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Offers</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Help</a>
-            </li>
-          </ul>
-          <div class="my-navbar-buttons">
-            <button class="my-navbar-button">
-              <img class="my-navbar-button__icon" src="./images/icon-settings.svg" alt>
-            </button>
-            <button class="my-navbar-button">
-              <img class="my-navbar-button__icon" src="./images/icon-notifications.svg" alt>
-            </button>
+  <main>
+    <!-- Begin content header -->
+    <section class="my-app__header">
+      <div class="container">
+        <div class="my-app__header-inner">
+          <div class="my-app__header-text media">
+            <i class="fa-solid fa-circle-user"></i>
+            <div class="media-body">
+              <h1 class="my-app__header-title">
+                Hi, {{ profileUser.username }}!
+              </h1>
+            </div>
           </div>
         </div>
-      </nav>
-    </header>
-    <main>
-      <!-- Begin content header -->
-      <section class="my-app__header">
-        <div class="container">
-          <div class="my-app__header-inner">
-            <div class="my-app__header-text media">
-              <svg class="mr-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="80" viewBox="0 0 80 80"><defs><style>.a{fill:#9ea0a5;}.b{clip-path:url(#a);}</style><clipPath id="a"><circle class="a" cx="40" cy="40" r="40" transform="translate(166 101)"/></clipPath></defs><g class="b" transform="translate(-166 -101)"><image width="82" height="82" transform="translate(165 100)" xlink:href="data:image/png;base64,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"/></g></svg>
-              <div class="media-body">
-                <h1 class="my-app__header-title">Hi there, Frederick!</h1>
-                <div class="my-input input-group mb-3">
-                  <select class="my-select custom-select" id="inputGroupSelect01">
-                    <option selected>Spend Your Money!</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
+      </div>
+    </section>
+    <!-- End content header -->
+
+    <!-- Begin content body -->
+    <section class="my-app__body">
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+            <!-- Begin Payment Balance card -->
+            <div class="my-card card">
+              <div class="my-card__header card-header">
+                <div class="my-card__header-title">
+                  <div class="my-text-overline">Apps you created</div>
+                  <h3 class="my-text-headline">$52,100.00</h3>
                 </div>
+                <a class="my-card__header-link" href="#">Details →</a>
+              </div>
+              <div class="my-card__body card-body">
+                <div class="my-text-overline">Available Currencies</div>
+                <dl class="my-list my-list--definitions my-dl">
+                  <dt>US Dollars</dt>
+                  <dd>32,220.00 USD</dd>
+                  <dt>British Pounds</dt>
+                  <dd>8,560.00 GBP</dd>
+                  <dt>Czech Koruna</dt>
+                  <dd>98,444.00 CZK</dd>
+                </dl>
+                <hr class="my-divider" />
+                <ul class="my-list my-list--simple list-inline mb-0">
+                  <li><a href="#">Add Money →</a></li>
+                  <li><a href="#">Top Up →</a></li>
+                  <li><a href="#">Add funds using PayBuddy →</a></li>
+                  <li><a href="#">Withdraw funds →</a></li>
+                </ul>
               </div>
             </div>
-            <div class="my-action-buttons my-app__header__buttons">
-              <button class="my-action-button">
-                <img class="my-action-button__icon" src="./images/icon-money.svg" alt>
-                Send money
-              </button>
-              <button class="my-action-button">
-                <img class="my-action-button__icon" src="./images/icon-cart.svg" alt>
-                Shopping deals
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End content header -->
+            <!-- End Payment Balance card -->
 
-      <!-- Begin content body -->
-      <section class="my-app__body">
-        <div class="container">
-          <div class="row">
-            <div class="col-4">
-              <!-- Begin Payment Balance card -->
-              <div class="my-card card">
-                <div class="my-card__header card-header">
-                  <div class="my-card__header-title">
-                    <div class="my-text-overline">Payment Balance</div>
-                    <h3 class="my-text-headline">$52,100.00</h3>
+            <!-- Begin Bank Accounts card -->
+            <div class="my-card card">
+              <div class="my-card__body card-body">
+                <div class="my-text-overline">Boudghet and liked apps</div>
+                <ul class="my-list my-list--simple list-inline mb-0">
+                  <li class="my-list-item">
+                    <span class="list__icon">
+                      <img src="./images/icon-bank-of-america.svg" alt />
+                    </span>
+                    <span>Bank of America x-9966</span>
+                  </li>
+                  <li class="my-list-item">
+                    <span class="my-list-item__graphic list__icon">
+                      <img src="./images/icon-mastercard.svg" alt />
+                    </span>
+                    <span class="my-list-item__text">MasterCard x-1144</span>
+                  </li>
+                </ul>
+                <hr class="my-divider" />
+                <ul class="my-list-inline list-inline mb-0">
+                  <li><a href="#">Add a Bank Account or Card →</a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- End Bank Accounts card -->
+          </div>
+
+          <div class="col-8">
+            <div class="my-alert alert alert-info">
+              <img class="my-alert__icon" src="./images/icon-alert.svg" alt />
+              <span class="my-alert__text">
+                Your latest activity is shown here. Make changes to your
+                profile.
+              </span>
+            </div>
+
+            <!-- Begin Pending card -->
+            <div class="my-card card">
+              <div class="my-card__header card-header">
+                <h3 class="my-card__header-title card-title">
+                  Personal Information
+                </h3>
+              </div>
+              <ul class="my-list list-group list-group-flush">
+                <li class="my-list-item list-group-item">
+                  <div class="my-list-item__date">
+                    <span class="my-list-item__date-day">Username</span>
                   </div>
-                  <a class="my-card__header-link" href="#">Details →</a>
-                </div>
-                <div class="my-card__body card-body">
-                  <div class="my-text-overline">Available Currencies</div>
-                  <dl class="my-list my-list--definitions my-dl">
-                    <dt>US Dollars</dt>
-                    <dd>32,220.00 USD</dd>
-                    <dt>British Pounds</dt>
-                    <dd>8,560.00 GBP</dd>
-                    <dt>Czech Koruna</dt>
-                    <dd>98,444.00 CZK</dd>
-                  </dl>
-                  <hr class="my-divider">
-                  <ul class="my-list my-list--simple list-inline mb-0">
-                    <li><a href="#">Add Money →</a></li>
-                    <li><a href="#">Top Up →</a></li>
-                    <li><a href="#">Add funds using PayBuddy →</a></li>
-                    <li><a href="#">Withdraw funds →</a></li>
-                  </ul>
-                </div>
-              </div>
-              <!-- End Payment Balance card -->
+                  <div class="my-list-item__text">
+                    <input
+                      class="my-list-item__text-title"
+                      placeholder=" {{ profileUser.username }}"
+                    />
+                  </div>
+                </li>
+                <li class="my-list-item list-group-item">
+                  <div class="my-list-item__date">
+                    <span class="my-list-item__date-day">First Name</span>
+                  </div>
+                  <div class="my-list-item__text">
+                    <input
+                      class="my-list-item__text-title"
+                      placeholder=" {{ profileUser.firstName }}"
+                    />
+                  </div>
+                </li>
+                <li class="my-list-item list-group-item">
+                  <div class="my-list-item__date">
+                    <span class="my-list-item__date-day">Last Name</span>
+                  </div>
+                  <div class="my-list-item__text">
+                    <input
+                      class="my-list-item__text-title"
+                      placeholder=" {{ profileUser.lastName }}"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- End Pending card -->
 
-              <!-- Begin Bank Accounts card -->
-              <div class="my-card card">
-                <div class="my-card__body card-body">
-                  <div class="my-text-overline">Bank accounts and cards</div>
-                  <ul class="my-list my-list--simple list-inline mb-0">
-                    <li class="my-list-item">
-                      <span class="list__icon">
-                        <img src="./images/icon-bank-of-america.svg" alt>
-                      </span>
-                      <span>Bank of America x-9966</span>
-                    </li>
-                    <li class="my-list-item">
-                      <span class="my-list-item__graphic list__icon">
-                        <img src="./images/icon-mastercard.svg" alt>
-                      </span>
-                      <span class="my-list-item__text">MasterCard x-1144</span>
-                    </li>
-                  </ul>
-                  <hr class="my-divider">
-                  <ul class="my-list-inline list-inline mb-0">
-                    <li><a href="#">Add a Bank Account or Card →</a></li>
-                  </ul>
-                </div>
+            <div class="my-card card">
+              <div class="my-card__header card-header">
+                <h3 class="my-card__header-title card-title">
+                  Contact Information
+                </h3>
+                <a class="my-card__header-link" href="#">See all →</a>
               </div>
-              <!-- End Bank Accounts card -->
+              <ul class="my-list list-group list-group-flush">
+                <li class="my-list-item list-group-item">
+                  <div class="my-list-item__date">
+                    <span class="my-list-item__date-day">28</span>
+                    <span class="my-list-item__date-month">jul</span>
+                  </div>
+                  <div class="my-list-item__text">
+                    <h4 class="my-list-item__text-title">Bank of America</h4>
+                    <p class="my-list-item__text-description">
+                      Withdraw to bank account
+                    </p>
+                  </div>
+                  <div class="my-list-item__fee">
+                    <span class="my-list-item__fee-delta">+250.00</span>
+                    <span class="my-list-item__fee-currency">USD</span>
+                  </div>
+                </li>
+                <li class="my-list-item list-group-item">
+                  <div class="my-list-item__date">
+                    <span class="my-list-item__date-day">28</span>
+                    <span class="my-list-item__date-month">jul</span>
+                  </div>
+                  <div class="my-list-item__text">
+                    <h4 class="my-list-item__text-title">Bank of America</h4>
+                    <p class="my-list-item__text-description">
+                      Withdraw to bank account
+                    </p>
+                  </div>
+                  <div class="my-list-item__fee">
+                    <span class="my-list-item__fee-delta">+250.00</span>
+                    <span class="my-list-item__fee-currency">USD</span>
+                  </div>
+                </li>
+                <li class="my-list-item list-group-item">
+                  <div class="my-list-item__date">
+                    <span class="my-list-item__date-day">28</span>
+                    <span class="my-list-item__date-month">jul</span>
+                  </div>
+                  <div class="my-list-item__text">
+                    <h4 class="my-list-item__text-title">Bank of America</h4>
+                    <p class="my-list-item__text-description">
+                      Withdraw to bank account
+                    </p>
+                  </div>
+                  <div class="my-list-item__fee">
+                    <span class="my-list-item__fee-delta">+250.00</span>
+                    <span class="my-list-item__fee-currency">USD</span>
+                  </div>
+                </li>
+              </ul>
             </div>
 
-            <div class="col-8">
-              <div class="my-alert alert alert-info">
-                <img class="my-alert__icon" src="./images/icon-alert.svg" alt>
-                <span class="my-alert__text">
-                  Your latest transaction may take a few minutes to show up in your activity.
-                </span>
+            <!-- Begin Completed card -->
+            <div class="my-card card">
+              <div class="my-card__header card-header">
+                <h3 class="my-card__header-title card-title">Address</h3>
+                <a class="my-card__header-link" href="#">See all →</a>
               </div>
-
-              <!-- Begin Pending card -->
-              <div class="my-card card">
-                <div class="my-card__header card-header">
-                  <h3 class="my-card__header-title card-title">Pending</h3>
-                  <a class="my-card__header-link" href="#">See all →</a>
-                </div>
-                <ul class="my-list list-group list-group-flush">
-                  <li class="my-list-item list-group-item">
-                    <div class="my-list-item__date">
-                      <span class="my-list-item__date-day">28</span>
-                      <span class="my-list-item__date-month">jul</span>
-                    </div>
-                    <div class="my-list-item__text">
-                      <h4 class="my-list-item__text-title">Bank of America</h4>
-                      <p class="my-list-item__text-description">Withdraw to bank account</p>
-                    </div>
-                    <div class="my-list-item__fee">
-                      <span class="my-list-item__fee-delta">+250.00</span>
-                      <span class="my-list-item__fee-currency">USD</span>
-                    </div>
-                  </li>
-                  <li class="my-list-item list-group-item">
-                    <div class="my-list-item__date">
-                      <span class="my-list-item__date-day">28</span>
-                      <span class="my-list-item__date-month">jul</span>
-                    </div>
-                    <div class="my-list-item__text">
-                      <h4 class="my-list-item__text-title">Bank of America</h4>
-                      <p class="my-list-item__text-description">Withdraw to bank account</p>
-                    </div>
-                    <div class="my-list-item__fee">
-                      <span class="my-list-item__fee-delta">+250.00</span>
-                      <span class="my-list-item__fee-currency">USD</span>
-                    </div>
-                  </li>
-                  <li class="my-list-item list-group-item">
-                    <div class="my-list-item__date">
-                      <span class="my-list-item__date-day">28</span>
-                      <span class="my-list-item__date-month">jul</span>
-                    </div>
-                    <div class="my-list-item__text">
-                      <h4 class="my-list-item__text-title">Bank of America</h4>
-                      <p class="my-list-item__text-description">Withdraw to bank account</p>
-                    </div>
-                    <div class="my-list-item__fee">
-                      <span class="my-list-item__fee-delta">+250.00</span>
-                      <span class="my-list-item__fee-currency">USD</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <!-- End Pending card -->
-
-              <!-- Begin Completed card -->
-              <div class="my-card card">
-                <div class="my-card__header card-header">
-                  <h3 class="my-card__header-title card-title">Completed</h3>
-                  <a class="my-card__header-link" href="#">See all →</a>
-                </div>
-                <ul class="my-list list-group list-group-flush">
-                  <li class="my-list-item list-group-item">
-                    <div class="my-list-item__date">
-                      <span class="my-list-item__date-day">28</span>
-                      <span class="my-list-item__date-month">jul</span>
-                    </div>
-                    <div class="my-list-item__text">
-                      <h4 class="my-list-item__text-title">Gumroad, Inc</h4>
-                      <p class="my-list-item__text-description">Withdraw to bank account</p>
-                    </div>
-                    <div class="my-list-item__fee">
-                      <span class="my-list-item__fee-delta">+250.00</span>
-                      <span class="my-list-item__fee-currency">USD</span>
-                    </div>
-                  </li>
-                  <li class="my-list-item list-group-item">
-                    <div class="my-list-item__date">
-                      <span class="my-list-item__date-day">28</span>
-                      <span class="my-list-item__date-month">jul</span>
-                    </div>
-                    <div class="my-list-item__text">
-                      <h4 class="my-list-item__text-title">Spotify Limited</h4>
-                      <p class="my-list-item__text-description">Preapproved Payment</p>
-                    </div>
-                    <div class="my-list-item__fee">
-                      <span class="my-list-item__fee-delta">+250.00</span>
-                      <span class="my-list-item__fee-currency">USD</span>
-                    </div>
-                  </li>
-                  <li class="my-list-item list-group-item">
-                    <div class="my-list-item__date">
-                      <span class="my-list-item__date-day">28</span>
-                      <span class="my-list-item__date-month">jul</span>
-                    </div>
-                    <div class="my-list-item__text">
-                      <h4 class="my-list-item__text-title">Bank of America</h4>
-                      <p class="my-list-item__text-description">Withdraw to bank account</p>
-                    </div>
-                    <div class="my-list-item__fee">
-                      <span class="my-list-item__fee-delta">+250.00</span>
-                      <span class="my-list-item__fee-currency">USD</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <!-- End Completed card -->
+              <ul class="my-list list-group list-group-flush">
+                <li class="my-list-item list-group-item">
+                  <div class="my-list-item__date">
+                    <span class="my-list-item__date-day">28</span>
+                    <span class="my-list-item__date-month">jul</span>
+                  </div>
+                  <div class="my-list-item__text">
+                    <h4 class="my-list-item__text-title">Gumroad, Inc</h4>
+                    <p class="my-list-item__text-description">
+                      Withdraw to bank account
+                    </p>
+                  </div>
+                  <div class="my-list-item__fee">
+                    <span class="my-list-item__fee-delta">+250.00</span>
+                    <span class="my-list-item__fee-currency">USD</span>
+                  </div>
+                </li>
+                <li class="my-list-item list-group-item">
+                  <div class="my-list-item__date">
+                    <span class="my-list-item__date-day">28</span>
+                    <span class="my-list-item__date-month">jul</span>
+                  </div>
+                  <div class="my-list-item__text">
+                    <h4 class="my-list-item__text-title">Spotify Limited</h4>
+                    <p class="my-list-item__text-description">
+                      Preapproved Payment
+                    </p>
+                  </div>
+                  <div class="my-list-item__fee">
+                    <span class="my-list-item__fee-delta">+250.00</span>
+                    <span class="my-list-item__fee-currency">USD</span>
+                  </div>
+                </li>
+                <li class="my-list-item list-group-item">
+                  <div class="my-list-item__date">
+                    <span class="my-list-item__date-day">28</span>
+                    <span class="my-list-item__date-month">jul</span>
+                  </div>
+                  <div class="my-list-item__text">
+                    <h4 class="my-list-item__text-title">Bank of America</h4>
+                    <p class="my-list-item__text-description">
+                      Withdraw to bank account
+                    </p>
+                  </div>
+                  <div class="my-list-item__fee">
+                    <span class="my-list-item__fee-delta">+250.00</span>
+                    <span class="my-list-item__fee-currency">USD</span>
+                  </div>
+                </li>
+              </ul>
             </div>
+            <!-- End Completed card -->
           </div>
         </div>
-      </section>
-      <!-- End content body -->
-    </main>
+      </div>
+    </section>
+    <!-- End content body -->
+  </main>
 </div>

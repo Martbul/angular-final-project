@@ -16,6 +16,7 @@ export class AppDetailsComponent implements OnInit {
   userEmail!: any;
   currentUser!: any;
 
+
   constructor(
     private apiService: ApiService,
     private activeRoute: ActivatedRoute,
@@ -54,8 +55,8 @@ export class AppDetailsComponent implements OnInit {
     this.activeRoute.params.subscribe((data) => {
       const id = data['appId'];
 
-      this.userEmail = this.userAuthService.userFromLocaleStorage.email;
-      this.appService.like(this.userEmail, id);
+       this.userEmail = this.userAuthService.userFromLocaleStorage.email;
+        this.appService.like(this.userEmail, id, );
 
 
      //this.router.navigate([`/app-finder/${id}`]);
