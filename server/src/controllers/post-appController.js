@@ -6,12 +6,10 @@ var moment = require('moment');
 router.post("/", async (req, res) => {
  let posted_at = moment().format("MMMM Do YYYY"); 
  
- console.log( req.user);
-  // const { title, description, price, category, imgUrl, _id, email} =
-  //   req.body;
 
-  const { title, description, price, category, imgUrl, creator} =
-  req.body
+
+  const { title, description, price, category, imgUrl, creator, creatorEmail } =
+    req.body;
 console.log(req.body);
   
 
@@ -36,6 +34,11 @@ console.log(req.body);
       imgUrl,
       posted_at,
       creator
+    });
+
+    await userService.addAppToUserCreatedApps({
+      title,
+      creatorEmail,
     });
 
   //   await userService.addOrderToUser({

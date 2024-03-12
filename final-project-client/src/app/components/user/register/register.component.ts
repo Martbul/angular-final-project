@@ -6,22 +6,41 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
+  error?: string | null = null;
+  constructor(private userAuthService: UserService, private router: Router) {}
+  handleSingUp(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
 
-  constructor(private userAuthService:UserService,
-              private router:Router
-    ){}
-  handleSingUp(form: NgForm){
-    if(form.invalid) {return}
-    const {username, email, password} =form.value
-    this.userAuthService.register(username, email, password)
-    .subscribe(user => {
-      console.log(user);
+    if (!form.value.username || form.value.username.length < 4) {
+       this.error = 'The username must be at least 4 characters';
+       return;
+    }
 
-      localStorage.setItem('auth', JSON.stringify(user))
-       this.router.navigate(['/'])
-    } )
+
+    if (!form.value.email || !form.value.email.includes('@') ) {
+      this.error = 'Enter a valid email';
+      return;
+    }
+
+    if (!form.value.password ||form.value.password < 6) {
+      this.error = 'The password should be at least 6 characters';
+      return;
+    }
+
+    const { username, email, password } = form.value;
+    this.userAuthService
+      .register(username, email, password)
+      .subscribe((user) => {
+        console.log(user);
+
+  
+        localStorage.setItem('auth', JSON.stringify(user));
+        this.router.navigate(['/']);
+      });
   }
 }

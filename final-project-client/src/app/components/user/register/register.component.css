@@ -234,3 +234,12 @@ input {
 .container.right-panel-active .overlay-right {
     transform: translateX(20%);
 }
+
+
+.error1{
+    color:red;
+    font-size:1em;
+    padding: 0;
+    margin: 0.6em 0;
+    
+}

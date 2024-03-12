@@ -31,6 +31,8 @@
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
 			<span>or use your account</span>
+			<p class="error1" *ngIf="error">{{error}}</p>
+			
 			<input type="text" placeholder="Username" name="username" #usernameInput="ngModel"
 			ngModel  />
 			<input type="email" placeholder="Email" name="email" #emailInput="ngModel"

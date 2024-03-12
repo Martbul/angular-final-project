@@ -19,7 +19,7 @@ body {
   height: 100vh;
   display: grid;
   place-items: center;
-  background-color: rgb(175, 202, 192);
+  background-color: rgb(74, 151, 123);
 
 }
 
@@ -31,18 +31,36 @@ body {
   gap: 1rem;
 }
 
-.form input,
+.form input{
+   width: 100%;
+  padding: 1rem;
+  font: 900 0.85rem futura,sans-serif;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+    background-color: #fff1d8;
+  border: 1px solid black;
+  border-radius: 2em;
+  outline: 0;
+}
 .form .layout,
-form .form-name,
-form button  {
+form .form-name {
   width: 100%;
   padding: 1rem;
   font: 900 0.85rem futura,sans-serif;
-  color: rgb(149,171,165);
+  color: rgb(0, 0, 0);
   text-transform: uppercase;
-  background-color: #686868c2;
+    background-color: #ffbd4a;
   border: none;
   outline: 0;
+}
+
+.form button{
+  padding: 1em 4em;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid black;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 1em;
 }
 
 .form .layout{
@@ -51,9 +69,9 @@ form button  {
    margin: 7em 0;
 }
 
-::placeholder { color:rgb(255, 217, 0); }
+::placeholder { color:rgb(0, 0, 0); }
 
-input:focus, textarea:focus { background-color: rgba(102, 24, 24, 0.5); }
+input:focus, textarea:focus { background-color: rgba(0, 0, 0, 0.5); }
 
 .form-name {
   display: flex;
@@ -84,5 +102,8 @@ input:focus, textarea:focus { background-color: rgba(102, 24, 24, 0.5); }
 }   
 
 .error{
-  color:red
+  color:red;
+  margin: 0 auto;
+  font-size: 1.2em;
+  margin-top: 1em;
 }

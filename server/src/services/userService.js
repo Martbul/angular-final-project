@@ -52,7 +52,7 @@ const token = await getToken(user); //works
 
 
 const decodedToken = jwtDecode(token)
-console.log('token =  '+ decodedToken);
+
 
 
 //! works!!
@@ -90,22 +90,6 @@ exports.getMyProfile = (userId)=>
  };
 
 exports.getSingleApp = (id) => App.findById(id);
-
-exports.addOrderToUser = (order, email) => {
-  // Find the user by ID
-  console.log(email);
-  User.findOneAndUpdate(
-    { email: email },
-    { $push: { order: order.order } },
-    { new: true }
-  )
-    .then((updatedUser) => {
-      //    console.log("Order added successfully to the user:", updatedUser);
-    })
-    .catch((error) => {
-      console.error("Failed to update user with order:", error);
-    });
-};
 
 
 
@@ -165,4 +149,48 @@ exports.addLikedAppToUserLikedApps = async (email, appId) => {
   } catch (error) {
     console.error("Failed to update user with app:", error);
   }
+};
+
+
+
+
+
+
+exports.addAppToUserCreatedApps = (data) => {
+  const title = data.title
+  const creatorEmail = data.creatorEmail
+  
+
+   User.findOneAndUpdate(
+     { email: creatorEmail },
+     { $push: { appsCreated: title } },
+     { new: true }
+   )
+     .then((updatedUser) => {
+       //    console.log("Order added successfully to the user:", updatedUser);
+     })
+     .catch((error) => {
+       console.error("Failed to update user with order:", error);
+     });
+
+};
+
+
+
+
+
+exports.addOrderToUser = (order, email) => {
+  // Find the user by ID
+  console.log(email);
+  User.findOneAndUpdate(
+    { email: email },
+    { $push: { order: order.order } },
+    { new: true }
+  )
+    .then((updatedUser) => {
+      //    console.log("Order added successfully to the user:", updatedUser);
+    })
+    .catch((error) => {
+      console.error("Failed to update user with order:", error);
+    });
 };

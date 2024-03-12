@@ -2,39 +2,40 @@ import { UserService } from '../user-auth.service';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NavigationComponent } from 'src/app/nav/navigatio/navigation.component';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers:[NavigationComponent]
 })
 export class LoginComponent {
-  error?:string | null= null
+  error?: string | null = null;
 
+  constructor(
+    private userAuthService: UserService,
+    private router: Router,
+    // private navComponent: NavigationComponent
+  ) {}
 
-  constructor(private userAuthService: UserService, private router:Router) {}
+  handleLogin(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
+    const { email, password } = form.value;
+    this.userAuthService.login(email, password).subscribe((user) => {
+      console.log(user);
 
-  
-
-  
-handleLogin(form: NgForm){
-if(form.invalid) {return}
-const {email, password} =form.value
-this.userAuthService.login(email, password)
-.subscribe(user => {
-console.log(user);
-
-
-  //! pri logi i signup s nevalidni danni pak te redirectva
-  //! tova e vremenno reshenie - popravi go!!!
-  if(user ==='invalid username!!!!!!!!! or password'){
-    this.error = user
-    return
+      //! pri logi i signup s nevalidni danni pak te redirectva
+      //! tova e vremenno reshenie - popravi go!!!
+      if (user === 'invalid username!!!!!!!!! or password') {
+        this.error = user;
+        return;
+      }
+      localStorage.setItem('auth', JSON.stringify(user));
+      // this.navComponent.changeNav()
+      this.router.navigate(['/app-finder']);
+    });
   }
-localStorage.setItem('auth', JSON.stringify(user))
-this.router.navigate(['/app-finder'])
-} )
-}
-
-
 }

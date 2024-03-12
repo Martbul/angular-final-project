@@ -11,10 +11,11 @@ import { CustomerSupportChatbotServiceComponent } from './components/customer-su
 import { CreateAppComponent } from './components/post-app/create-app/create-app.component';
 import { AppEditComponent } from './components/app-finer/app-edit/app-edit.component';
 import { LogoutComponent } from './components/user/logout/logout.component';
-import { AuthActivate } from './components/guards/auth.activate';
+
 // import { CreateAppComponent } from './components/create-app/create-app.component';
 import { ErrorComponent } from './error/error.component';
 import { AppFinderComponent } from './components/app-finer/app-finder-page/app-finder.component';
+import { AuthActivate } from './components/shared/guards/auth.activate';
 
 const routes: Routes = [
   {
@@ -56,15 +57,29 @@ const routes: Routes = [
   {
     path: 'create-app',
     component: CreateAppComponent,
+    canActivate: [AuthActivate],
+    data: {
+      title: 'Create-App',
+      loginRequired: true
+    }
   },
   {
     path: 'app-finder/edit/:appId',
     component: AppEditComponent,
+    canActivate: [AuthActivate],
+    data: {
+      title: 'Edit-App',
+      loginRequired:true
+    }
   },
 
   {
     path: 'app-finder/delete/:appId',
     redirectTo: '/app-finder',
+    data: {
+      title: 'delete-app',
+      loginRequired:true
+    }
   },
   {
     path: 'logout',

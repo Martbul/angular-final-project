@@ -14,10 +14,14 @@
             </ng-template> -->
             
 
-
-
             <li  class="nav-item"><a routerLink="/services">Services</a></li>
+
+
               <li *ngIf="user" class="nav-item"> <a routerLink="/create-app">Post App</a></li>
+               
+
+
+
             <li class="nav-item"> <a routerLink="/app-finder">App Finder</a></li>
             <li class="nav-item"><a routerLink="/about">About</a></li>
 
@@ -26,7 +30,11 @@
             <!-- <ng-template #loggedOutTemplate>
               <li class="nav-item"><a routerLink="/login">LogIn</a></li>
             </ng-template> -->
+
+
+
             <li *ngIf="!user" class="nav-item"><a routerLink="/login">LogIn</a></li>
+
 
 
             <!-- <ng-template #loggedInTemplate>
@@ -34,6 +42,9 @@
             <li class="nav-item"><a routerLink="/profile">{{user?.username}}'s Profile</a></li>
             </ng-template> -->
           
+
+
+
             <li *ngIf="user" class="nav-item"><a routerLink="/profile">{{user?.username}}'s Profile</a></li>
   <li *ngIf="user" class="nav-item"><a routerLink="/logout">Logout</a></li>
 
