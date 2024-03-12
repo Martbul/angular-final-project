@@ -23,7 +23,7 @@ import { CreateAppComponent } from './components/post-app/create-app/create-app.
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppFinerModule } from './components/app-finer/app-finer.module';
-import { UserModule } from './components/user/user.module'
+import { UserModule } from './components/user/user.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppsLoopDirective } from './apps-loop.directive';
 import { AppEditComponent } from './components/app-finer/app-edit/app-edit.component';
@@ -31,7 +31,6 @@ import { appInterceptorProvider } from './app.interceptor';
 import { LogoutComponent } from './components/user/logout/logout.component';
 import { AuthenticateComponent } from './components/authenticate/authenticate.component';
 // import { MyRouterLinkDirective } from './my-router-link.directive';
-
 
 @NgModule({
   declarations: [
@@ -44,7 +43,7 @@ import { AuthenticateComponent } from './components/authenticate/authenticate.co
 
     AboutComponent,
     OurservicesComponent,
-  
+
     AlystServicesComponent,
     CustomerSupportChatbotServiceComponent,
     CustomerOnboardingChatbotServiceComponent,
@@ -56,8 +55,6 @@ import { AuthenticateComponent } from './components/authenticate/authenticate.co
     LogoutComponent,
     AuthenticateComponent,
     // MyRouterLinkDirective,
-    
-   
   ],
   imports: [
     BrowserModule,
@@ -71,7 +68,7 @@ import { AuthenticateComponent } from './components/authenticate/authenticate.co
     FormsModule,
 
     //! modul za reactivni formi
-     ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   //! appInterceptorProvider
   providers: [appInterceptorProvider],
