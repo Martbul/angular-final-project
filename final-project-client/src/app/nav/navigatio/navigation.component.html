@@ -8,61 +8,39 @@
             <li class="nav-item"><a routerLink="/" >Home</a></li>
 
 
-
-            <!-- <ng-template #loggedOutTemplate>
+            <!-- !BACA -->
+           <ng-template #loggedInTemplate>
               <li class="nav-item"> <a routerLink="/create-app">Post App</a></li>
-            </ng-template> -->
-            
+                     <li class="nav-item"><a routerLink="/logout">Logout</a></li>
+                  <li class="nav-item"><a routerLink="/profile">{{user?.username}}'s Profile</a></li>
+            </ng-template> 
 
+            
+            <!-- !BACA -->
             <li  class="nav-item"><a routerLink="/services">Services</a></li>
 
 
-              <li *ngIf="user" class="nav-item"> <a routerLink="/create-app">Post App</a></li>
-               
-
-
-
+            <!-- !BACA -->
             <li class="nav-item"> <a routerLink="/app-finder">App Finder</a></li>
-            <li class="nav-item"><a routerLink="/about">About</a></li>
+            <li class="nav-item"><a routerLink="/about">About</a></li> 
 
 
-
-            <!-- <ng-template #loggedOutTemplate>
+            <!-- !BACA -->
+           <ng-template #loggedOutTemplate>
               <li class="nav-item"><a routerLink="/login">LogIn</a></li>
-            </ng-template> -->
+            </ng-template>  
+
+             
+  
+           <ng-template #loggedInTemplate>
+            
+            </ng-template> 
 
 
-
-            <li *ngIf="!user" class="nav-item"><a routerLink="/login">LogIn</a></li>
-
-
-
-            <!-- <ng-template #loggedInTemplate>
- <li class="nav-item"><a routerLink="/logout">Logout</a></li>
-            <li class="nav-item"><a routerLink="/profile">{{user?.username}}'s Profile</a></li>
-            </ng-template> -->
+      
           
 
-
-
-            <li *ngIf="user" class="nav-item"><a routerLink="/profile">{{user?.username}}'s Profile</a></li>
-  <li *ngIf="user" class="nav-item"><a routerLink="/logout">Logout</a></li>
-
-
-
-  <ng-template #loggedInTemplate>
-  <li >USER IS LOGGED IN</li>
-  </ng-template>
-
-   <ng-template #loggedOutTemplate>
-     <li >USER IS LOGGED OUT</li>
-  </ng-template>
-
-
- 
-
-            
-               <ng-container *ngTemplateOutlet="userForVavRerender ? loggedInTemplate : loggedOutTemplate"></ng-container>
+               <ng-container *ngTemplateOutlet="isLoggedIn ? loggedInTemplate : loggedOutTemplate"></ng-container>
 
             <!-- <ng-container *ngTemplateOutlet="isLoggedIn ? loggedInTemplate : loggedOutTemplate"></ng-container> -->
         </ul>

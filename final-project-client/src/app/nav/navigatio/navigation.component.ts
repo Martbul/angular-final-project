@@ -38,6 +38,6 @@ export class NavigationComponent  {
 
   get user() {
     this.userForVavRerender = this.userAuthService.userFromLocaleStorage;
-    return this.userAuthService.userFromLocaleStorage;
+    return this.userAuthService.user;
   }
 }
