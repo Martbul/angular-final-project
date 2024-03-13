@@ -34,18 +34,15 @@ export class AppDetailsComponent implements OnInit {
       const id = data['appId'];
       console.log(id);
 
-      this.currentUser = this.userAuthService.userFromLocaleStorage.username;
-      this.currentUserBoughtApps =
-        this.userAuthService.user.appsBought;
-      console.log(this.currentUserBoughtApps);
-      
-      
-
-      this.userEmail = this.userAuthService.userFromLocaleStorage.email;
+  
       this.apiService.getSingleApp(id).subscribe((app) => {
         this.app = app;
         this.currentAppLikes = this.app.likes;
         console.log(this.app);
+            this.currentUser =
+              this.userAuthService.userFromLocaleStorage.username;
+            this.currentUserBoughtApps = this.userAuthService.user.appsBought;
+            this.userEmail = this.userAuthService.userFromLocaleStorage.email;
       });
     });
   }
