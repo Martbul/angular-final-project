@@ -98,7 +98,7 @@ exports.addLikedAppToUserLikedApps = async (email, appId) => {
   try {
     const app = await this.getSingleApp(appId);
     const user = await this.getSingleUserByEmail(email)
-    console.log("MYUSERIS: " + user);
+
     if (user.appsLiked.includes(app.title)) {
     
     const updatedUser = await User.findOneAndUpdate(
@@ -159,7 +159,7 @@ exports.addLikedAppToUserLikedApps = async (email, appId) => {
 exports.addAppToUserCreatedApps = (data) => {
   const title = data.title
   const creatorEmail = data.creatorEmail
-  
+
 
    User.findOneAndUpdate(
      { email: creatorEmail },
@@ -177,20 +177,20 @@ exports.addAppToUserCreatedApps = (data) => {
 
 
 
-
-
-exports.addOrderToUser = (order, email) => {
-  // Find the user by ID
+exports.addAppToUserBoughtApps =async(email, appId) => {
+  const app = await this.getSingleApp(appId);
+  console.log('here');
   console.log(email);
-  User.findOneAndUpdate(
-    { email: email },
-    { $push: { order: order.order } },
-    { new: true }
-  )
-    .then((updatedUser) => {
-      //    console.log("Order added successfully to the user:", updatedUser);
-    })
-    .catch((error) => {
-      console.error("Failed to update user with order:", error);
-    });
-};
+  console.log(app);
+ User.findOneAndUpdate(
+   { email: email },
+   { $push: { appsBought: app.title } },
+   { new: true }
+ )
+   .then((updatedUser) => {
+     //    console.log("Order added successfully to the user:", updatedUser);
+   })
+   .catch((error) => {
+     console.error("Failed to update user with order:", error);
+   });
+}

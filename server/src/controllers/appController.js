@@ -85,6 +85,17 @@ router.post("/like", async (req, res) => {
 })
 
 
+router.post("/buy", async (req, res) => {
+  
+  const { email } = req.body;
+  const { id } = req.body;
+
+  // const result = await appService.addLikeToApp(id, email);
+  const result = await userService.addAppToUserBoughtApps(email, id);
+  res.json(result).status(200).end();
+});
+
+
 // router.post('/binds/:bindId', async (req, res) => {
 //   console.log('here');
 //   console.log(req.body);

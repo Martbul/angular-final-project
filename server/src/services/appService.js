@@ -12,9 +12,9 @@ exports.create = async (appData) => {
   appData.likes = 0;
   appData.likedBy = Array;
   appData.comments={}
-  console.log(appData);
+ 
   const newApp = await App.create(appData);
-  console.log(App);
+  
   return newApp;
 };
 
@@ -35,7 +35,7 @@ exports.addLikeToApp = async(appId,email) =>{
   const app = await this.getSingleApp(appId)
  
   if (app.likedBy.includes(email)) {
-    console.log('email is in the likedBy array');
+  ;
     app.likes -= 1
    
     let index = app.likedBy.indexOf(email);
@@ -44,7 +44,7 @@ exports.addLikeToApp = async(appId,email) =>{
        return app.save();
     }
   } else {
-     console.log("email is NOT IN LIKEDBY");
+     
     app.likes += 1
     app.likedBy.push(email);
     

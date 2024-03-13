@@ -1,6 +1,7 @@
 <div    class="details-container">
   <div class="content">
     <div class="category">
+  
       <p>{{ app.category }}</p>
     </div>
     <div class="heading">
@@ -17,7 +18,9 @@
     </div>
     <div class="bottom-layout">
       <div class="buttons">
-         <button *ngIf="currentUser !== app.creator" >BUY</button>
+
+         <button *ngIf="currentUser !== app.creator ||! currentUserBoughtApps.includes(app.title)"   (click)="buy()" >BUY</button>
+         <!-- <p *ngIf="currentUserBoughtApps.includes(app.title)"> YOU BOUGHT THIS APP</p> -->
       <button *ngIf="currentUser == app.creator" [routerLink]="'/app-finder/edit/'+app._id" >Edit</button>
       <button *ngIf="currentUser== app.creator" (click)="deleteApp()" [routerLink]="'/app-finder/delete/'+app._id" >Delete</button>
       </div>
@@ -25,13 +28,13 @@
       <div  *ngIf="app.likedBy.includes(userEmail)" class="heart">
       
          <div class="likeGroup" (click)="addLike()">
-          <p class="likeCount" >{{app.likes}} </p> 
+          <p class="likeCount" >{{currentAppLikes}} </p> 
           <i class="fa-solid fa-heart" style="color: #ff0000;"></i>
         </div>
       </div>
       <div *ngIf="!app.likedBy.includes(userEmail)">
             <div   class="likeGroup" (click)="addLike()"> 
-              <p class="likeCount">{{app.likes}} </p> 
+                <p class="likeCount" >{{currentAppLikes}} </p> 
               <i class="fa-regular fa-heart"></i>
             </div>
       </div>

@@ -15,7 +15,8 @@ export class AppDetailsComponent implements OnInit {
   app = {} as App;
   userEmail!: any;
   currentUser!: any;
-
+  currentUserBoughtApps!: any;
+  currentAppLikes!: any;
 
   constructor(
     private apiService: ApiService,
@@ -34,9 +35,16 @@ export class AppDetailsComponent implements OnInit {
       console.log(id);
 
       this.currentUser = this.userAuthService.userFromLocaleStorage.username;
-  this.userEmail = this.userAuthService.userFromLocaleStorage.email;
+      this.currentUserBoughtApps =
+        this.userAuthService.user.appsBought;
+      console.log(this.currentUserBoughtApps);
+      
+      
+
+      this.userEmail = this.userAuthService.userFromLocaleStorage.email;
       this.apiService.getSingleApp(id).subscribe((app) => {
         this.app = app;
+        this.currentAppLikes = this.app.likes;
         console.log(this.app);
       });
     });
@@ -55,11 +63,30 @@ export class AppDetailsComponent implements OnInit {
     this.activeRoute.params.subscribe((data) => {
       const id = data['appId'];
 
-       this.userEmail = this.userAuthService.userFromLocaleStorage.email;
-        this.appService.like(this.userEmail, id, );
+      this.userEmail = this.userAuthService.userFromLocaleStorage.email;
+      this.appService.like(this.userEmail, id);
 
+      this.apiService.getSingleApp(id).subscribe((app) => {
+        let app1 = app;
+        this.currentAppLikes = app1.likes;
+        console.log(this.app.likes);
+      });
+      //this.router.navigate([`/app-finder/${id}`]);
+    });
 
-     //this.router.navigate([`/app-finder/${id}`]);
+    //! tova e vremenno resheni, nameri nachin da rerendernesh componenta
+
+    // window.location.reload();
+  }
+
+  buy() {
+    this.activeRoute.params.subscribe((data) => {
+      const id = data['appId'];
+
+      this.userEmail = this.userAuthService.userFromLocaleStorage.email;
+      this.appService.buy(this.userEmail, id);
+
+      //this.router.navigate([`/app-finder/${id}`]);
     });
 
     //! tova e vremenno resheni, nameri nachin da rerendernesh componenta
