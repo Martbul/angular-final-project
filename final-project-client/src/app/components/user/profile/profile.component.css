@@ -259,7 +259,7 @@
 }
 
 .my-text-overline {
-  margin-bottom: 0.75rem;
+  /* margin-bottom: 0.75rem; */
   color: #9ea0a5;
   font-size: 12px;
   font-weight: 500;
@@ -321,4 +321,65 @@
 
 input {
   all: unset;
+}
+
+
+.my-card .my-list-item__date span{
+  width:7em
+}
+.my-app__body .my-card__body .my-text-overline,
+.my-app__body .my-card__header-title .my-text-overline{
+  font-size: 1.2em;
+  font-style:initial;
+  color: black;
+}
+
+.my-app__body .my-card__header-title ul{
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1em;
+}
+
+.my-app__body .my-card__header h1{
+  
+  color:orange;
+  font-size: 2.2em;
+  font-weight: 900;
+}
+
+
+.my-app__body .my-card__body .my-list h5{
+    font-size: 1.2em;
+  font-style:initial;
+  color: black;
+}
+
+
+.my-app__body .my-card__body .my-list p{
+
+    color:orange;
+  font-size: 1.8em;
+  font-weight: 900;
+}
+
+.my-app__body .my-card__body .my-list .numberOfBA{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  margin: 0.6em 0.4em;
+}
+
+
+
+.my-app__body .my-card__body .my-list ul{
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1em;
+}
+.col-8 .my-alert{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
 }

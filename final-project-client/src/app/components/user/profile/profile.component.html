@@ -27,27 +27,16 @@
               <div class="my-card__header card-header">
                 <div class="my-card__header-title">
                   <div class="my-text-overline">Apps you created</div>
-                  <h3 class="my-text-headline">$52,100.00</h3>
+
+                  <ul>
+                    <li *ngFor="let app of profileUser.appsCreated">
+                      {{ app }}
+                    </li>
+                  </ul>
                 </div>
-                <a class="my-card__header-link" href="#">Details →</a>
-              </div>
-              <div class="my-card__body card-body">
-                <div class="my-text-overline">Available Currencies</div>
-                <dl class="my-list my-list--definitions my-dl">
-                  <dt>US Dollars</dt>
-                  <dd>32,220.00 USD</dd>
-                  <dt>British Pounds</dt>
-                  <dd>8,560.00 GBP</dd>
-                  <dt>Czech Koruna</dt>
-                  <dd>98,444.00 CZK</dd>
-                </dl>
-                <hr class="my-divider" />
-                <ul class="my-list my-list--simple list-inline mb-0">
-                  <li><a href="#">Add Money →</a></li>
-                  <li><a href="#">Top Up →</a></li>
-                  <li><a href="#">Add funds using PayBuddy →</a></li>
-                  <li><a href="#">Withdraw funds →</a></li>
-                </ul>
+                <h1 class="my-card__header-link">
+                  {{ profileUser.appsCreated.length }}
+                </h1>
               </div>
             </div>
             <!-- End Payment Balance card -->
@@ -55,46 +44,45 @@
             <!-- Begin Bank Accounts card -->
             <div class="my-card card">
               <div class="my-card__body card-body">
-                <div class="my-text-overline">Boudghet and liked apps</div>
-                
+                <div class="my-text-overline">Bought and liked apps</div>
+
                 <ul class="my-list my-list--simple list-inline mb-0">
-                  <li class="my-list-item">
-                    <h5>Boudghe apps: number of apps</h5>
-                    <ul>
-                      <li>1</li>
-                      <li>2</li>
-                      <li>3</li>
-                    </ul>
-                   
-                  </li>
+                  <div class="numberOfBA">
+                    <h5>Bought apps</h5>
+                    <p>{{ profileUser.appsBought.length }}</p>
+                  </div>
 
+                  <ul>
+                    <li *ngFor="let app of profileUser.appsBought">
+                      {{ app }}
+                    </li>
+                  </ul>
 
+                  <hr class="my-divider" />
 
+                  <div class="numberOfBA">
+                    <h5>Liked apps</h5>
+                    <p>{{ profileUser.appsLiked.length }}</p>
+                  </div>
 
-                     <hr class="my-divider" />
-
-
-
-                  <li class="my-list-item">
-                    <!-- <h5>Liked apps: {{profileUser.appsLiked.length}}</h5> -->
-                    <h5>Liked apps: # of liked apps</h5>
-                    <ul>
-                      <li>
-                       use ngFor to display liked apps
-                      </li>
-                    </ul>
-                  </li>
+                  <ul>
+                    <li *ngFor="let app of profileUser.appsLiked">
+                      {{ app }}
+                    </li>
+                  </ul>
                 </ul>
-             
-                
               </div>
             </div>
             <!-- End Bank Accounts card -->
           </div>
 
-          <div class="col-8">
+          <form
+            class="col-8"
+            #profileEditForm="ngForm"
+            (ngSubmit)="profileEdit(profileEditForm)"
+          >
             <div class="my-alert alert alert-info">
-              <img class="my-alert__icon" src="./images/icon-alert.svg" alt />
+              <button>Save</button>
               <span class="my-alert__text">
                 Your latest activity is shown here. Make changes to your
                 profile.
@@ -116,7 +104,10 @@
                   <div class="my-list-item__text">
                     <input
                       class="my-list-item__text-title"
-                      placeholder=" {{ profileUser.username }}"
+                      name="username"
+                      #usernameInput="ngModel"
+                      [ngModel]="profileUser.username"
+                      ngModel
                     />
                   </div>
                 </li>
@@ -127,7 +118,10 @@
                   <div class="my-list-item__text">
                     <input
                       class="my-list-item__text-title"
-                      placeholder=" {{ profileUser.firstName }}"
+                      name="firstName"
+                      #firstNameInput="ngModel"
+                      [ngModel]="profileUser.firstName"
+                      ngModel
                     />
                   </div>
                 </li>
@@ -138,7 +132,11 @@
                   <div class="my-list-item__text">
                     <input
                       class="my-list-item__text-title"
-                      placeholder=" {{ profileUser.lastName }}"
+                     
+                       name="lastName"
+                       #lastNameInput="ngModel"
+                      [ngModel]="profileUser.lastName"
+                      ngModel
                     />
                   </div>
                 </li>
@@ -151,119 +149,98 @@
                 <h3 class="my-card__header-title card-title">
                   Contact Information
                 </h3>
-                <a class="my-card__header-link" href="#">See all →</a>
               </div>
               <ul class="my-list list-group list-group-flush">
                 <li class="my-list-item list-group-item">
                   <div class="my-list-item__date">
-                    <span class="my-list-item__date-day">28</span>
-                    <span class="my-list-item__date-month">jul</span>
+                    <span class="my-list-item__date-day">Email</span>
                   </div>
                   <div class="my-list-item__text">
-                    <h4 class="my-list-item__text-title">Bank of America</h4>
-                    <p class="my-list-item__text-description">
-                      Withdraw to bank account
-                    </p>
-                  </div>
-                  <div class="my-list-item__fee">
-                    <span class="my-list-item__fee-delta">+250.00</span>
-                    <span class="my-list-item__fee-currency">USD</span>
+                    <input
+                      class="my-list-item__text-title"
+                      
+                       name="email"
+                       #emailInput="ngModel"
+                      [ngModel]="profileUser.email"
+                      ngModel
+                    
+                    />
                   </div>
                 </li>
                 <li class="my-list-item list-group-item">
                   <div class="my-list-item__date">
-                    <span class="my-list-item__date-day">28</span>
-                    <span class="my-list-item__date-month">jul</span>
+                    <span class="my-list-item__date-day">Phone Number</span>
                   </div>
                   <div class="my-list-item__text">
-                    <h4 class="my-list-item__text-title">Bank of America</h4>
-                    <p class="my-list-item__text-description">
-                      Withdraw to bank account
-                    </p>
+                    <input
+                      class="my-list-item__text-title"
+                      
+                       name="phoneNumber"
+                       #phoneNumberInput="ngModel"
+                      [ngModel]="profileUser.phoneNumber"
+                      ngModel
+                    />
                   </div>
-                  <div class="my-list-item__fee">
-                    <span class="my-list-item__fee-delta">+250.00</span>
-                    <span class="my-list-item__fee-currency">USD</span>
+                </li>
+              </ul>
+            </div>
+            <div class="my-card card">
+              <div class="my-card__header card-header">
+                <h3 class="my-card__header-title card-title">Address</h3>
+              </div>
+              <ul class="my-list list-group list-group-flush">
+                <li class="my-list-item list-group-item">
+                  <div class="my-list-item__date">
+                    <span class="my-list-item__date-day">Country</span>
+                  </div>
+                  <div class="my-list-item__text">
+                    <input
+                      class="my-list-item__text-title"
+                   
+                        
+                       name="country"
+                       #countryInput="ngModel"
+                      [ngModel]="profileUser.country"
+                      ngModel
+                    />
                   </div>
                 </li>
                 <li class="my-list-item list-group-item">
                   <div class="my-list-item__date">
-                    <span class="my-list-item__date-day">28</span>
-                    <span class="my-list-item__date-month">jul</span>
+                    <span class="my-list-item__date-day">City</span>
                   </div>
                   <div class="my-list-item__text">
-                    <h4 class="my-list-item__text-title">Bank of America</h4>
-                    <p class="my-list-item__text-description">
-                      Withdraw to bank account
-                    </p>
-                  </div>
-                  <div class="my-list-item__fee">
-                    <span class="my-list-item__fee-delta">+250.00</span>
-                    <span class="my-list-item__fee-currency">USD</span>
+                    <input
+                      class="my-list-item__text-title"
+                    
+
+                      name="city"
+                       #cityInput="ngModel"
+                      [ngModel]="profileUser.city"
+                      ngModel
+                    />
                   </div>
                 </li>
               </ul>
             </div>
 
-            <!-- Begin Completed card -->
             <div class="my-card card">
               <div class="my-card__header card-header">
-                <h3 class="my-card__header-title card-title">Address</h3>
-                <a class="my-card__header-link" href="#">See all →</a>
+                <h3 class="my-card__header-title card-title">About Me</h3>
               </div>
               <ul class="my-list list-group list-group-flush">
                 <li class="my-list-item list-group-item">
                   <div class="my-list-item__date">
-                    <span class="my-list-item__date-day">28</span>
-                    <span class="my-list-item__date-month">jul</span>
-                  </div>
-                  <div class="my-list-item__text">
-                    <h4 class="my-list-item__text-title">Gumroad, Inc</h4>
-                    <p class="my-list-item__text-description">
-                      Withdraw to bank account
-                    </p>
-                  </div>
-                  <div class="my-list-item__fee">
-                    <span class="my-list-item__fee-delta">+250.00</span>
-                    <span class="my-list-item__fee-currency">USD</span>
-                  </div>
-                </li>
-                <li class="my-list-item list-group-item">
-                  <div class="my-list-item__date">
-                    <span class="my-list-item__date-day">28</span>
-                    <span class="my-list-item__date-month">jul</span>
-                  </div>
-                  <div class="my-list-item__text">
-                    <h4 class="my-list-item__text-title">Spotify Limited</h4>
-                    <p class="my-list-item__text-description">
-                      Preapproved Payment
-                    </p>
-                  </div>
-                  <div class="my-list-item__fee">
-                    <span class="my-list-item__fee-delta">+250.00</span>
-                    <span class="my-list-item__fee-currency">USD</span>
-                  </div>
-                </li>
-                <li class="my-list-item list-group-item">
-                  <div class="my-list-item__date">
-                    <span class="my-list-item__date-day">28</span>
-                    <span class="my-list-item__date-month">jul</span>
-                  </div>
-                  <div class="my-list-item__text">
-                    <h4 class="my-list-item__text-title">Bank of America</h4>
-                    <p class="my-list-item__text-description">
-                      Withdraw to bank account
-                    </p>
-                  </div>
-                  <div class="my-list-item__fee">
-                    <span class="my-list-item__fee-delta">+250.00</span>
-                    <span class="my-list-item__fee-currency">USD</span>
+                    <textarea      name="aboutMe"
+                       #aboutMeInput="ngModel"
+                      [ngModel]="profileUser.aboutMe"
+                      ngModel class="my-list-item__date-day"></textarea>
                   </div>
                 </li>
               </ul>
             </div>
             <!-- End Completed card -->
-          </div>
+          </form>
         </div>
       </div>
     </section>

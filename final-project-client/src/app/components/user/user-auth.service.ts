@@ -41,7 +41,7 @@ export class UserService implements OnDestroy {
   logout() {
     //! VEMENNO RESHENIE
     localStorage.clear();
-    this.user=undefined;
+    this.user = undefined;
     // return this.http
     //   .get<any>('/api/users/logout')
     //   .pipe(tap((user) => this.user$$.next(null)));
@@ -67,32 +67,39 @@ export class UserService implements OnDestroy {
       );
   }
 
-  // getProfile() {
-  //   this.user = JSON.parse(
-  //     localStorage.getItem('auth') as any
-  //   );
-  //   if (this.user == null) {
-  //     return throwError(() => ' ERRROR');
-  //   }
-  //   return this.http
-  //     .post<any>('/api/users/profile', {
-  //       email: this.user.email,
-  //     })
-  //     .pipe(
-  //       tap((user) => this.user$$.next(user)),
-  //       catchError((err) => {
-  //         this.user$$.next(null);
-  //         return throwError(() => err);
-  //       })
-  //     );
-  // }
+  profileEdit(
+    currentEmail:string,
+    username:string,
+    firstName:string,
+    lastName:string,
+    email:string,
+    phoneNumber:string,
+    country:string,
+    city:string,
+    aboutMe:string
+  ) {
 
-  //   getProfile11() {
-  //     return this.http
-  //       .get<User>('/api/users/profile')
-  //       .pipe(tap((user) => this.user$$.next(user)));
-  //   }
 
+     return this.http
+       .put<any>('/api/profile/edit', {
+         currentEmail,
+         username,
+         firstName,
+         lastName,
+         phoneNumber,
+         country,
+         city,
+         aboutMe,
+       })
+       .pipe(
+         tap((user) => this.user$$.next(user)),
+         catchError((err) => {
+           this.user$$.next(null);
+           return throwError(() => err);
+         })
+       );
+
+  }
 
   ngOnDestroy(): void {
     //Called once, before the instance is destroyed.

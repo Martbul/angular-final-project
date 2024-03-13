@@ -20,25 +20,53 @@ router.post('/',async (req,res)=>{
 
 
 
-router.put("/:email", async (req, res) => {
+router.put("/edit", async (req, res) => {
    
-    try {
-      const { email } = req.params;
+  try {
+    console.log('here');
+    console.log(req.body);
+     // const { email } = req.params;
       //console.log(email);
       
   
-      const { userAboutMeText,userCity,userCountry,userEmail,userFirstName,userLastName,userOrder,userPhoneNumber,userUsername } =
-        req.body;
+      const {
+        currentEmail,
+        username,
+        firstName,
+        lastName,
+        email,
+        phoneNumber,
+        country,
+        city,
+        aboutMe,
+      } = req.body;
   
-      const profileData = {
-        userAboutMeText,userCity,userCountry,userEmail,userFirstName,userLastName,userOrder,userPhoneNumber,userUsername
-        // _ownerId: req.user._id,
-      };
-     //console.log(profileData);
+    
+    
+   
   
-      await profileService.update(email, profileData);
+      await profileService.update(
+        currentEmail,
+        username,
+        firstName,
+        lastName,
+        phoneNumber,
+        country,
+        city,
+        aboutMe
+    );
+    console.log('Successful Profile Edit');
+    const updatedProfileData = {
+      username,
+      firstName,
+      lastName,
+      phoneNumber,
+      country,
+      city,
+      aboutMe,
+    };
   
-      res.json(profileData).status(200).end();
+      res.json(updatedProfileData).status(200).end();
     } catch (message) {
       res.status(400).json({ message });
     }

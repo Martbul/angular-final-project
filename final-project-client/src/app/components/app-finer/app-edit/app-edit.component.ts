@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { App } from 'src/app/types/app';
 import { EditAppService } from './edit-app.service';
@@ -21,7 +21,8 @@ export class AppEditComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private activeRoute: ActivatedRoute,
-    private editService: EditAppService
+    private editService: EditAppService,
+    private router: Router
   ) {}
   error?: string | null = null;
 
@@ -98,5 +99,7 @@ export class AppEditComponent implements OnInit {
       category: '',
       description: '',
     });
+     this.error = null;
+     this.router.navigate(['/app-finder']);
   }
 }

@@ -10,19 +10,29 @@ exports.getProfileData = async (email) => {
 
 
 //! oshte malko imash za updatejt
-exports.update = (email, profileData) => {
-  console.log(email);
-  console.log(profileData);
+exports.update = (
+  currentEmail,
+  username,
+  firstName,
+  lastName,
+  phoneNumber,
+  country,
+  city,
+  aboutMe
+) => {
+  console.log(currentEmail);
+  console.log(username);
+
   return User.findOneAndUpdate(
-    { email },
+    { email:currentEmail },
     {
-      firstName: profileData.userFirstName,
-      lastName: profileData.userLastName,
-      order: profileData.userOrder,
-      country: profileData.userCountry,
-      city: profileData.userCity,
-      phoneNumber: profileData.userPhoneNumber,
-      aboutMe: profileData.userAboutMeText,
+      username: username,
+      firstName: firstName,
+      lastName: lastName,
+      country: country,
+      city: city,
+      phoneNumber: phoneNumber,
+      aboutMe: aboutMe,
     },
     { new: true }
   );

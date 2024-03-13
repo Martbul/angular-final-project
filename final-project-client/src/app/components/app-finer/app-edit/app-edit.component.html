@@ -2,13 +2,13 @@
    <div class="layout">
    <h1>Edit App</h1>
       <div class="form-name">
-    <input class="form-first" type="text" placeholder="TITLE"  name="title"   #titleInput="ngModel"
+    <input class="form-first" type="text" placeholder="TITLE"  name="title"   #titleInput="ngModel" [ngModel]="title"
     ngModel
     />
     
 
 
-    <input class="form-last" type="text" placeholder="PRICE"  name="price" #priceInput="ngModel"
+    <input class="form-last" type="text" placeholder="PRICE"  name="price" #priceInput="ngModel" [ngModel]="price"
     ngModel
      />
     <ng-container *ngIf="priceInput.touched">
@@ -19,14 +19,14 @@
     
   </div>
   <div class="form-name">
-    <input class="form-first" type="text" placeholder="IMAGE"  name="imgUrl" #imageInput="ngModel"
+    <input class="form-first" type="text" placeholder="IMAGE"  name="imgUrl" #imageInput="ngModel" [ngModel]="imgUrl"
     ngModel
     />
     <ng-container *ngIf="imageInput.touched">
       
       <!-- <div *ngIf="imageInput.errors?.['required']">Image is requierd</div> -->
     </ng-container>
-    <input class="form-last" type="text" placeholder="CATEGORY"  name="category" #categoryInput="ngModel"
+    <input class="form-last" type="text" placeholder="CATEGORY"  name="category" #categoryInput="ngModel" [ngModel]="category"
     ngModel
      />
     <ng-container *ngIf="categoryInput.touched">
@@ -34,7 +34,7 @@
       <!-- <div *ngIf="categoryInput.errors?.['required']">Category is requierd</div> -->
     </ng-container>
   </div>
-  <input class="form-comment" placeholder="DESCRIPTION"  name="description" #descriptionInput="ngModel"
+  <input class="form-comment" placeholder="DESCRIPTION"  name="description" #descriptionInput="ngModel" [ngModel]="description"
   ngModel
   >
   <ng-container *ngIf="descriptionInput.touched">
