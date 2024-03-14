@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ApiService } from 'src/app/api.service';
+
 import { App } from 'src/app/types/app';
 import { EditAppService } from './edit-app.service';
+import { AppServicesService } from 'src/app/app-finer/app-services.service';
 
 @Component({
   selector: 'app-app-edit',
@@ -19,7 +20,7 @@ export class AppEditComponent implements OnInit {
   category!: string;
   _id!: any;
   constructor(
-    private apiService: ApiService,
+    private appService: AppServicesService,
     private activeRoute: ActivatedRoute,
     private editService: EditAppService,
     private router: Router
@@ -32,7 +33,7 @@ export class AppEditComponent implements OnInit {
       const id = data['appId'];
       console.log(id);
 
-      this.apiService.getSingleApp(id).subscribe((app) => {
+      this.appService.getSingleApp(id).subscribe((app) => {
         this.app = app;
         this.title = this.app.title;
         this.price = this.app.price;
@@ -99,7 +100,7 @@ export class AppEditComponent implements OnInit {
       category: '',
       description: '',
     });
-     this.error = null;
-     this.router.navigate(['/app-finder']);
+    this.error = null;
+    this.router.navigate(['/app-finder']);
   }
 }

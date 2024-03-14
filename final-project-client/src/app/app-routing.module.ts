@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './components/homepage/homepage.component';
@@ -8,14 +7,14 @@ import { AboutComponent } from './components/about/about.component';
 import { CustomerOnboardingChatbotServiceComponent } from './components/customer-onboarding-chatbot-service/customer-onboarding-chatbot-service.component';
 import { EmployeeTrainingChatbotServiceComponent } from './components/employee-training-chatbot-service/employee-training-chatbot-service.component';
 import { CustomerSupportChatbotServiceComponent } from './components/customer-support-chatbot-service/customer-support-chatbot-service.component';
-import { CreateAppComponent } from './components/post-app/create-app/create-app.component';
-import { AppEditComponent } from './components/app-finer/app-edit/app-edit.component';
-import { LogoutComponent } from './components/user/logout/logout.component';
 
 // import { CreateAppComponent } from './components/create-app/create-app.component';
-import { ErrorComponent } from './error/error.component';
-import { AppFinderComponent } from './components/app-finer/app-finder-page/app-finder.component';
-import { AuthActivate } from './components/shared/guards/auth.activate';
+
+import { AppFinderComponent } from './app-finer/app-finder-page/app-finder.component';
+import { AppEditComponent } from './app-finer/app-edit/app-edit.component';
+import { CreateAppComponent } from './post-app/create-app/create-app.component';
+import { AuthActivate } from './shared/guards/auth.activate';
+import { LogoutComponent } from './user/logout/logout.component';
 
 const routes: Routes = [
   {
@@ -60,8 +59,8 @@ const routes: Routes = [
     canActivate: [AuthActivate],
     data: {
       title: 'Create-App',
-      loginRequired: true
-    }
+      loginRequired: true,
+    },
   },
   {
     path: 'app-finder/edit/:appId',
@@ -69,8 +68,8 @@ const routes: Routes = [
     canActivate: [AuthActivate],
     data: {
       title: 'Edit-App',
-      loginRequired:true
-    }
+      loginRequired: true,
+    },
   },
 
   {
@@ -78,8 +77,8 @@ const routes: Routes = [
     redirectTo: '/app-finder',
     data: {
       title: 'delete-app',
-      loginRequired:true
-    }
+      loginRequired: true,
+    },
   },
   {
     path: 'logout',
@@ -88,7 +87,7 @@ const routes: Routes = [
     data: {
       title: 'logout',
       loginRequired: true,
-    }
+    },
   },
 
   // { path: '', pathMatch: 'full', redirectTo: '/home' },

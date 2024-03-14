@@ -8,8 +8,9 @@ import {
 import { Inject, Injectable, Provider } from '@angular/core';
 import { BehaviorSubject, Observable, catchError } from 'rxjs';
 import { environment } from './enviroments/enviroments';
-import { API_ERROR } from './components/shared/constants';
+
 import { Router } from '@angular/router';
+import { API_ERROR } from './shared/constants';
 const apiUrl = environment.apiUrl;
 @Injectable()
 export class AppInterceptor implements HttpInterceptor {

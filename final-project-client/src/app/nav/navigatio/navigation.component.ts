@@ -1,6 +1,7 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/components/user/user-auth.service';
+import { UserService } from 'src/app/user/user-auth.service';
+
 
 @Component({
   selector: 'app-navigation',

@@ -1,9 +1,7 @@
-
 import { Component, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { AppServicesService } from 'src/app/services/app-services.service';
+import { AppServicesService } from 'src/app/app-finer/app-services.service';
 import { App } from 'src/app/types/app';
-import { UserService } from '../../user/user-auth.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -14,10 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class AppCardComponent {
   apps: App[] = [];
   userEmail!: any;
-  constructor(
-    private appService: AppServicesService,
-
-  ) {}
+  constructor(private appService: AppServicesService) {}
 
   ngOnInit(): void {
     this.fetchApps();
@@ -48,6 +43,4 @@ export class AppCardComponent {
       console.log(this.apps);
     });
   }
-
-
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { App } from '../types/app';
+import { environment } from '../enviroments/enviroments';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +13,15 @@ export class AppServicesService {
 
   getApps() {
     return this.http.get<App[]>(`${this.baseUrl}/app-finder`);
+  }
+
+  getSingleApp(id: string) {
+    console.log(id);
+
+    const { apiUrl } = environment;
+    console.log(apiUrl);
+
+    return this.http.get<App>(`${apiUrl}/app-finder/${id}`);
   }
 
   like(email: string, id: string) {

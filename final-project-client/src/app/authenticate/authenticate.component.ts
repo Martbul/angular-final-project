@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user/user-auth.service';
+
 
 @Component({
   selector: 'app-authenticate',
@@ -8,7 +9,6 @@ import { UserService } from '../user/user-auth.service';
   styleUrls: ['./authenticate.component.css'],
 })
 export class AuthenticateComponent implements OnInit {
-  //! isAuthenticating = true; samo za test sym go slojil na false -  varni go!!!
   isAuthenticating = true;
   constructor(private userAuthService: UserService) {}
 

@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { BehaviorSubject, debounceTime, take } from 'rxjs';
-import { API_ERROR } from '../components/shared/constants';
+import { API_ERROR } from '../../shared/constants';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./error.component.css'],
 })
 export class ErrorComponent implements OnInit {
-
   apiError$ = this.apiError.asObservable();
 
   constructor(
@@ -17,8 +16,8 @@ export class ErrorComponent implements OnInit {
     private router: Router
   ) {
     this.apiError$.pipe(debounceTime(0), take(1)).subscribe(() => {
-      this.router.navigate(['/'])
-    })
+      this.router.navigate(['/']);
+    });
   }
 
   ngOnInit(): void {}

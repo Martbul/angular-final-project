@@ -1,10 +1,10 @@
 import { Component, NgZone, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ApiService } from 'src/app/api.service';
 import { App } from 'src/app/types/app';
 import { DetailsService } from './details.service';
-import { UserService } from '../../user/user-auth.service';
-import { AppServicesService } from 'src/app/services/app-services.service';
+
+import { AppServicesService } from 'src/app/app-finer/app-services.service';
+import { UserService } from 'src/app/user/user-auth.service';
 
 @Component({
   selector: 'app-app-details',
@@ -19,7 +19,6 @@ export class AppDetailsComponent implements OnInit {
   currentAppLikes!: any;
 
   constructor(
-    private apiService: ApiService,
     private activeRoute: ActivatedRoute,
     private detailsService: DetailsService,
     private userAuthService: UserService,
@@ -34,15 +33,13 @@ export class AppDetailsComponent implements OnInit {
       const id = data['appId'];
       console.log(id);
 
-  
-      this.apiService.getSingleApp(id).subscribe((app) => {
+      this.appService.getSingleApp(id).subscribe((app) => {
         this.app = app;
         this.currentAppLikes = this.app.likes;
         console.log(this.app);
-            this.currentUser =
-              this.userAuthService.userFromLocaleStorage.username;
-            this.currentUserBoughtApps = this.userAuthService.user.appsBought;
-            this.userEmail = this.userAuthService.userFromLocaleStorage.email;
+        this.currentUser = this.userAuthService.userFromLocaleStorage.username;
+        this.currentUserBoughtApps = this.userAuthService.user.appsBought;
+        this.userEmail = this.userAuthService.userFromLocaleStorage.email;
       });
     });
   }
@@ -63,7 +60,7 @@ export class AppDetailsComponent implements OnInit {
       this.userEmail = this.userAuthService.userFromLocaleStorage.email;
       this.appService.like(this.userEmail, id);
 
-      this.apiService.getSingleApp(id).subscribe((app) => {
+      this.appService.getSingleApp(id).subscribe((app) => {
         let app1 = app;
         this.currentAppLikes = app1.likes;
         console.log(this.app.likes);
