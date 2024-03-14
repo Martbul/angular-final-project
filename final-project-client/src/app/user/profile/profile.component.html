@@ -34,9 +34,9 @@
                     </li>
                   </ul>
                 </div>
-                <h1 class="my-card__header-link">
+                <!-- !<h1 class="my-card__header-link">
                   {{ profileUser.appsCreated.length }}
-                </h1>
+                </h1> -->
               </div>
             </div>
             <!-- End Payment Balance card -->
@@ -49,7 +49,7 @@
                 <ul class="my-list my-list--simple list-inline mb-0">
                   <div class="numberOfBA">
                     <h5>Bought apps</h5>
-                    <p>{{ profileUser.appsBought.length }}</p>
+                    <!--! <p>{{ profileUser.appsBought.length }}</p> -->
                   </div>
 
                   <ul>
@@ -62,7 +62,7 @@
 
                   <div class="numberOfBA">
                     <h5>Liked apps</h5>
-                    <p>{{ profileUser.appsLiked.length }}</p>
+                    <!--! <p>{{ profileUser.appsLiked.length }}</p> -->
                   </div>
 
                   <ul>
@@ -106,7 +106,7 @@
                       class="my-list-item__text-title"
                       name="username"
                       #usernameInput="ngModel"
-                      [ngModel]="profileUser.username"
+                      [value]="profileUser.username"
                       ngModel
                     />
                   </div>
@@ -120,7 +120,7 @@
                       class="my-list-item__text-title"
                       name="firstName"
                       #firstNameInput="ngModel"
-                      [ngModel]="profileUser.firstName"
+                      [value]="profileUser.email"
                       ngModel
                     />
                   </div>

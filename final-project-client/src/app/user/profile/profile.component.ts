@@ -8,22 +8,22 @@ import { NgForm } from '@angular/forms';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
 })
-export class ProfileComponent implements OnInit, OnChanges {
+export class ProfileComponent implements OnInit {
   constructor(private userAuthService: UserService, private router: Router) {
-  
+ this.profileUser = this.userAuthService.user;
+ console.log(this.profileUser);
   }
 
   profileUser!: any;
   ngOnInit() {
-    this.profileUser = this.userAuthService.user;
-    console.log(this.profileUser);
+  
   }
-  ngOnChanges(): void {
-    this.profileUser = this.userAuthService.user;
-    console.log(this.profileUser);
-  }
+  // ngOnChanges(): void {
+  //   this.profileUser = this.userAuthService.user;
+  //   console.log(this.profileUser);
+  // }
 
-  profileEdit(form: NgForm) {
+  async profileEdit(form: NgForm) {
     console.log(form.value);
     const currentEmail = this.profileUser.email;
     const {
@@ -37,23 +37,29 @@ export class ProfileComponent implements OnInit, OnChanges {
       aboutMe,
     } = form.value;
 
+    await this.userAuthService.profileEdit(
+      currentEmail,
+      username,
+      firstName,
+      lastName,
+      email,
+      phoneNumber,
+      country,
+      city,
+      aboutMe
+    );
 
-    this.userAuthService
-      .profileEdit(
-        currentEmail,
-        username,
-        firstName,
-        lastName,
-        email,
-        phoneNumber,
-        country,
-        city,
-        aboutMe
-      )
-      .subscribe((user: any) => {
-        console.log(user);
-      });
+    this.profileUser = {
+      username,
+      firstName,
+      lastName,
+      email,
+      phoneNumber,
+      country,
+      city,
+      aboutMe,
+    };
 
-   // this.profileUser = this.userAuthService.user;
+    // this.profileUser = this.userAuthService.user;
   }
 }

@@ -37,6 +37,7 @@ export class LoginComponent {
         return;
       }
       localStorage.setItem('auth', JSON.stringify(user));
+      this.userAuthService.getProfile()
       // this.navComponent.changeNav()
       this.router.navigate(['/app-finder']);
     });

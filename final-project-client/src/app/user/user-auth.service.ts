@@ -33,9 +33,10 @@ export class UserService implements OnDestroy {
   }
 
   login(email: string, password: string) {
-    return this.http
-      .post<any>('/api/users/login', { email, password })
-      .pipe(tap((user) => this.user$$.next(user)));
+     return this.http
+       .post<any>('/api/users/login', { email, password })
+       .pipe(tap((user) => this.user$$.next(user)));
+      
   }
 
   logout() {
@@ -48,6 +49,7 @@ export class UserService implements OnDestroy {
   }
 
   getProfile() {
+ 
     this.userFromLocaleStorage = JSON.parse(
       localStorage.getItem('auth') as any
     );
