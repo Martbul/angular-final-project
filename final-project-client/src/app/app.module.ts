@@ -26,6 +26,7 @@ import { FooterComponent } from './core/footer/footer.component';
 import { UserModule } from './user/user.module';
 import { LogoutComponent } from './user/logout/logout.component';
 import { PostAppModule } from './post-app/post-app.module';
+import { SharedModule } from './shared/shared.module';
 // import { MyRouterLinkDirective } from './my-router-link.directive';
 
 @NgModule({
@@ -61,6 +62,7 @@ import { PostAppModule } from './post-app/post-app.module';
     FormsModule,
     ReactiveFormsModule,
     PostAppModule,
+  
   ],
   //! appInterceptorProvider
   providers: [appInterceptorProvider],

@@ -3,21 +3,24 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NavigationComponent } from 'src/app/nav/navigatio/navigation.component';
+import { EmailValidator } from '@angular/forms';
+import { EMAIL_DOMAINS } from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers:[NavigationComponent]
+  providers: [NavigationComponent, EmailValidator],
 })
 export class LoginComponent {
+  domains = EMAIL_DOMAINS
   error?: string | null = null;
 
   constructor(
     private userAuthService: UserService,
-    private router: Router,
-    // private navComponent: NavigationComponent
-  ) {}
+    private router: Router
+  ) // private navComponent: NavigationComponent
+  {}
 
   handleLogin(form: NgForm) {
     if (form.invalid) {

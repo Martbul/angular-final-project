@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { UserRoutingModule } from './user-routing.module';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
-
+  import { SharedModule } from './../shared/shared.module';
 
 
 
@@ -17,8 +17,10 @@ import { RegisterComponent } from './register/register.component';
     RegisterComponent
   ],
   imports: [
-    CommonModule,
-    UserRoutingModule, RouterModule, FormsModule
+
+  CommonModule,
+    UserRoutingModule, RouterModule, FormsModule,
+    SharedModule
           
   ],
   exports:[]

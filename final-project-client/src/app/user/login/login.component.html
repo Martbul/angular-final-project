@@ -1,46 +1,73 @@
-
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+    crossorigin="anonymous"
+  />
 </head>
 <body>
+  <div class="container" id="container">
+    <div class="form-container sign-in-container">
+      <form #loginForm="ngForm" (ngSubmit)="handleLogin(loginForm)">
+        <h1>LogIn</h1>
+        <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <span>or use your account</span>
+        <p class="error" *ngIf="error">Invalid username or password</p>
+        <ng-container *ngIf="emailInput.touched">
+          <p *ngIf="emailInput.errors?.['emailValidator']">NOT VALID EMAIL</p>
+        </ng-container>
 
-<div class="container" id="container">
-	
-	<div class="form-container sign-in-container">
-		<form #loginForm="ngForm" (ngSubmit)="handleLogin(loginForm)">
-			<h1>LogIn</h1>
-			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<span>or use your account</span>
-			<p class="error" *ngIf="error">Invalid username or password
-			</p>
-			<input type="email" placeholder="Email"  name="email" #emailInput="ngModel"
-			ngModel />
-			<input type="password" placeholder="Password"  name="password" #passwordInput="ngModel"
-			ngModel />
-			<a href="#">Forgot your password?</a>
-			<button>LogIn</button>
-			
-		</form>
-		
-	</div>
-	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-left">
-				<h1>Welcome Back!</h1>
-				<p>To keep connected with us please login with your personal info</p>
-				<button class="ghost" id="signIn">Sign In</button>
-			</div>
-			<div class="overlay-panel overlay-right">
-				<h1>Hello, Friend!</h1>
-				<p>If you do not have account:</p>
-				<button class="ghost" id="signUp" [routerLink]="['/singup']">Sign Up</button>
-			</div>
-		</div>
-	</div>
-</div>
+        <input
+          type="email"
+          placeholder="Email"
+          name="email"
+          #emailInput="ngModel"
+          ngModel
+			 required
+          [appEmail]="domains"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          #passwordInput="ngModel"
+          ngModel
+          required
+          minlength="6"
+        />
+
+        <ng-container *ngIf="passwordInput.touched">
+          <p *ngIf="passwordInput.errors?.['required']">Password is required</p>
+          <p *ngIf="passwordInput.errors?.['minlength']">
+            Password must be at least 6 characters long
+          </p>
+        </ng-container>
+
+        <a href="#">Forgot your password?</a>
+        <button>LogIn</button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Welcome Back!</h1>
+          <p>To keep connected with us please login with your personal info</p>
+          <button class="ghost" id="signIn">Sign In</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Hello, Friend!</h1>
+          <p>If you do not have account:</p>
+          <button class="ghost" id="signUp" [routerLink]="['/singup']">
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
