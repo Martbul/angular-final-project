@@ -15,20 +15,17 @@ import { CustomerSupportChatbotServiceComponent } from './components/customer-su
 import { CustomerOnboardingChatbotServiceComponent } from './components/customer-onboarding-chatbot-service/customer-onboarding-chatbot-service.component';
 import { EmployeeTrainingChatbotServiceComponent } from './components/employee-training-chatbot-service/employee-training-chatbot-service.component';
 import { BookACallComponent } from './components/book-a-call/book-a-call.component';
-
 import { HttpClientModule } from '@angular/common/http';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppsLoopDirective } from './apps-loop.directive';
 import { appInterceptorProvider } from './app.interceptor';
-
 import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { AppFinerModule } from './app-finer/app-finer.module';
 import { AppEditComponent } from './app-finer/app-edit/app-edit.component';
 import { FooterComponent } from './core/footer/footer.component';
-import { CreateAppComponent } from './post-app/create-app/create-app.component';
 import { UserModule } from './user/user.module';
 import { LogoutComponent } from './user/logout/logout.component';
+import { PostAppModule } from './post-app/post-app.module';
 // import { MyRouterLinkDirective } from './my-router-link.directive';
 
 @NgModule({
@@ -39,16 +36,14 @@ import { LogoutComponent } from './user/logout/logout.component';
     HomepageComponent,
     TestemonialsComponent,
     FAQsComponent,
-
     AboutComponent,
     OurservicesComponent,
-
     AlystServicesComponent,
     CustomerSupportChatbotServiceComponent,
     CustomerOnboardingChatbotServiceComponent,
     EmployeeTrainingChatbotServiceComponent,
     BookACallComponent,
-    CreateAppComponent,
+
     AppsLoopDirective,
     AppEditComponent,
     LogoutComponent,
@@ -63,11 +58,9 @@ import { LogoutComponent } from './user/logout/logout.component';
     AppFinerModule,
     UserModule,
     BrowserAnimationsModule,
-
     FormsModule,
-
-    //! modul za reactivni formi
     ReactiveFormsModule,
+    PostAppModule,
   ],
   //! appInterceptorProvider
   providers: [appInterceptorProvider],
