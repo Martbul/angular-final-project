@@ -17,14 +17,15 @@ export class AppDetailsComponent implements OnInit {
   currentUser!: any;
   currentUserBoughtApps!: any;
   currentAppLikes!: any;
+  renderTrigger:boolean = false;
+  boughtApp = false
+  showLikeBtn:boolean = true;
 
   constructor(
     private activeRoute: ActivatedRoute,
     private detailsService: DetailsService,
     private userAuthService: UserService,
     private appService: AppServicesService,
-    private router: Router,
-    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -63,7 +64,10 @@ export class AppDetailsComponent implements OnInit {
       this.appService.getSingleApp(id).subscribe((app) => {
         let app1 = app;
         this.currentAppLikes = app1.likes;
-        console.log(this.app.likes);
+
+
+        this.renderTrigger = true
+        this.showLikeBtn = !this.showLikeBtn
       });
       //this.router.navigate([`/app-finder/${id}`]);
     });
@@ -84,6 +88,7 @@ export class AppDetailsComponent implements OnInit {
     });
 
     //! tova e vremenno resheni, nameri nachin da rerendernesh componenta
-    window.location.reload();
+    this.boughtApp = true
+    //window.location.reload();
   }
 }

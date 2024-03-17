@@ -83,6 +83,6 @@ export class CreateAppComponent {
       description: '',
     });
     this.error = null
-    this.router.navigate(['/app-finder'])
+    this.router.navigate(['/thanks-posted-app'])
   }
 }

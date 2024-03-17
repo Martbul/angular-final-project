@@ -27,6 +27,7 @@ import { UserModule } from './user/user.module';
 import { LogoutComponent } from './user/logout/logout.component';
 import { PostAppModule } from './post-app/post-app.module';
 import { SharedModule } from './shared/shared.module';
+import { ThanksForPostedAppComponent } from './thanks-for-posted-app/thanks-for-posted-app.component';
 // import { MyRouterLinkDirective } from './my-router-link.directive';
 
 @NgModule({
@@ -49,6 +50,7 @@ import { SharedModule } from './shared/shared.module';
     AppEditComponent,
     LogoutComponent,
     AuthenticateComponent,
+    ThanksForPostedAppComponent,
     // MyRouterLinkDirective,
   ],
   imports: [
