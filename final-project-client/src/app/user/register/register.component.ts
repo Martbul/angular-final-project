@@ -41,6 +41,7 @@ export class RegisterComponent {
         console.log(user);
 
         localStorage.setItem('auth', JSON.stringify(user));
+            this.userAuthService.getProfile();
         this.router.navigate(['/']);
       });
   }

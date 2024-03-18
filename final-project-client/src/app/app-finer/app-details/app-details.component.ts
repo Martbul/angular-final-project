@@ -17,15 +17,15 @@ export class AppDetailsComponent implements OnInit {
   currentUser!: any;
   currentUserBoughtApps!: any;
   currentAppLikes!: any;
-  renderTrigger:boolean = false;
-  boughtApp = false
- liked = false
+  renderTrigger: boolean = false;
+  boughtApp = false;
+  liked = false;
 
   constructor(
     private activeRoute: ActivatedRoute,
     private detailsService: DetailsService,
     private userAuthService: UserService,
-    private appService: AppServicesService,
+    private appService: AppServicesService
   ) {}
 
   ngOnInit(): void {
@@ -42,7 +42,9 @@ export class AppDetailsComponent implements OnInit {
         this.currentUserBoughtApps = this.userAuthService.user.appsBought;
         this.userEmail = this.userAuthService.userFromLocaleStorage.email;
       });
+      
     });
+     this.isBought();
   }
 
   deleteApp() {
@@ -63,17 +65,20 @@ export class AppDetailsComponent implements OnInit {
 
       this.appService.getSingleApp(id).subscribe((app) => {
         let app1 = app;
-        console.log(app1);
-        
-        this.currentAppLikes = app1.likes;
-        if(app1.likedBy.includes(this.currentUser.email)){
-          this.liked = true
+        console.log(app1.likedBy);
+        console.log(this.userEmail);
+        console.log(this.currentUserBoughtApps);
+        console.log(this.app);
+
+        if (app1.likedBy.includes(this.userEmail)) {
+          this.currentAppLikes = app1.likes;
+          this.liked = true;
         }
 
-
-        this.renderTrigger = true
-       
+        this.renderTrigger = true;
+        console.log(this.liked);
       });
+
       //this.router.navigate([`/app-finder/${id}`]);
     });
 
@@ -88,12 +93,18 @@ export class AppDetailsComponent implements OnInit {
 
       this.userEmail = this.userAuthService.userFromLocaleStorage.email;
       this.appService.buy(this.userEmail, id);
-
-      //this.router.navigate([`/app-finder/${id}`]);
     });
 
     //! tova e vremenno resheni, nameri nachin da rerendernesh componenta
-    this.boughtApp = true
-    window.location.reload();
+    this.boughtApp = true;
+    // window.location.reload();
+  }
+
+  isBought() {
+    const isUserBoughtApp = this.currentUserBoughtApps.includes(this.app.title);
+
+    console.log(isUserBoughtApp);
+
+    return isUserBoughtApp;
   }
 }

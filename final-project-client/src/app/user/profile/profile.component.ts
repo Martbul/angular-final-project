@@ -10,13 +10,12 @@ import { NgForm } from '@angular/forms';
 })
 export class ProfileComponent implements OnInit {
   constructor(private userAuthService: UserService, private router: Router) {
- this.profileUser = this.userAuthService.user;
- console.log(this.profileUser);
+    this.profileUser = this.userAuthService.user
   }
 
   profileUser!: any;
   ngOnInit() {
-  
+ 
   }
   // ngOnChanges(): void {
   //   this.profileUser = this.userAuthService.user;

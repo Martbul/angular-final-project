@@ -16,7 +16,9 @@ export class AuthenticateComponent implements OnInit {
     // Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     // Add 'implements OnInit' to the class.
     this.userAuthService.getProfile().subscribe({
-      next: () => {
+      next: (user) => {
+        console.log(user);
+
         this.isAuthenticating = false;
       },
       error: (error) => {
