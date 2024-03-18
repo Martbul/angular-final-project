@@ -19,7 +19,7 @@ export class AppDetailsComponent implements OnInit {
   currentAppLikes!: any;
   renderTrigger:boolean = false;
   boughtApp = false
-  showLikeBtn:boolean = true;
+ liked = false
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -63,11 +63,16 @@ export class AppDetailsComponent implements OnInit {
 
       this.appService.getSingleApp(id).subscribe((app) => {
         let app1 = app;
+        console.log(app1);
+        
         this.currentAppLikes = app1.likes;
+        if(app1.likedBy.includes(this.currentUser.email)){
+          this.liked = true
+        }
 
 
         this.renderTrigger = true
-        this.showLikeBtn = !this.showLikeBtn
+       
       });
       //this.router.navigate([`/app-finder/${id}`]);
     });
@@ -89,6 +94,6 @@ export class AppDetailsComponent implements OnInit {
 
     //! tova e vremenno resheni, nameri nachin da rerendernesh componenta
     this.boughtApp = true
-    //window.location.reload();
+    window.location.reload();
   }
 }

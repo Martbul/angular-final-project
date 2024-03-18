@@ -50,22 +50,16 @@
       </div>
       </ng-container>
        -->
-<ng-container *ngIf="currentUser !== undefined && !app.likedBy.includes(userEmail) && showLikeBtn==true">
+<ng-container *ngIf="currentUser !== undefined">
      <div >
         <p class="likeCount" >{{currentAppLikes}} </p> 
         
-        <i (click)="addLike()" class="fa-regular fa-heart"></i>
+        <i *ngIf="liked == false" (click)="addLike()" class="fa-regular fa-heart"></i>
+        <i *ngIf="liked==true"  class="fa-regular fa-heart" style="color: #ff0000"></i>
        </div>
 </ng-container>
 
-<ng-container *ngIf="currentUser !== undefined && app.likedBy.includes(userEmail) && showLikeBtn==false">
-  <div >
-     <p class="likeCount" >{{currentAppLikes}} </p> 
-     
-     <i (click)="addLike()" class="fa-solid fa-heart" style="color: #ff0000;"></i>
-    </div>
-</ng-container>
-    
+
 
        <!-- <div>
         <p class="likeCount" >{{currentAppLikes}} </p> 

@@ -34,26 +34,30 @@ exports.addLikeToApp = async(appId,email) =>{
  
   const app = await this.getSingleApp(appId)
  
-  if (app.likedBy.includes(email)) {
-  ;
-    app.likes -= 1
+  // if (app.likedBy.includes(email)) {
+  // ;
+  //   app.likes -= 1
    
-    let index = app.likedBy.indexOf(email);
-    if (index > -1) {
-      app.likedBy.splice(index, 1);
-       return app.save();
-    }
-  } else {
+  //   let index = app.likedBy.indexOf(email);
+  //   if (index > -1) {
+  //     app.likedBy.splice(index, 1);
+  //      return app.save();
+  //   }
+  // } else {
      
-    app.likes += 1
+  //   app.likes += 1
+  //   app.likedBy.push(email);
+    
+
+  // return app.save();
+  
+
+  // }
+   app.likes += 1
     app.likedBy.push(email);
     
 
   return app.save();
-  
-
-  }
-
 
 
 }

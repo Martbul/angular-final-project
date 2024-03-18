@@ -6,9 +6,10 @@ import { AppFinderComponent } from './app-finder-page/app-finder.component';
 import { FormsModule } from '@angular/forms';
 import { AppDetailsComponent } from './app-details/app-details.component';
 import { RouterModule } from '@angular/router';
+import { AppEditComponent } from './app-edit/app-edit.component';
 
 @NgModule({
-  declarations: [AppCardComponent, AppFinderComponent, AppDetailsComponent],
+  declarations: [AppCardComponent, AppFinderComponent, AppDetailsComponent, AppEditComponent],
   imports: [CommonModule, AppFinerRoutingModule, FormsModule, RouterModule],
 })
 export class AppFinerModule {}

@@ -7,13 +7,12 @@ import { CustomerOnboardingChatbotServiceComponent } from './components/customer
 import { EmployeeTrainingChatbotServiceComponent } from './components/employee-training-chatbot-service/employee-training-chatbot-service.component';
 import { CustomerSupportChatbotServiceComponent } from './components/customer-support-chatbot-service/customer-support-chatbot-service.component';
 import { ThanksForPostedAppComponent } from './thanks-for-posted-app/thanks-for-posted-app.component';
+import { ErrorComponent } from './components/404/404.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    component: HomepageComponent,
-  },
+ 
+  { path: '', pathMatch: 'full', redirectTo: '/home' },
+  { path: 'home', component: HomepageComponent },
 
   {
     path: 'services',
@@ -51,8 +50,8 @@ const routes: Routes = [
  
  
 
-  // { path: '', pathMatch: 'full', redirectTo: '/home' },
-  // { path: '**', redirectTo: '/404' },
+  //!  { path: '**', redirectTo: '/404' },
+  //  { path: '404', component: ErrorComponent },
 
 ];
 

@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './nav/navigatio/navigation.component';
-
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { TestemonialsComponent } from './components/testemonials/testemonials.component';
 import { FAQsComponent } from './components/faqs/faqs.component';
@@ -28,6 +27,8 @@ import { LogoutComponent } from './user/logout/logout.component';
 import { PostAppModule } from './post-app/post-app.module';
 import { SharedModule } from './shared/shared.module';
 import { ThanksForPostedAppComponent } from './thanks-for-posted-app/thanks-for-posted-app.component';
+import { ErrorComponent } from './components/404/404.component';
+
 // import { MyRouterLinkDirective } from './my-router-link.directive';
 
 @NgModule({
@@ -47,10 +48,11 @@ import { ThanksForPostedAppComponent } from './thanks-for-posted-app/thanks-for-
     BookACallComponent,
 
     AppsLoopDirective,
-    AppEditComponent,
+   
     LogoutComponent,
     AuthenticateComponent,
     ThanksForPostedAppComponent,
+    ErrorComponent
     // MyRouterLinkDirective,
   ],
   imports: [
