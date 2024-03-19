@@ -1,5 +1,6 @@
 
-import { Component, OnInit } from '@angular/core';
+import {
+  Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import { UserService } from '../user/user-auth.service';
 
 
@@ -8,7 +9,7 @@ import { UserService } from '../user/user-auth.service';
   templateUrl: './authenticate.component.html',
   styleUrls: ['./authenticate.component.css'],
 })
-export class AuthenticateComponent implements OnInit {
+export class AuthenticateComponent implements OnInit, OnChanges {
   isAuthenticating = true;
   constructor(private userAuthService: UserService) {}
 
@@ -26,5 +27,18 @@ export class AuthenticateComponent implements OnInit {
         this.isAuthenticating = false;
       },
     });
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+     this.userAuthService.getProfile().subscribe({
+       next: (user) => {
+         console.log(user);
+
+         this.isAuthenticating = false;
+       },
+       error: (error) => {
+         console.log('Error occurred:', error);
+         this.isAuthenticating = false;
+       },
+     });
   }
 }

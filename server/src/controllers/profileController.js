@@ -17,7 +17,18 @@ router.post('/',async (req,res)=>{
      
 })
 
-
+router.post('/',async (req,res)=>{
+    const {email} = req.body
+  
+    try {
+        const profileData = await profileService.getProfileData(email)
+    res.json(profileData).status(200).end();
+    console.log('userData deliverd');
+    } catch (message) {
+        res.status(400).json({ message }); 
+    }
+     
+})
 
 
 router.put("/edit", async (req, res) => {

@@ -34,6 +34,15 @@ export class AppServicesService {
     );
   }
 
+  subtrLike(email: string, id: string) {
+     this.http
+       .post(`${this.baseUrl}/app-finder/subtrLike`, { email, id })
+       .subscribe(
+         (data) => console.log('Success!', data),
+         (error) => console.error('Error:', error)
+       );
+  }
+
   buy(email: string, id: string) {
     this.http.post(`${this.baseUrl}/app-finder/buy`, { email, id }).subscribe(
       (data) => console.log('Success!', data),

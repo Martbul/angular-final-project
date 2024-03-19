@@ -16,20 +16,18 @@
       <img src="{{ app.imgUrl }}" alt="" />
     </div>
     <div class="bottom-layout">
+
+
       <div class="buttons">
-        <!--! BUY BUTTON WORKS!!! -->
+       
         <button
-          *ngIf="
-            currentUser !== undefined &&
-            currentUser !== app.creator &&
-            isBought() ==false
-          "
+          *ngIf=" !boughtApp "
           (click)="buy()"
         >
           BUY
         </button>
-       
-      <ng-container *ngIf="isBought()"> You Bought this app </ng-container>
+      
+         <ng-container *ngIf="boughtApp"> You Bought this app </ng-container>
 
         <button
           *ngIf="currentUser == app.creator"
@@ -46,50 +44,22 @@
         </button>
       </div>
 
-      <!-- <ng-container *ngIf="currentUser !== undefined  && app.likedBy.includes(userEmail) && renderTrigger==true">
- <div   class="heart">
-      
-         <div class="likeGroup" (click)="addLike()">
-          <p class="likeCount" >{{currentAppLikes}} </p> 
-          <i class="fa-solid fa-heart" style="color: #ff0000;"></i>
-        </div>
+
+
+      <ng-container>
+        <div class="all-like">
+          <div class="all-like-num">
+    <p *ngIf="!liked" class="likeCount">{{ numberOfLikes }}</p>
+          <p *ngIf="liked" class="likeCount">{{ numberOfLikes }}</p>
+          </div>
+      <div class="all-like-hearth">
+         <i *ngIf="!liked" (click)="addLike()" class="fa-regular fa-heart"></i>
+          <!-- <i *ngIf="liked" (click)="subtractLike()" class="fa-solid fa-heart" style="color: #ff0000;"></i> -->
+          <i *ngIf="liked" class="fa-solid fa-heart" style="color: #ff0000;"></i>
       </div>
-      </ng-container>
-
-      <ng-container *ngIf="currentUser !== undefined  &&  !app.likedBy.includes(userEmail) && renderTrigger==false">
-        <div >
-
-            <div   class="likeGroup" (click)="addLike()"> 
-                <p class="likeCount" >{{currentAppLikes}} </p> 
-              <i class="fa-regular fa-heart"></i>
-            </div>
-      </div>
-      </ng-container>
-       -->
-
-      <ng-container *ngIf="currentUser !== undefined">
-        <div>
-          <p *ngIf="liked == false" class="likeCount">{{ currentAppLikes }}</p>
-          <p *ngIf="liked == true" class="likeCount">{{ currentAppLikes }}</p>
-          <i
-            *ngIf="liked == false"
-            (click)="addLike()"
-            class="fa-regular fa-heart"
-          ></i>
-          <i
-            *ngIf="liked == true"
-            class="fa-regular fa-heart"
-            style="color: #ff0000"
-          ></i>
+         
         </div>
       </ng-container>
-
-
-      <!-- <div>
-        <p class="likeCount" >{{currentAppLikes}} </p> 
-        <button (click)="addLike()">LIKE</button>
-       </div>
-       -->
     </div>
     <div class="interactions"></div>
   </div>

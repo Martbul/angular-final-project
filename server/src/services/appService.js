@@ -34,25 +34,7 @@ exports.addLikeToApp = async(appId,email) =>{
  
   const app = await this.getSingleApp(appId)
  
-  // if (app.likedBy.includes(email)) {
-  // ;
-  //   app.likes -= 1
-   
-  //   let index = app.likedBy.indexOf(email);
-  //   if (index > -1) {
-  //     app.likedBy.splice(index, 1);
-  //      return app.save();
-  //   }
-  // } else {
-     
-  //   app.likes += 1
-  //   app.likedBy.push(email);
-    
-
-  // return app.save();
   
-
-  // }
    app.likes += 1
     app.likedBy.push(email);
     
@@ -61,3 +43,38 @@ exports.addLikeToApp = async(appId,email) =>{
 
 
 }
+
+
+
+
+
+
+//! WORKING STAGE
+exports.subtrLikeFromApp = async (appId, email) => {
+  console.log('subtracting');
+  const app = await this.getSingleApp(appId);
+
+    app.likes -= 1
+
+    let index = app.likedBy.indexOf(email);
+    if (index > -1) {
+      app.likedBy.splice(index, 1);
+       return app.save();
+    }
+  
+}
+
+exports.subtrLikeFromApp = async (appId, email) => {
+  console.log("subtracting");
+  const app = await this.getSingleApp(appId);
+
+   if (app.likes > 0) {
+      app.likes -= 1;
+      await app.save(); // Save the updated app object with one less like
+      console.log("Successfully subtracted one like from the app.");
+    } else {
+      console.log("Cannot subtract like as the count is already zero.");
+    }
+  
+  
+};

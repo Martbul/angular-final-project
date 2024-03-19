@@ -74,7 +74,7 @@ router.delete("/delete/:appId", async (req, res) => {
 
 
 router.post("/like", async (req, res) => {
-  console.log(req.body);
+ // console.log(req.body);
   const {email}  = req.body
   const { id } = req.body; 
  
@@ -83,6 +83,20 @@ router.post("/like", async (req, res) => {
   const result2 = await userService.addLikedAppToUserLikedApps(email,id);
   res.json(result).status(200).end()
 })
+
+
+router.post("/subtrLike", async (req, res) => {
+  console.log("SUBTRACTING PROCCESS ACTIVAED");
+ // console.log(req.body);
+  const { email } = req.body;
+  const { id } = req.body;
+
+  const result = await appService.subtrLikeFromApp(id, email);
+  const result2 = await userService.sptrAppFromUserLikedApps(email, id);
+  res.json(result).status(200).end();
+});
+
+
 
 
 router.post("/buy", async (req, res) => {

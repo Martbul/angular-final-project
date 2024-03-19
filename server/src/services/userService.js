@@ -155,6 +155,44 @@ exports.addLikedAppToUserLikedApps = async (email, appId) => {
 
 
 
+exports.sptrAppFromUserLikedApps = async (email, appId) => {
+  try {
+    const app = await this.getSingleApp(appId);
+    const user = await this.getSingleUserByEmail(email);
+
+   (user.appsLiked.includes(app.title)) 
+      const updatedUser = await User.findOneAndUpdate(
+        { email: email },
+        { $pull: { appsLiked: app.title } },
+        { new: true }
+      );
+
+      if (updatedUser) {
+        console.log(
+          "App removed successfully from the user's liked apps:",
+          updatedUser
+        );
+      } else {
+        console.log("User not found or app not removed.");
+      }
+    
+  } catch (error) {
+    console.error("Failed to update user with app:", error);
+  }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 exports.addAppToUserCreatedApps = (data) => {
   const title = data.title

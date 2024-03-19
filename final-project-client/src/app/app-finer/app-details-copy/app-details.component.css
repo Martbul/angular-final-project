@@ -68,20 +68,3 @@ i{
   font-size: 2em;
   
 }
-
-
-
-
-
-
-
-.all-like{
-  display: flex;
-  align-items: center;
-  gap: 0.6em;
-}
-
-.all-like .all-like-num{
-  padding-top: 0.45em;
-  font-size: 1.8em;
-}
