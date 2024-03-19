@@ -21,7 +21,7 @@
       <div class="buttons">
        
         <button
-          *ngIf=" !boughtApp "
+          *ngIf=" !boughtApp && logedUser"
           (click)="buy()"
         >
           BUY
@@ -46,7 +46,7 @@
 
 
 
-      <ng-container>
+      <ng-container *ngIf="logedUser">
         <div class="all-like">
           <div class="all-like-num">
     <p *ngIf="!liked" class="likeCount">{{ numberOfLikes }}</p>

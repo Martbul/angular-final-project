@@ -1,7 +1,15 @@
 import { HttpBackend, HttpClient } from '@angular/common/http';
 import { Injectable, OnDestroy } from '@angular/core';
-import { BehaviorSubject, Subscription, catchError, filter, tap, throwError } from 'rxjs';
+import {
+  BehaviorSubject,
+  Subscription,
+  catchError,
+  filter,
+  tap,
+  throwError,
+} from 'rxjs';
 import { User } from 'src/app/types/user';
+
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +20,7 @@ export class UserService implements OnDestroy {
     .asObservable()
     .pipe(filter((val): val is User | null => val !== undefined));
   user: any | undefined;
-  user2!:any
+  user2!: any;
 
   userFromLocaleStorage: any = null;
 
@@ -61,12 +69,11 @@ export class UserService implements OnDestroy {
       })
       .pipe(
         tap((user) => {
-          this.user$$.next(user)
+          this.user$$.next(user);
           console.log('hhhhere');
-          
+
           console.log(user);
-           this.user2 = user
-          
+          this.user2 = user;
         }),
         catchError((err) => {
           this.user$$.next(null);
@@ -75,10 +82,7 @@ export class UserService implements OnDestroy {
       );
   }
 
-
-
-
-  profileEdit(
+  editUserProfile(
     currentEmail: string,
     username: string,
     firstName: string,
@@ -89,24 +93,49 @@ export class UserService implements OnDestroy {
     city: string,
     aboutMe: string
   ) {
-    return this.http
-      .put<any>('/api/profile/edit', {
-        currentEmail,
-        username,
-        firstName,
-        lastName,
-        phoneNumber,
-        country,
-        city,
-        aboutMe,
-      })
+    console.log(currentEmail);
+    console.log(username);
+
+    let dataForUserProfileUpdate = {
+      currentEmail,
+      username,
+      firstName,
+      lastName,
+      phoneNumber,
+      country,
+      city,
+      aboutMe,
+    };
+    console.log(dataForUserProfileUpdate);
+
+    this.http
+      .put<any>('http://localhost:5050/profile/edit', dataForUserProfileUpdate)
       .pipe(
-        tap((user) => this.user$$.next(user)),
+        tap((user) => {
+          this.user$$.next(user);
+          console.log('hhhhere');
+
+          console.log(user);
+          this.user2 = user;
+        }),
         catchError((err) => {
           this.user$$.next(null);
           return throwError(() => err);
         })
+      )
+      .subscribe(
+        (data) => console.log('Success!', data),
+        (error) => console.error('Error:', error)
       );
+
+    this.getProfile().subscribe({
+      next: (user) => {
+        console.log(user);
+      },
+      error: (error) => {
+        console.log('Error occurred:', error);
+      },
+    });
   }
 
   ngOnDestroy(): void {
@@ -115,19 +144,6 @@ export class UserService implements OnDestroy {
     this.subscription.unsubscribe();
   }
 }
-  
-
-
-
-
-
-
-
-
-
-
-
-
 
 // export class UserService implements OnDestroy {
 //   private user$$ = new BehaviorSubject<User | undefined>(undefined);

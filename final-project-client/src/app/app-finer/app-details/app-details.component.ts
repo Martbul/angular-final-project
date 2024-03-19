@@ -26,6 +26,8 @@ export class AppDetailsComponent implements OnInit, OnChanges {
   currentFullUser!: any;
   subscription!: Subscription;
   userLIKEDAPPS!: any;
+
+  logedUser= true
   constructor(
     private activeRoute: ActivatedRoute,
     private detailsService: DetailsService,
@@ -88,6 +90,12 @@ export class AppDetailsComponent implements OnInit, OnChanges {
         console.log('Error occurred:', error);
       },
     });
+
+   
+    
+    if (this.userAuthService.user! == undefined) {
+      this.logedUser = false
+    }
 
     this.activeRoute.params.subscribe((data) => {
       const id = data['appId'];
