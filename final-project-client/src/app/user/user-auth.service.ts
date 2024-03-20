@@ -94,7 +94,7 @@ export class UserService implements OnDestroy {
     aboutMe: string
   ) {
     console.log(currentEmail);
-    console.log(username);
+    console.log(firstName);
 
     let dataForUserProfileUpdate = {
       currentEmail,

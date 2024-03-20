@@ -9,9 +9,21 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit, OnChanges {
-  constructor(private userAuthService: UserService, private router: Router) {}
+  constructor(private userAuthService: UserService, private router: Router) {
+     this.userAuthService.getProfile().subscribe({
+       next: (user) => {
+         console.log(user);
+       },
+       error: (error) => {
+         console.log('Error occurred:', error);
+       },
+     });
+     this.profileUser = this.userAuthService.user!;
+     this.appsBought = this.userAuthService.user!.appsBought;
+  }
 
   profileUser!: any;
+  appsBought!: any;
   ngOnInit() {
     this.userAuthService.getProfile().subscribe({
       next: (user) => {
@@ -22,6 +34,8 @@ export class ProfileComponent implements OnInit, OnChanges {
       },
     });
     this.profileUser = this.userAuthService.user!;
+    this.appsBought = this.userAuthService.user!.appsBought;
+
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -34,6 +48,7 @@ export class ProfileComponent implements OnInit, OnChanges {
       },
     });
     this.profileUser = this.userAuthService.user!;
+        this.appsBought = this.userAuthService.user!.appsBought;
   }
 
   async profileEdit(form: NgForm) {
@@ -41,7 +56,7 @@ export class ProfileComponent implements OnInit, OnChanges {
     const currentEmail = this.profileUser.email;
     const {
       username,
-      firstName,
+      firstname,
       lastName,
       email,
       phoneNumber,
@@ -50,10 +65,11 @@ export class ProfileComponent implements OnInit, OnChanges {
       aboutMe,
     } = form.value;
 
+
     await this.userAuthService.editUserProfile(
       currentEmail,
       username,
-      firstName,
+      firstname,
       lastName,
       email,
       phoneNumber,
@@ -62,15 +78,17 @@ export class ProfileComponent implements OnInit, OnChanges {
       aboutMe
     );
 
-    // this.profileUser = {
-    //   username,
-    //   firstName,
-    //   lastName,
-    //   email,
-    //   phoneNumber,
-    //   country,
-    //   city,
-    //   aboutMe,
-    // };
+    this.userAuthService.getProfile().subscribe({
+      next: (user) => {
+        console.log(user);
+      },
+      error: (error) => {
+        console.log('Error occurred:', error);
+      },
+    });
+    this.profileUser = this.userAuthService.user!;
+        this.appsBought = this.userAuthService.user!.appsBought;
+
+   
   }
 }

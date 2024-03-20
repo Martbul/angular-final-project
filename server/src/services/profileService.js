@@ -21,7 +21,7 @@ exports.update = (
   aboutMe
 ) => {
   console.log(currentEmail);
-  console.log(username);
+  console.log(firstName);
 
   return User.findOneAndUpdate(
     { email:currentEmail },

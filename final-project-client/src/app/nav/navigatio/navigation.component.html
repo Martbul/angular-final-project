@@ -10,9 +10,9 @@
 
             <!-- !BACA -->
            <ng-template #loggedInTemplate>
-              <li class="nav-item"> <a routerLink="/create-app">Post App</a></li>
-                     <li class="nav-item"><a routerLink="/logout">Logout</a></li>
-                  <li class="nav-item"><a routerLink="/profile">{{user?.username}}'s Profile</a></li>
+              <li class="nav-item"> <a routerLink="/post-app/create-app">Post App</a></li>
+                     <li class="nav-item"><a routerLink="/user/logout">Logout</a></li>
+                  <li class="nav-item"><a routerLink="/user/profile">{{user?.username}}'s Profile</a></li>
             </ng-template> 
 
             
@@ -21,13 +21,13 @@
 
 
             <!-- !BACA -->
-            <li class="nav-item"> <a routerLink="/app-finder">App Finder</a></li>
+            <li class="nav-item"> <a routerLink="/app-finder/app-finder">App Finder</a></li>
             <li class="nav-item"><a routerLink="/about">About</a></li> 
 
 
             <!-- !BACA -->
            <ng-template #loggedOutTemplate>
-              <li class="nav-item"><a routerLink="/login">LogIn</a></li>
+              <li class="nav-item"><a routerLink="/user/login">LogIn</a></li>
             </ng-template>  
 
              

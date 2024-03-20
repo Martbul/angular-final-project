@@ -48,11 +48,11 @@ import { ErrorComponent } from './components/404/404.component';
     BookACallComponent,
 
     AppsLoopDirective,
-   
+
     LogoutComponent,
     AuthenticateComponent,
     ThanksForPostedAppComponent,
-    ErrorComponent
+    ErrorComponent,
     // MyRouterLinkDirective,
   ],
   imports: [
@@ -60,13 +60,11 @@ import { ErrorComponent } from './components/404/404.component';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-    AppFinerModule,
-    UserModule,
+
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    PostAppModule,
-  
+    
   ],
   //! appInterceptorProvider
   providers: [appInterceptorProvider],

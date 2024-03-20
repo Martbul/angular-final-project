@@ -34,9 +34,9 @@
                     </li>
                   </ul>
                 </div>
-                <!-- !<h1 class="my-card__header-link">
+                <h1 class="my-card__header-link">
                   {{ profileUser.appsCreated.length }}
-                </h1> -->
+                </h1>
               </div>
             </div>
             <!-- End Payment Balance card -->
@@ -49,20 +49,20 @@
                 <ul class="my-list my-list--simple list-inline mb-0">
                   <div class="numberOfBA">
                     <h5>Bought apps</h5>
-                    <!--! <p>{{ profileUser.appsBought.length }}</p> -->
+                    <p>{{ profileUser.appsBought.length }}</p>
                   </div>
 
                   <ul>
-                    <li *ngFor="let app of profileUser.appsBought">
-                      {{ app }}
-                    </li>
-                  </ul>
+  <li >
+    {{ appsBought }}
+  </li>
+</ul>
 
                   <hr class="my-divider" />
 
                   <div class="numberOfBA">
                     <h5>Liked apps</h5>
-                    <!--! <p>{{ profileUser.appsLiked.length }}</p> -->
+                     <p>{{ profileUser.appsLiked.length }}</p>
                   </div>
 
                   <ul>
@@ -102,11 +102,12 @@
                     <span class="my-list-item__date-day">Username</span>
                   </div>
                   <div class="my-list-item__text">
-                    <input
+                      <input
                       class="my-list-item__text-title"
-                      name="username"
-                      #usernameInput="ngModel"
-                      [value]=" profileUser.username"
+                     
+                       name="username"
+                       #usernameInput="ngModel"
+                      [ngModel]="profileUser.username"
                       ngModel
                     />
                   </div>
@@ -118,9 +119,10 @@
                   <div class="my-list-item__text">
                     <input
                       class="my-list-item__text-title"
-                      name="firstName"
-                      #firstNameInput="ngModel"
-                      [value]="profileUser.firstName"
+                     
+                       name="firstname"
+                       #firstNameInput="ngModel"
+                      [ngModel]="profileUser.firstName"
                       ngModel
                     />
                   </div>

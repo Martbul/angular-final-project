@@ -24,6 +24,7 @@ router.put("/edit", async (req, res) => {
   try {
     
     console.log(req.body);
+    
      // const { email } = req.params;
       //console.log(email);
       

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { OurservicesComponent } from './components/ourservices/ourservices.component';
 import { AboutComponent } from './components/about/about.component';
@@ -10,7 +10,6 @@ import { ThanksForPostedAppComponent } from './thanks-for-posted-app/thanks-for-
 import { ErrorComponent } from './components/404/404.component';
 
 const routes: Routes = [
- 
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: 'home', component: HomepageComponent },
 
@@ -29,7 +28,6 @@ const routes: Routes = [
     component: ThanksForPostedAppComponent,
   },
 
- 
   {
     path: 'services/customeronboardingchatbot',
     pathMatch: 'full',
@@ -45,18 +43,28 @@ const routes: Routes = [
     path: 'services/customersupportchatbot',
     component: CustomerSupportChatbotServiceComponent,
   },
+  {
+    path: 'user',
+    loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
+  },
 
-  
- 
- 
+  {
+    path: 'app-finder',
+    loadChildren: () =>
+      import('./app-finer/app-finer.module').then((m) => m.AppFinerModule),
+  },
+  {
+    path: 'post-app',
+    loadChildren: () =>
+      import('./post-app/post-app.module').then((m) => m.PostAppModule),
+  },
 
-  //!  { path: '**', redirectTo: '/404' },
+  //  { path: '**', redirectTo: '/not-found' },
   //  { path: '404', component: ErrorComponent },
-
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes ,{preloadingStrategy:PreloadAllModules})],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
