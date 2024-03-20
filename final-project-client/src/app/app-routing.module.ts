@@ -59,8 +59,8 @@ const routes: Routes = [
       import('./post-app/post-app.module').then((m) => m.PostAppModule),
   },
 
-  //  { path: '**', redirectTo: '/not-found' },
-  //  { path: '404', component: ErrorComponent },
+ { path: '**', redirectTo: '/404' },
+    { path: '404', component: ErrorComponent },
 ];
 
 @NgModule({
