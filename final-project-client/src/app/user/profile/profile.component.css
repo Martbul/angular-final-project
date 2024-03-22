@@ -383,3 +383,15 @@ input {
   justify-content:space-between;
   align-items: center;
 }
+
+
+.my-card textarea{
+  border: 1px solid #000;
+  border-radius: 0.5em;
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  resize: none;
+  width: 38em;
+  height: 10vh;
+}
