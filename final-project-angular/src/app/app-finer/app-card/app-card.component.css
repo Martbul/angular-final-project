@@ -7,6 +7,7 @@
 .Cardss {
   display: flex;
   flex-direction: row;
+  gap: 4em;
 }
 
 .app-card {

@@ -85,6 +85,9 @@ export class AppDetailsComponent implements OnInit, OnChanges {
     this.userAuthService.getProfile().subscribe({
       next: (user) => {
         console.log(user);
+        this.currentUser = user.username
+        console.log(this.currentUser);
+        
       },
       error: (error) => {
         console.log('Error occurred:', error);

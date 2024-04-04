@@ -21,7 +21,7 @@
       <div class="buttons">
        
         <button
-          *ngIf=" !boughtApp && logedUser"
+          *ngIf=" !boughtApp && logedUser && currentUser !== app.creator"
           (click)="buy()"
         >
           BUY
@@ -30,15 +30,15 @@
          <ng-container *ngIf="boughtApp"> You Bought this app </ng-container>
 
         <button
-          *ngIf="currentUser == app.creator"
-          [routerLink]="'/app-finder/edit/' + app._id"
+          *ngIf="currentUser== app.creator"
+          [routerLink]="'/app-finder/app-finder/edit/' + app._id"
         >
           Edit
         </button>
         <button
           *ngIf="currentUser == app.creator"
           (click)="deleteApp()"
-          [routerLink]="'/app-finder/delete/' + app._id"
+          [routerLink]="'/app-finder/app-finder/delete/' + app._id"
         >
           Delete
         </button>
