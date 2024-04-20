@@ -1,108 +1,88 @@
-@media(min-width:800px) {
-  .service-heading{
-      margin: 8em 0em;
+@media (min-width: 800px) {
+  .service-heading {
+    margin: 8em 0em;
   }
-  .service-heading .service-heading-container{
-  
-  display: flex;
-  flex-direction:row;
-  justify-content:space-around;
-flex-grow: 1;
-flex-shrink: 1;
-padding: 0em 4em;
-gap: 2em;
+  .service-heading .service-heading-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 0em 4em;
+    gap: 2em;
+  }
+
+  .service-heading .service-heading-container .service-heading-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .service-heading .service-heading-container .service-heading-text h1 {
+    font-size: 3em;
+    font-weight: 800;
+    padding-bottom: 0.4em;
+    line-height: 1.1;
+  }
+
+  .service-heading .service-heading-container .service-heading-text h5 {
+    font-size: 1.8em;
+  }
+
+  .service-heading
+    .service-heading-container
+    .service-heading-background-media-container {
+    width: 62em;
+    min-width: 36em;
+  }
+
+  .service-heading
+    .service-heading-container
+    .service-heading-background-media-container
+    .service-media {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
+@media (max-width: 799px) {
+  .service-heading .service-heading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 0em 4em;
+    gap: 2em;
+  }
 
-.service-heading .service-heading-container .service-heading-text{
-display: flex;
-flex-direction: column;
-justify-content: center;
+  .service-heading .service-heading-container .service-heading-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
+  .service-heading .service-heading-container .service-heading-text h1 {
+    font-size: 3em;
+    font-weight: 800;
+    padding-bottom: 0.4em;
+    line-height: 1.1;
+  }
+
+  .service-heading .service-heading-container .service-heading-text h5 {
+    font-size: 1.8em;
+  }
+
+  .service-heading
+    .service-heading-container
+    .service-heading-background-media-container {
+    min-width: 18em;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }
-
-
-.service-heading .service-heading-container .service-heading-text h1{
-  font-size: 3em;
-  font-weight: 800;
-  padding-bottom: 0.4em;
-  line-height: 1.1;
-}
-
-.service-heading .service-heading-container .service-heading-text h5{
-  font-size: 1.8em;
-}
-
-.service-heading .service-heading-container .service-heading-background-media-container{
-  width: 62em;
-  min-width: 36em;
-}
-
-.service-heading .service-heading-container .service-heading-background-media-container .service-media{
-  display: flex;
-  flex-direction: row;
-  
-}
-}
-
-
-@media(max-width:799px){
-    .service-heading .service-heading-container{
-  display: flex;
-  flex-direction:column;
-  justify-content:space-around;
-flex-grow: 1;
-flex-shrink: 1;
-padding: 0em 4em;
-gap: 2em;
-}
-
-
-.service-heading .service-heading-container .service-heading-text{
-display: flex;
-flex-direction: column;
-justify-content: center;
-
-}
-
-
-.service-heading .service-heading-container .service-heading-text h1{
-  font-size: 3em;
-  font-weight: 800;
-  padding-bottom: 0.4em;
-  line-height: 1.1;
-}
-
-.service-heading .service-heading-container .service-heading-text h5{
-  font-size: 1.8em;
-}
-
-.service-heading .service-heading-container .service-heading-background-media-container{
-  min-width: 18em;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media (min-width: 1200px) {
   .how-it-works .how-container {
@@ -205,29 +185,6 @@ justify-content: center;
     margin: 0.4em 0.5em;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media (min-width: 1200px) {
   .what-offering .what-offering-counter {
@@ -419,26 +376,6 @@ justify-content: center;
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media (min-width: 1200px) {
   .results {
     padding: 9em 0;
@@ -501,22 +438,3 @@ justify-content: center;
     font-size: 6.6em;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
